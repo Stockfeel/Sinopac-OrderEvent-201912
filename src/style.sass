@@ -1,0 +1,62 @@
+// color 
+$primary: #4bb5b1
+$yellow: #f8d357
+$orange: #ffa225
+$blue: #a7ebfc
+
+// default 
+@mixin initialize 
+  *
+    transition: .2s
+    box-sizing: border-box
+    font-stretch: normal
+    font-style: normal
+    line-height: 1.38
+    letter-spacing: normal
+    cursor: default
+    font-family: 'Lato', 'Noto Sans TC'
+  body, html 
+    width: 100%
+    margin: 0
+    height: 100%
+  section
+    width: 100%
+    height: 100%
+
+// utilis
+@mixin size($w, $h:$w)
+    width: $w
+    height: $h
+
+@mixin flexCenter()
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-wrap: wrap
+
+@mixin btn($bgColor, $textColor)
+  color: $textColor
+  background-color: $bgColor
+  border: 1px solid $bgColor
+  &:hover 
+    color: $bgColor
+    background-color: $textColor
+    border: 1px solid $textColor
+
+@mixin font($size, $color)
+  font-size: $size
+  color: $color
+
+// component
+.btn 
+  display: inline-block
+  border-radius: 20px
+  font-size: 16px
+  font-weight: bold
+  font-stretch: normal
+  font-style: normal
+  line-height: 1.38
+  letter-spacing: normal
+  text-align: center
+  padding: 3px 10px
+  cursor: pointer

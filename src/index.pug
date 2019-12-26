@@ -1,0 +1,64 @@
+-var n = 0;
+html
+  head 
+    title 永豐活動頁面
+    // link(rel='stylesheet' type='text/css' href='./font.css')  
+    link(rel='stylesheet' type='text/css' href='./main.css')  
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.4/gsap.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(charset="UTF-8")
+  body
+    section.landing
+      .landing__logo
+        img(src='./asset/logo.svg')
+      .landing__title
+        for n in [1,2,3,4,5,6,7,8,9,10]
+          img(src='./asset/title/'+n+'.svg')
+      .landing__steps
+        .step 
+          img(src='./asset/landing_light.png')
+          h2 知識學習
+        .step__arrow 
+          img(src='./asset/landing_arrow.svg') 
+        .step 
+          img(src='./asset/landing_coin.png') 
+          h2 投資下單
+        .step 
+          img(src='./asset/landing_dialogue.svg')
+      .landing__info
+        p 股感攜手永豐金證券，秉持著落實普惠金融、致力打造知識金融場域的理念，帶你從自身的#[span.highlight 生活能力圈出發、培養投資嗅覺]，啟動你的生活投資！
+      .landing__btn
+        p 即刻體驗
+        img(src='./asset/landing_next.svg')
+      .ball-bg
+        for n in [1,2,3,4,5,6,7,8,9,10,11]
+          .ball
+            img(src='./asset/ball/'+n+'.png')
+    section.industry
+      .title-bg 
+        h3 industry 
+        h4 industry 
+      .info
+        .title 從生活圈出發啟動生活投資
+        .intro 股感帶你從生活圈及能力圈出發，認識產業主題包，讓生活串連投資零時差！
+      .canvas
+
+      .ball-bg
+    section.menu
+    section.invest
+      .title-bg
+      .title 
+      .intro 
+      .btn
+      .canvas
+      .ball-bg
+    section.sources
+      .title-bg
+      .title 
+      .intro 
+      .canvas
+      .ball-bg
+    section.sales 
+    footers
+  script(src='./app.js')
