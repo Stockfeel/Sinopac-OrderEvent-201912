@@ -3,6 +3,8 @@ $primary: #4bb5b1
 $yellow: #f8d357
 $orange: #ffa225
 $blue: #a7ebfc
+$bg: #e5fcfc
+
 
 // default 
 @mixin initialize 
@@ -48,15 +50,47 @@ $blue: #a7ebfc
   color: $color
 
 // component
-.btn 
-  display: inline-block
-  border-radius: 20px
-  font-size: 16px
-  font-weight: bold
-  font-stretch: normal
-  font-style: normal
-  line-height: 1.38
-  letter-spacing: normal
-  text-align: center
-  padding: 3px 10px
-  cursor: pointer
+
+section 
+  margin: 0px
+  position: relative
+
+.info 
+  position: absolute
+  display: flex
+  flex-direction: column
+  top: 50%
+  transform: translateY(-50%)
+  .title
+    width: 240px 
+    font-weight: 900
+    font-size: 40px
+    color: $primary
+  .intro
+    margin-top: 20px
+    width: 170px 
+    font-size: 16px 
+
+.title-bg 
+  position: absolute
+  &>* 
+    margin: 0
+    text-transform: uppercase
+    font-weight: 900
+    color: #c5f4f2
+    font-size: 120px
+  h4
+    font-size: 90px
+
+.btn
+  display: flex
+  background: $primary
+  padding: 5px 20px 
+  border-radius: 30px
+  width: 145px
+
+footer 
+  +flexCenter() 
+  height: 50px 
+  width: 100%
+  background: #e5fcfc

@@ -1,10 +1,12 @@
 -var n = 0;
+-var m = 0;
 html
   head 
     title 永豐活動頁面
     // link(rel='stylesheet' type='text/css' href='./font.css')  
     link(rel='stylesheet' type='text/css' href='./main.css')  
     script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.4/gsap.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.2/CSSRulePlugin.min.js")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     meta(charset="UTF-8")
@@ -28,37 +30,73 @@ html
           img(src='./asset/landing_dialogue.svg')
       .landing__info
         p 股感攜手永豐金證券，秉持著落實普惠金融、致力打造知識金融場域的理念，帶你從自身的#[span.highlight 生活能力圈出發、培養投資嗅覺]，啟動你的生活投資！
-      .landing__btn
+      .btn
         p 即刻體驗
         img(src='./asset/landing_next.svg')
       .ball-bg
-        for n in [1,2,3,4,5,6,7,8,9,10,11]
+        for n in [1,2,3,4,5,6,7,8,9,10]
           .ball
             img(src='./asset/ball/'+n+'.png')
-    section.industry
-      .title-bg 
-        h3 industry 
-        h4 industry 
-      .info
-        .title 從生活圈出發啟動生活投資
-        .intro 股感帶你從生活圈及能力圈出發，認識產業主題包，讓生活串連投資零時差！
-      .canvas
-
-      .ball-bg
-    section.menu
-    section.invest
-      .title-bg
-      .title 
-      .intro 
-      .btn
-      .canvas
-      .ball-bg
-    section.sources
-      .title-bg
-      .title 
-      .intro 
-      .canvas
-      .ball-bg
-    section.sales 
-    footers
+      .pure-bg
+        for m in [1,2,3,4,5,6,7,8,9,10]
+          .bgBall
+    main
+      section.industry
+        .title-bg 
+          h3 industry 
+          h4 industry 
+        .info
+          .title 從生活圈出發啟動生活投資
+          .intro 股感帶你從生活圈及能力圈出發，認識產業主題包，讓生活串連投資零時差！
+        .canvas
+          img(class='airplane' src='./asset/industry/airplane.png')
+          img(class='building' src='./asset/industry/building.png')
+          img(class='bus' src='./asset/industry/bus.png')
+          img(class='chart1' src='./asset/industry/chart1.png')
+          img(class='chart2' src='./asset/industry/chart2.png')
+          img(class='chart3' src='./asset/industry/chart3.png')
+          img(class='chart4' src='./asset/industry/chart4.png')
+          img(class='coin1' src='./asset/industry/coin1.png')
+          img(class='coin2' src='./asset/industry/coin2.png')
+          img(class='coin3' src='./asset/industry/coin3.png')
+          img(class='front' src='./asset/industry/front.png')
+          img(class='land' src='./asset/industry/land.png')
+          img(class='machine' src='./asset/industry/machine.png')
+      .menu
+        for m in [1,2,3,4,5,6,7,8,9,10]
+          .menu__item
+            img(src='./asset/ball/'+m+'.png') 
+      section.invest
+        .title-bg
+          h3 invest 
+          h4 invest
+        .info
+          .title 精選十二大產業別輕鬆縮小投資範圍
+          .intro 永豐金證券精選十二大產業投資組合，為你輕鬆篩選標的，省時省力不燒腦！
+          .btn
+            p 即刻體驗
+            img(src='./asset/landing_next.svg')
+        .canvas
+      section.sources
+        .title-bg
+          h3 sources 
+          h4 sources
+        .info
+          .title 學習大師投資奠定成功基石
+          .intro 股感擁有豐富金融知識庫，輕鬆學習大師的價值價量投資學，練就投資真功夫！
+        .canvas
+      section.products
+        .title-bg
+          h3 products 
+          h4 products
+        .info
+          .title 囊括海內外金融商品即刻啟動生活投資
+          .intro 股感囊括眾多海內外金融標的，不只美股台股更有豐富ETF可選擇，串連知識學習和投資下單零時差！
+          .btn
+            p 即刻體驗
+            img(src='./asset/landing_next.svg')
+        .canvas
+      section.sales 
+    footer
+      p © Stockfeel. All rights reserved
   script(src='./app.js')

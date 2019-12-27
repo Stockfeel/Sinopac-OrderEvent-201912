@@ -10,23 +10,93 @@ $colors: $primary, $yellow, $blue, $orange
 	align-items: center
 	flex-direction: column
 	overflow: hidden
-.industry, .menu, .invest 
-	background: #e5fcfc
+	&>* 
+		z-index: 5
+.landing__steps
+	+flexCenter()
+	.step
+		margin: 10px 20px
+		+flexCenter()
+		&>*
+			margin: 0 10px
 .ball-bg
 	display: flex
-
+	z-index: 2
 .ball
 	position: absolute
 	border-radius: 50%
-	margin: 10px
 	display: flex
 	justify-content: center
 	align-items: center
+	z-index: 2
+	// visibility: hidden
 	img
 		width: 80%
 		height: 80%
 		object-fit: contain
-@for $i from 1 through 11 
+@for $i from 1 through 10 
 	.ball:nth-child(#{$i})
+		left: #{random(100)+'%'}
+		bottom: -300px
 		background: nth($colors, random(4))
-		+size(#{100+random(100))+'px'})
+		+size(#{100+random(200))+'px'})
+.pure-bg
+	z-index: 1
+.bgBall
+	position: absolute
+	border-radius: 50%
+	display: flex
+	justify-content: center
+	align-items: center
+	z-index: 1
+@for $i from 1 through 10 
+	.bgBall:nth-child(#{$i})
+		left: #{random(100)+'%'}
+		bottom: -300px
+		background: nth($colors, random(4))
+		+size(#{50+random(100))+'px'})
+
+.industry, .sources
+	background: $bg
+	justify-content: flex-start
+	.info 
+		left: 500px
+	.title-bg 
+		justify-content: flex-end
+		top: 100px
+		right: 500px
+.invest, .products, 
+	background: $bg
+	.info 
+		right: 500px
+		justify-content: flex-end
+		.title 
+			text-align: right
+		.intro 
+			text-align: right
+	.title-bg 
+		justify-content: flex-start
+		top: 100px
+		left: 500px
+		&>* 
+			text-align: left
+.sources, .products
+	background: white
+
+.industry .canvas 
+	position: absolute
+	+size(960px, 500px)
+	right: 150px 
+	bottom: 0
+	border: 1px solid black
+	&>* 
+		display: inline-block
+		position: absolute
+		border: 1px solid black
+		
+.menu
+	display: flex 
+	background: $bg
+	overflow: hidden
+	&>* 
+		margin: 10px
