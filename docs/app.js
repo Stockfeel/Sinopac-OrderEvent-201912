@@ -278,9 +278,12 @@ $(window).scroll(function(evt) {
 }); // menu
 
 var mySwiper = new Swiper('.swiper-container', {
-  // Optional parameters
-  direction: 'horizontal',
-  loop: true
+  slidesPerView: 'auto',
+  loop: true,
+  autoplay: 1000,
+  pagination: '.swiper-pagination',
+  nextButton: '.swiper-button-next',
+  prevButton: '.swiper-button-prev'
 }); // utlis 
 
 function randomBetween(min, max) {

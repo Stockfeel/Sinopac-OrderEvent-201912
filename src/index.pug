@@ -76,10 +76,14 @@ html
             img(src='./asset/industry/coin3.png')
           .imgBox.front
             img(src='./asset/industry/front.png')
-      .menu#menu
-        for m in [1,2,3,4,5,6,7,8,9,10]
-          .menu__item
-            img(src='./asset/ball/'+m+'.png') 
+      .menu.swiper-container#menu
+        .swiper-wrapper
+          for m in [1,2,3,4,5,6,7,8,9,10]
+            .menu__item.swiper-slide
+              img(src='./asset/ball/'+m+'.png')
+        .swiper-pagination 
+        .swiper-button-prev
+        .swiper-button-next
       section.invest#invest
         .title-bg
           h3 invest 
