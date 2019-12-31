@@ -30,6 +30,10 @@ $bg: #e5fcfc
     width: $w
     height: $h
 
+@mixin pos($x, $y:$x)
+    left: $x
+    top: $y
+
 @mixin flexCenter()
   display: flex
   justify-content: center
@@ -94,3 +98,4 @@ footer
   height: 50px 
   width: 100%
   background: #e5fcfc
+

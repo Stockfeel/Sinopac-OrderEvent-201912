@@ -105,74 +105,74 @@ section {
     object-fit: contain; }
 
 .ball:nth-child(1) {
-  left: 19%;
-  bottom: -300px;
+  left: 34%;
+  bottom: -400px;
   background: #f8d357;
-  width: 159;
-  height: 159; }
+  width: 353;
+  height: 353; }
 
 .ball:nth-child(2) {
-  left: 18%;
-  bottom: -300px;
-  background: #ffa225;
-  width: 161;
-  height: 161; }
+  left: 24%;
+  bottom: -400px;
+  background: #f8d357;
+  width: 379;
+  height: 379; }
 
 .ball:nth-child(3) {
-  left: 80%;
-  bottom: -300px;
+  left: 64%;
+  bottom: -400px;
   background: #a7ebfc;
-  width: 166;
-  height: 166; }
+  width: 352;
+  height: 352; }
 
 .ball:nth-child(4) {
-  left: 26%;
-  bottom: -300px;
-  background: #ffa225;
-  width: 220;
-  height: 220; }
+  left: 5%;
+  bottom: -400px;
+  background: #4bb5b1;
+  width: 294;
+  height: 294; }
 
 .ball:nth-child(5) {
-  left: 55%;
-  bottom: -300px;
-  background: #ffa225;
-  width: 281;
-  height: 281; }
+  left: 91%;
+  bottom: -400px;
+  background: #4bb5b1;
+  width: 337;
+  height: 337; }
 
 .ball:nth-child(6) {
-  left: 93%;
-  bottom: -300px;
+  left: 30%;
+  bottom: -400px;
   background: #ffa225;
-  width: 214;
-  height: 214; }
+  width: 239;
+  height: 239; }
 
 .ball:nth-child(7) {
-  left: 34%;
-  bottom: -300px;
-  background: #a7ebfc;
-  width: 216;
-  height: 216; }
+  left: 19%;
+  bottom: -400px;
+  background: #ffa225;
+  width: 325;
+  height: 325; }
 
 .ball:nth-child(8) {
-  left: 68%;
-  bottom: -300px;
+  left: 64%;
+  bottom: -400px;
   background: #4bb5b1;
-  width: 182;
-  height: 182; }
+  width: 325;
+  height: 325; }
 
 .ball:nth-child(9) {
-  left: 20%;
-  bottom: -300px;
-  background: #f8d357;
-  width: 274;
-  height: 274; }
+  left: 15%;
+  bottom: -400px;
+  background: #4bb5b1;
+  width: 307;
+  height: 307; }
 
 .ball:nth-child(10) {
-  left: 69%;
-  bottom: -300px;
-  background: #f8d357;
-  width: 283;
-  height: 283; }
+  left: 16%;
+  bottom: -400px;
+  background: #4bb5b1;
+  width: 343;
+  height: 343; }
 
 .pure-bg {
   z-index: 1; }
@@ -186,74 +186,74 @@ section {
   z-index: 1; }
 
 .bgBall:nth-child(1) {
-  left: 38%;
+  left: 45%;
   bottom: -300px;
-  background: #4bb5b1;
-  width: 100;
-  height: 100; }
+  background: #a7ebfc;
+  width: 111;
+  height: 111; }
 
 .bgBall:nth-child(2) {
-  left: 81%;
-  bottom: -300px;
-  background: #f8d357;
-  width: 105;
-  height: 105; }
-
-.bgBall:nth-child(3) {
-  left: 14%;
+  left: 83%;
   bottom: -300px;
   background: #ffa225;
-  width: 69;
-  height: 69; }
+  width: 104;
+  height: 104; }
+
+.bgBall:nth-child(3) {
+  left: 17%;
+  bottom: -300px;
+  background: #ffa225;
+  width: 61;
+  height: 61; }
 
 .bgBall:nth-child(4) {
-  left: 2%;
+  left: 73%;
   bottom: -300px;
-  background: #a7ebfc;
-  width: 88;
-  height: 88; }
+  background: #ffa225;
+  width: 135;
+  height: 135; }
 
 .bgBall:nth-child(5) {
-  left: 51%;
+  left: 82%;
   bottom: -300px;
-  background: #a7ebfc;
-  width: 59;
-  height: 59; }
+  background: #ffa225;
+  width: 114;
+  height: 114; }
 
 .bgBall:nth-child(6) {
-  left: 63%;
+  left: 59%;
   bottom: -300px;
-  background: #a7ebfc;
-  width: 144;
-  height: 144; }
+  background: #f8d357;
+  width: 134;
+  height: 134; }
 
 .bgBall:nth-child(7) {
-  left: 97%;
+  left: 70%;
   bottom: -300px;
-  background: #a7ebfc;
-  width: 147;
-  height: 147; }
+  background: #f8d357;
+  width: 120;
+  height: 120; }
 
 .bgBall:nth-child(8) {
-  left: 54%;
-  bottom: -300px;
-  background: #4bb5b1;
-  width: 81;
-  height: 81; }
-
-.bgBall:nth-child(9) {
-  left: 68%;
+  left: 10%;
   bottom: -300px;
   background: #a7ebfc;
-  width: 112;
-  height: 112; }
+  width: 113;
+  height: 113; }
+
+.bgBall:nth-child(9) {
+  left: 75%;
+  bottom: -300px;
+  background: #f8d357;
+  width: 89;
+  height: 89; }
 
 .bgBall:nth-child(10) {
-  left: 35%;
+  left: 3%;
   bottom: -300px;
-  background: #4bb5b1;
-  width: 147;
-  height: 147; }
+  background: #f8d357;
+  width: 149;
+  height: 149; }
 
 .industry, .sources {
   background: #e5fcfc;
@@ -284,17 +284,190 @@ section {
 .sources, .products {
   background: white; }
 
+.imgBox {
+  overflow: hidden; }
+
 .industry .canvas {
   position: absolute;
   width: 960px;
   height: 500px;
   right: 150px;
-  bottom: 0;
-  border: 1px solid black; }
+  bottom: 0; }
   .industry .canvas > * {
     display: inline-block;
+    position: absolute; }
+  .industry .canvas .land {
+    left: auto;
+    top: 100px;
+    opacity: 0; }
+  .industry .canvas .front {
+    left: 260px;
+    top: 80px; }
+  .industry .canvas .machine {
+    left: 600px;
+    top: 10px; }
+  .industry .canvas .building {
+    left: 300px;
+    top: -30px; }
+  .industry .canvas .bus {
+    left: 220px;
+    top: 150px; }
+  .industry .canvas .airplane {
+    left: auto;
+    top: 200px; }
+  .industry .canvas .coin1 {
+    left: 50px;
+    top: 0;
+    opacity: 0; }
+  .industry .canvas .coin2 {
+    left: 50px;
+    top: -100px;
+    opacity: 0; }
+  .industry .canvas .coin3 {
+    left: 50px;
+    top: 210px; }
+  .industry .canvas .chart1 {
+    left: 200px;
+    top: 50px; }
+  .industry .canvas .chart2 {
+    left: 90px;
+    top: 80px; }
+  .industry .canvas .chart3 {
+    left: 50px;
+    top: 150px; }
+
+.invest .canvas {
+  position: absolute;
+  width: 960px;
+  height: 500px;
+  left: 400px;
+  bottom: 200px; }
+  .invest .canvas > * {
+    display: inline-block;
+    position: absolute; }
+  .invest .canvas .imgBox.land {
+    left: -100px;
+    top: 120px; }
+  .invest .canvas .imgBox.wall {
+    left: 50px;
+    top: 100px; }
+  .invest .canvas .imgBox.other {
+    left: 60px;
+    top: -20px; }
+  .invest .canvas .imgBox.front {
+    left: 280px;
+    top: 250px; }
+  .invest .canvas .imgBox.boxc1 {
+    left: 300px;
+    top: 150px; }
+  .invest .canvas .imgBox.plant {
+    left: 150px;
+    top: 250px; }
+  .invest .canvas .imgBox.time {
+    left: 580px;
+    top: 30px; }
+  .invest .canvas .imgBox.coin1 {
+    left: 150px;
+    top: -200px; }
+  .invest .canvas .imgBox.coin2 {
+    left: 400px;
+    top: -100px; }
+  .invest .canvas .imgBox.coin3 {
+    left: 150px;
+    top: 300px; }
+  .invest .canvas .imgBox.boxr1 {
+    left: 480px;
+    top: 50px; }
+  .invest .canvas .imgBox.boxr2 {
+    left: 480px;
+    top: 50px; }
+  .invest .canvas .imgBox.boxl1 {
+    left: 90px;
+    top: 140px; }
+  .invest .canvas .imgBox.boxl2 {
+    left: 90px;
+    top: 140px; }
+  .invest .canvas .imgBox.boxl3 {
+    left: 90px;
+    top: 140px; }
+  .invest .canvas .imgBox.check {
+    left: 420px;
+    top: 220px; }
+  .invest .canvas .imgBox.cancel {
+    left: 200px;
+    top: 170px; }
+  .invest .canvas .imgBox.circle1 {
+    left: 100px;
+    top: 250px; }
+  .invest .canvas .imgBox.circle2 {
+    left: 160px;
+    top: 235px; }
+  .invest .canvas .imgBox.circle3 {
+    left: 220px;
+    top: 225px; }
+
+.sources .canvas {
+  position: absolute;
+  width: 960px;
+  height: 500px;
+  right: 100px;
+  bottom: 0;
+  border: solid 1px black; }
+  .sources .canvas > * {
+    display: inline-block;
     position: absolute;
-    border: 1px solid black; }
+    border: solid 1px black; }
+  .sources .canvas .imgBox.land {
+    left: -100px;
+    top: 120px; }
+  .sources .canvas .imgBox.mountain {
+    left: 200px;
+    top: 100px; }
+  .sources .canvas .imgBox.house {
+    left: 475px;
+    top: 175px; }
+  .sources .canvas .imgBox.line {
+    left: 0;
+    top: 150px; }
+  .sources .canvas .imgBox.front {
+    left: 350px;
+    top: 170px; }
+  .sources .canvas .imgBox.mountain {
+    left: 200px;
+    top: 100px; }
+  .sources .canvas .imgBox.tree1 {
+    left: 660px;
+    top: 160px; }
+  .sources .canvas .imgBox.tree2 {
+    left: 420px;
+    top: 220px; }
+  .sources .canvas .imgBox.book {
+    left: 150px;
+    top: -20px; }
+  .sources .canvas .imgBox.img1 {
+    left: 350px;
+    top: -50px; }
+  .sources .canvas .imgBox.img2 {
+    left: 350px;
+    top: -50px; }
+  .sources .canvas .imgBox.chart1 {
+    left: 450px;
+    top: 70px; }
+  .sources .canvas .imgBox.chart2 {
+    left: 550px;
+    top: 70px; }
+  .sources .canvas .imgBox.boxl1 {
+    left: 460px;
+    top: 50px; }
+  .sources .canvas .imgBox.boxl2 {
+    left: 470px;
+    top: 50px; }
+  .sources .canvas .imgBox.boxr1 {
+    left: 560px;
+    top: 50px; }
+  .sources .canvas .imgBox.boxr2 {
+    left: 570px;
+    top: 50px; }
 
 .menu {
   display: flex;

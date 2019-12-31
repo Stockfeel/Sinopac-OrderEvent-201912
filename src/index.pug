@@ -5,9 +5,11 @@ html
     title 永豐活動頁面
     // link(rel='stylesheet' type='text/css' href='./font.css')  
     link(rel='stylesheet' type='text/css' href='./main.css')  
+    link(rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.4/gsap.min.js")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.2/CSSRulePlugin.min.js")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+    script(src="https://unpkg.com/swiper/js/swiper.min.js")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     meta(charset="UTF-8")
   body
@@ -41,7 +43,7 @@ html
         for m in [1,2,3,4,5,6,7,8,9,10]
           .bgBall
     main
-      section.industry
+      section.industry#industry
         .title-bg 
           h3 industry 
           h4 industry 
@@ -49,24 +51,36 @@ html
           .title 從生活圈出發啟動生活投資
           .intro 股感帶你從生活圈及能力圈出發，認識產業主題包，讓生活串連投資零時差！
         .canvas
-          img(class='airplane' src='./asset/industry/airplane.png')
-          img(class='building' src='./asset/industry/building.png')
-          img(class='bus' src='./asset/industry/bus.png')
-          img(class='chart1' src='./asset/industry/chart1.png')
-          img(class='chart2' src='./asset/industry/chart2.png')
-          img(class='chart3' src='./asset/industry/chart3.png')
-          img(class='chart4' src='./asset/industry/chart4.png')
-          img(class='coin1' src='./asset/industry/coin1.png')
-          img(class='coin2' src='./asset/industry/coin2.png')
-          img(class='coin3' src='./asset/industry/coin3.png')
-          img(class='front' src='./asset/industry/front.png')
-          img(class='land' src='./asset/industry/land.png')
-          img(class='machine' src='./asset/industry/machine.png')
-      .menu
+          .imgBox.land
+            img(src='./asset/industry/land.png')
+          .imgBox.bus
+            img(src='./asset/industry/bus.png')
+          .imgBox.machine
+            img(src='./asset/industry/machine.png')
+          .imgBox.building
+            img(src='./asset/industry/building.png')
+          .imgBox.airplane
+            img(src='./asset/industry/airplane.png')
+          .imgBox.chart1
+            img(src='./asset/industry/chart1.png')
+          .imgBox.chart2
+            img(src='./asset/industry/chart2.png')
+          .imgBox.chart3
+            img(src='./asset/industry/chart3.png')
+          //- img(class='chart4' src='./asset/industry/chart4.png')
+          .imgBox.coin1
+            img(src='./asset/industry/coin1.png')
+          .imgBox.coin2
+            img(src='./asset/industry/coin2.png')
+          .imgBox.coin3
+            img(src='./asset/industry/coin3.png')
+          .imgBox.front
+            img(src='./asset/industry/front.png')
+      .menu#menu
         for m in [1,2,3,4,5,6,7,8,9,10]
           .menu__item
             img(src='./asset/ball/'+m+'.png') 
-      section.invest
+      section.invest#invest
         .title-bg
           h3 invest 
           h4 invest
@@ -77,6 +91,46 @@ html
             p 即刻體驗
             img(src='./asset/landing_next.svg')
         .canvas
+          .imgBox.land
+            img(src='./asset/invest/land.png')
+          .imgBox.wall
+            img(src='./asset/invest/wall.png')
+          .imgBox.boxc1
+            img(src='./asset/invest/boxc1.png')
+          .imgBox.boxl3
+            img(src='./asset/invest/boxl3.png')
+          .imgBox.boxl2
+            img(src='./asset/invest/boxl2.png')
+          .imgBox.boxl1
+            img(src='./asset/invest/boxl1.png')
+          .imgBox.boxr2
+            img(src='./asset/invest/boxr2.png')
+          .imgBox.boxr1
+            img(src='./asset/invest/boxr1.png')
+          .imgBox.plant
+            img(src='./asset/invest/plant.png')
+          .imgBox.circle1
+            img(src='./asset/invest/circle1.png')
+          .imgBox.circle2
+            img(src='./asset/invest/circle2.png')
+          .imgBox.circle3
+            img(src='./asset/invest/circle3.png')
+          .imgBox.coin1
+            img(src='./asset/invest/coin1.png')
+          .imgBox.coin2
+            img(src='./asset/invest/coin2.png')
+          .imgBox.coin3
+            img(src='./asset/invest/coin3.png')
+          .imgBox.cancel
+            img(src='./asset/invest/cancel.png')
+          .imgBox.check
+            img(src='./asset/invest/check.png')
+          .imgBox.other
+            img(src='./asset/invest/other.png')
+          .imgBox.time
+            img(src='./asset/invest/time.png')
+          .imgBox.front
+            img(src='./asset/invest/front.png')
       section.sources
         .title-bg
           h3 sources 
@@ -85,6 +139,46 @@ html
           .title 學習大師投資奠定成功基石
           .intro 股感擁有豐富金融知識庫，輕鬆學習大師的價值價量投資學，練就投資真功夫！
         .canvas
+          .imgBox.land
+            img(src='./asset/sources/land.png')
+          .imgBox.mountain
+            img(src='./asset/sources/mountain.png')
+          .imgBox.book
+            img(src='./asset/sources/book.png')
+          .imgBox.bSquare
+            img(src='./asset/sources/bSquare.png')
+          .imgBox.bar
+            img(src='./asset/sources/bar.png')
+          .imgBox.gbox
+            img(src='./asset/sources/gbox.png')
+          .imgBox.boxl1
+            img(src='./asset/sources/boxl1.png')
+          .imgBox.boxl2
+            img(src='./asset/sources/boxl2.png')
+          .imgBox.boxr1
+            img(src='./asset/sources/boxr1.png')
+          .imgBox.boxr2
+            img(src='./asset/sources/boxr2.png')
+          .imgBox.chart1
+            img(src='./asset/sources/chart1.png')
+          .imgBox.chart2
+            img(src='./asset/sources/chart2.png')
+          .imgBox.house
+            img(src='./asset/sources/house.png')
+          .imgBox.img1
+            img(src='./asset/sources/img1.png')
+          .imgBox.img2
+            img(src='./asset/sources/img2.png')
+          .imgBox.line
+            img(src='./asset/sources/line.png')
+          .imgBox.pen
+            img(src='./asset/sources/pen.png')
+          .imgBox.tree1
+            img(src='./asset/sources/tree1.png')
+          .imgBox.tree2
+            img(src='./asset/sources/tree2.png')
+          .imgBox.front
+            img(src='./asset/sources/front.png')
       section.products
         .title-bg
           h3 products 

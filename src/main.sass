@@ -37,9 +37,9 @@ $colors: $primary, $yellow, $blue, $orange
 @for $i from 1 through 10 
 	.ball:nth-child(#{$i})
 		left: #{random(100)+'%'}
-		bottom: -300px
+		bottom: -400px
 		background: nth($colors, random(4))
-		+size(#{100+random(200))+'px'})
+		+size(#{200+random(200))+'px'})
 .pure-bg
 	z-index: 1
 .bgBall
@@ -82,18 +82,138 @@ $colors: $primary, $yellow, $blue, $orange
 			text-align: left
 .sources, .products
 	background: white
+.imgBox
+	overflow: hidden
 
 .industry .canvas 
 	position: absolute
 	+size(960px, 500px)
 	right: 150px 
 	bottom: 0
-	border: 1px solid black
 	&>* 
 		display: inline-block
 		position: absolute
-		border: 1px solid black
-		
+	.land 
+		+pos(auto, 100px)
+		opacity: 0
+	.front 
+		+pos(260px, 80px)
+	.machine 
+		+pos(600px, 10px)
+	.building
+		+pos(300px, -30px)
+	.bus
+		+pos(220px, 150px)
+	.airplane
+		+pos(auto, 200px)
+	.coin1
+		+pos(50px, 0)
+		opacity: 0
+	.coin2
+		+pos(50px, -100px)
+		opacity: 0
+	.coin3
+		+pos(50px, 210px)
+	.chart1 
+		+pos(200px, 50px)
+	.chart2
+		+pos(90px, 80px)
+	.chart3
+		+pos(50px, 150px)
+
+.invest .canvas 
+	position: absolute
+	+size(960px, 500px)
+	left: 400px 
+	bottom: 200px
+	&>* 
+		display: inline-block
+		position: absolute
+	.imgBox.land
+		+pos(-100px, 120px)
+	.imgBox.wall 
+		+pos(50px, 100px)
+	.imgBox.other
+		+pos(60px, -20px)
+	.imgBox.front 
+		+pos(280px, 250px)
+	.imgBox.boxc1 
+		+pos(300px, 150px)
+	.imgBox.plant
+		+pos(150px, 250px)
+	.imgBox.time
+		+pos(580px, 30px)
+	.imgBox.coin1
+		+pos(150px, -200px)
+	.imgBox.coin2
+		+pos(400px, -100px)
+	.imgBox.coin3
+		+pos(150px, 300px)
+	.imgBox.boxr1 
+		+pos(480px, 50px)
+	.imgBox.boxr2
+		+pos(480px, 50px)
+	.imgBox.boxl1
+		+pos(90px, 140px)
+	.imgBox.boxl2
+		+pos(90px, 140px)
+	.imgBox.boxl3
+		+pos(90px, 140px)
+	.imgBox.check
+		+pos(420px, 220px)
+	.imgBox.cancel
+		+pos(200px, 170px)
+	.imgBox.circle1
+		+pos(100px, 250px)
+	.imgBox.circle2
+		+pos(160px, 235px)
+	.imgBox.circle3
+		+pos(220px, 225px)
+
+.sources .canvas 
+	position: absolute
+	+size(960px, 500px)
+	right: 100px 
+	bottom: 0
+	border: solid 1px black
+	&>* 
+		display: inline-block
+		position: absolute
+		border: solid 1px black
+	.imgBox.land
+		+pos(-100px, 120px)
+	.imgBox.mountain 
+		+pos(200px, 100px)
+	.imgBox.house 
+		+pos(475px, 175px)
+	.imgBox.line 
+		+pos(0, 150px)
+	.imgBox.front 
+		+pos(350px, 170px)
+	.imgBox.mountain 
+		+pos(200px, 100px)
+	.imgBox.tree1 
+		+pos(660px, 160px)
+	.imgBox.tree2
+		+pos(420px, 220px)
+	.imgBox.book
+		+pos(150px, -20px)
+	.imgBox.img1	
+		+pos(350px, -50px)
+	.imgBox.img2 
+		+pos(350px, -50px)
+	.imgBox.chart1 
+		+pos(450px, 70px)
+	.imgBox.chart2
+		+pos(550px, 70px)
+	.imgBox.boxl1 
+		+pos(460px, 50px)
+	.imgBox.boxl2
+		+pos(470px, 50px)
+	.imgBox.boxr1 
+		+pos(560px, 50px)
+	.imgBox.boxr2
+		+pos(570px, 50px)
 .menu
 	display: flex 
 	background: $bg

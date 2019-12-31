@@ -3,9 +3,11 @@
 <head>
   <title>永豐活動頁面</title><!-- link(rel='stylesheet' type='text/css' href='./font.css')  -->
   <link rel="stylesheet" type="text/css" href="./main.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.4/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.2/CSSRulePlugin.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta charset="UTF-8" />
 </head>
@@ -56,7 +58,7 @@
     </div>
   </section>
   <main>
-    <section class="industry">
+    <section class="industry" id="industry">
       <div class="title-bg">
         <h3>industry </h3>
         <h4>industry </h4>
@@ -65,9 +67,22 @@
         <div class="title">從生活圈出發啟動生活投資</div>
         <div class="intro">股感帶你從生活圈及能力圈出發，認識產業主題包，讓生活串連投資零時差！</div>
       </div>
-      <div class="canvas"><img class="airplane" src="./asset/industry/airplane.png" /><img class="building" src="./asset/industry/building.png" /><img class="bus" src="./asset/industry/bus.png" /><img class="chart1" src="./asset/industry/chart1.png" /><img class="chart2" src="./asset/industry/chart2.png" /><img class="chart3" src="./asset/industry/chart3.png" /><img class="chart4" src="./asset/industry/chart4.png" /><img class="coin1" src="./asset/industry/coin1.png" /><img class="coin2" src="./asset/industry/coin2.png" /><img class="coin3" src="./asset/industry/coin3.png" /><img class="front" src="./asset/industry/front.png" /><img class="land" src="./asset/industry/land.png" /><img class="machine" src="./asset/industry/machine.png" /></div>
+      <div class="canvas">
+        <div class="imgBox land"><img src="./asset/industry/land.png" /></div>
+        <div class="imgBox bus"><img src="./asset/industry/bus.png" /></div>
+        <div class="imgBox machine"><img src="./asset/industry/machine.png" /></div>
+        <div class="imgBox building"><img src="./asset/industry/building.png" /></div>
+        <div class="imgBox airplane"><img src="./asset/industry/airplane.png" /></div>
+        <div class="imgBox chart1"><img src="./asset/industry/chart1.png" /></div>
+        <div class="imgBox chart2"><img src="./asset/industry/chart2.png" /></div>
+        <div class="imgBox chart3"><img src="./asset/industry/chart3.png" /></div>
+        <div class="imgBox coin1"><img src="./asset/industry/coin1.png" /></div>
+        <div class="imgBox coin2"><img src="./asset/industry/coin2.png" /></div>
+        <div class="imgBox coin3"><img src="./asset/industry/coin3.png" /></div>
+        <div class="imgBox front"><img src="./asset/industry/front.png" /></div>
+      </div>
     </section>
-    <div class="menu">
+    <div class="menu" id="menu">
       <div class="menu__item"><img src="./asset/ball/1.png" /></div>
       <div class="menu__item"><img src="./asset/ball/2.png" /></div>
       <div class="menu__item"><img src="./asset/ball/3.png" /></div>
@@ -79,7 +94,7 @@
       <div class="menu__item"><img src="./asset/ball/9.png" /></div>
       <div class="menu__item"><img src="./asset/ball/10.png" /></div>
     </div>
-    <section class="invest">
+    <section class="invest" id="invest">
       <div class="title-bg">
         <h3>invest </h3>
         <h4>invest</h4>
@@ -91,7 +106,28 @@
           <p>即刻體驗</p><img src="./asset/landing_next.svg" />
         </div>
       </div>
-      <div class="canvas"></div>
+      <div class="canvas">
+        <div class="imgBox land"><img src="./asset/invest/land.png" /></div>
+        <div class="imgBox wall"><img src="./asset/invest/wall.png" /></div>
+        <div class="imgBox boxc1"><img src="./asset/invest/boxc1.png" /></div>
+        <div class="imgBox boxl3"><img src="./asset/invest/boxl3.png" /></div>
+        <div class="imgBox boxl2"><img src="./asset/invest/boxl2.png" /></div>
+        <div class="imgBox boxl1"><img src="./asset/invest/boxl1.png" /></div>
+        <div class="imgBox boxr2"><img src="./asset/invest/boxr2.png" /></div>
+        <div class="imgBox boxr1"><img src="./asset/invest/boxr1.png" /></div>
+        <div class="imgBox plant"><img src="./asset/invest/plant.png" /></div>
+        <div class="imgBox circle1"><img src="./asset/invest/circle1.png" /></div>
+        <div class="imgBox circle2"><img src="./asset/invest/circle2.png" /></div>
+        <div class="imgBox circle3"><img src="./asset/invest/circle3.png" /></div>
+        <div class="imgBox coin1"><img src="./asset/invest/coin1.png" /></div>
+        <div class="imgBox coin2"><img src="./asset/invest/coin2.png" /></div>
+        <div class="imgBox coin3"><img src="./asset/invest/coin3.png" /></div>
+        <div class="imgBox cancel"><img src="./asset/invest/cancel.png" /></div>
+        <div class="imgBox check"><img src="./asset/invest/check.png" /></div>
+        <div class="imgBox other"><img src="./asset/invest/other.png" /></div>
+        <div class="imgBox time"><img src="./asset/invest/time.png" /></div>
+        <div class="imgBox front"><img src="./asset/invest/front.png" /></div>
+      </div>
     </section>
     <section class="sources">
       <div class="title-bg">
@@ -102,7 +138,28 @@
         <div class="title">學習大師投資奠定成功基石</div>
         <div class="intro">股感擁有豐富金融知識庫，輕鬆學習大師的價值價量投資學，練就投資真功夫！</div>
       </div>
-      <div class="canvas"></div>
+      <div class="canvas">
+        <div class="imgBox land"><img src="./asset/sources/land.png" /></div>
+        <div class="imgBox mountain"><img src="./asset/sources/mountain.png" /></div>
+        <div class="imgBox book"><img src="./asset/sources/book.png" /></div>
+        <div class="imgBox bSquare"><img src="./asset/sources/bSquare.png" /></div>
+        <div class="imgBox bar"><img src="./asset/sources/bar.png" /></div>
+        <div class="imgBox gbox"><img src="./asset/sources/gbox.png" /></div>
+        <div class="imgBox boxl1"><img src="./asset/sources/boxl1.png" /></div>
+        <div class="imgBox boxl2"><img src="./asset/sources/boxl2.png" /></div>
+        <div class="imgBox boxr1"><img src="./asset/sources/boxr1.png" /></div>
+        <div class="imgBox boxr2"><img src="./asset/sources/boxr2.png" /></div>
+        <div class="imgBox chart1"><img src="./asset/sources/chart1.png" /></div>
+        <div class="imgBox chart2"><img src="./asset/sources/chart2.png" /></div>
+        <div class="imgBox house"><img src="./asset/sources/house.png" /></div>
+        <div class="imgBox img1"><img src="./asset/sources/img1.png" /></div>
+        <div class="imgBox img2"><img src="./asset/sources/img2.png" /></div>
+        <div class="imgBox line"><img src="./asset/sources/line.png" /></div>
+        <div class="imgBox pen"><img src="./asset/sources/pen.png" /></div>
+        <div class="imgBox tree1"><img src="./asset/sources/tree1.png" /></div>
+        <div class="imgBox tree2"><img src="./asset/sources/tree2.png" /></div>
+        <div class="imgBox front"><img src="./asset/sources/front.png" /></div>
+      </div>
     </section>
     <section class="products">
       <div class="title-bg">
