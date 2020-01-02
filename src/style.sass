@@ -63,39 +63,45 @@ section
   position: absolute
   display: flex
   flex-direction: column
-  top: 50%
-  transform: translateY(-50%)
   .title
     width: 240px 
     font-weight: 900
     font-size: 40px
     color: $primary
   .intro
-    margin-top: 20px
-    width: 170px 
+    margin-top: 40px
+    width: 196px 
     font-size: 16px 
+    line-height: 1.63
+  &.right-align
+    align-items: flex-end 
+    & > * 
+      text-align: right
+    
 
 .title-bg 
   position: absolute
-  &>* 
-    margin: 0
-    text-transform: uppercase
-    font-weight: 900
-    color: #c5f4f2
-    font-size: 120px
-  h4
-    font-size: 90px
+  width: 100%
+  img 
+    object-fit: contain
 
 .btn
   display: flex
+  justify-content: space-between 
+  align-items: center
   background: $primary
+  color: white
   padding: 5px 20px 
   border-radius: 30px
-  width: 145px
+  width: 142.3px
+  height: 43.2px
+  margin-top: 40px
 
 footer 
   +flexCenter() 
-  height: 50px 
+  height: 200px 
   width: 100%
-  background: #e5fcfc
+  color: white
+  background: $primary 
+
 

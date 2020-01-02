@@ -3,6 +3,7 @@
 $colors: $primary, $yellow, $blue, $orange
 +initialize
 
+// landing
 .landing
 	position: relative
 	display: flex
@@ -11,14 +12,18 @@ $colors: $primary, $yellow, $blue, $orange
 	flex-direction: column
 	overflow: hidden
 	&>* 
+		margin-top: 20px
 		z-index: 5
 .landing__steps
 	+flexCenter()
 	.step
-		margin: 10px 20px
 		+flexCenter()
-		&>*
+		&>*:not(&:last-child)
 			margin: 0 10px
+		h2.communication 
+			color: $primary 
+			margin-right: -50%
+			z-index: 6
 .ball-bg
 	display: flex
 	z-index: 2
@@ -40,9 +45,9 @@ $colors: $primary, $yellow, $blue, $orange
 		bottom: -400px
 		background: nth($colors, random(4))
 		+size(#{200+random(200))+'px'})
-.pure-bg
+.landing .pure-bg
 	z-index: 1
-.bgBall
+.landing .bgBall
 	position: absolute
 	border-radius: 50%
 	display: flex
@@ -56,43 +61,217 @@ $colors: $primary, $yellow, $blue, $orange
 		background: nth($colors, random(4))
 		+size(#{50+random(100))+'px'})
 
-.industry, .sources
+// layout 
+section:not(section:first-child) 
 	background: $bg
-	justify-content: flex-start
+	& > *
+		position: absolute
+.industry
 	.info 
-		left: 500px
-	.title-bg 
-		justify-content: flex-end
-		top: 100px
-		right: 500px
-.invest, .products, 
-	background: $bg
+		left: 20%
+		top: 40%
+	.title-bg
+		width: 50%
+		right: 0
+		top: 25%
+	.canvas 
+		right: 20% 
+		bottom: 0
+
+.invest 
 	.info 
-		right: 500px
-		justify-content: flex-end
+		right: 20%
+		top: 30%
 		.title 
-			text-align: right
-		.intro 
-			text-align: right
+			width: 320px
 	.title-bg 
-		justify-content: flex-start
-		top: 100px
-		left: 500px
-		&>* 
-			text-align: left
+		width: 50%
+		left: 20% 
+		top: 20%
+	.canvas 
+		left: 20% 
+		bottom: 10%
+
+.sources 
+	.info 
+		left: 20%
+		top: 30%
+	.title-bg 
+		width: 50%
+		top: 10%
+		right: 0
+	.canvas
+		right: 10% 
+		bottom: 10%
+		
+.products 
+	.info 
+		right: 20%
+		top: 25%
+		.title 
+			width: 360px
+	.title-bg 
+		width: 50%
+		top: 10%
+		left: 20%
+	.canvas
+		bottom: 10%
+		left: 20%
+
+.industry, .invest
+	background: $bg
 .sources, .products
 	background: white
-.imgBox
+
+@media (max-width:767px)
+	section:not(section:first-child) 
+		overflow: hidden
+		display: flex
+		text-align: center
+		height: auto
+	.landing
+		.landing__info
+			width: 50%	
+	.industry
+		.info 
+			top: 10%
+			width: 100%
+			left: 50%
+			transform: translateX(-50%)
+			+flexCenter()
+			.title
+				width: 100%
+				margin: 0
+				text-align: center
+			.intro 
+				width: 100%
+				text-align: center
+				margin: 0
+		.title-bg 
+			right: 10%
+			width: 80%
+			.imgBox
+				img
+					width: 100%
+		.canvas 
+			left: 50%
+			transform: translate(-50%, -100px) scale(0.9)
+	.invest
+		.info 
+			top: 10%
+			width: 100%
+			left: 50%
+			transform: translateX(-50%)
+			+flexCenter()
+			.title
+				width: 100%
+				margin: 0
+				text-align: center
+			.intro 
+				width: 100%
+				text-align: center
+				margin: 0
+		.title-bg 
+			left: 10%
+			width: 70%
+			top: 30%
+			.imgBox
+				img
+					width: 100%
+		.canvas 
+			left: 50%
+			transform: translateX(-50%) scale(0.9)
+	.sources
+		.info 
+			top: 10%
+			width: 100%
+			left: 50%
+			transform: translateX(-50%)
+			+flexCenter()
+			.title
+				width: 100%
+				margin: 0
+				text-align: center
+			.intro 
+				width: 100%
+				text-align: center
+				margin: 0
+		.title-bg 
+			right: 10%
+			width: 70%
+			top: 25%
+			.imgBox
+				img
+					width: 100%
+		.canvas 
+			left: 50%
+			transform: translateX(-50%) scale(0.9)
+	.products
+		.info 
+			top: 10%
+			width: 90%
+			left: 50%
+			transform: translateX(-50%)
+			+flexCenter()
+			.title
+				width: 100%
+				margin: 0
+				text-align: center
+			.intro 
+				width: 90%
+				text-align: center
+				margin: 0
+		.title-bg 
+			left: 10%
+			width: 70%
+			top: 30%
+			.imgBox
+				img
+					width: 100%
+		.canvas 
+			left: 50%
+			transform: translateX(-50%) scale(0.9)
+
+
+// menu
+.menu.swiper-container
+	width: 100%
+	height: 250px
+	background: $bg
+	.swiper-wrapper 
+		height: 200px
+		background: $bg
+	.swiper-slide
+		+size(200px, 200px)
+		background: $bg
+		display: flex 
+		align-items: center 
+		justify-content: center 
+		flex-direction: column
+		p
+			color: $primary 
+			font-weight: bold
+		.imgBox
+			+size(90%, 90%)
+			+flexCenter()
+			&>*
+				position: absolute
+			.object
+				+size(80%, 80%)
+				bottom: 5px
+			.land 
+				object-fit: contain
+				bottom: 0
+
+// motion 
+.canvas .imgBox
+	display: inline-block
+	position: absolute
 	overflow: hidden
 
 .industry .canvas 
 	position: absolute
 	+size(960px, 500px)
-	right: 150px 
-	bottom: 0
-	&>* 
-		display: inline-block
-		position: absolute
 	.land 
 		+pos(auto, 100px)
 		opacity: 0
@@ -124,11 +303,6 @@ $colors: $primary, $yellow, $blue, $orange
 .invest .canvas 
 	position: absolute
 	+size(960px, 500px)
-	left: 400px 
-	bottom: 200px
-	&>* 
-		display: inline-block
-		position: absolute
 	.imgBox.land
 		+pos(-100px, 120px)
 	.imgBox.wall 
@@ -173,13 +347,6 @@ $colors: $primary, $yellow, $blue, $orange
 .sources .canvas 
 	position: absolute
 	+size(960px, 500px)
-	right: 100px 
-	bottom: 0
-	border: solid 1px black
-	&>* 
-		display: inline-block
-		position: absolute
-		border: solid 1px black
 	.imgBox.land
 		+pos(-100px, 120px)
 	.imgBox.mountain 
@@ -197,26 +364,88 @@ $colors: $primary, $yellow, $blue, $orange
 	.imgBox.tree2
 		+pos(420px, 220px)
 	.imgBox.book
-		+pos(150px, -20px)
+		+pos(60px, -80px)
 	.imgBox.img1	
-		+pos(350px, -50px)
+		+pos(340px, -150px)
 	.imgBox.img2 
-		+pos(350px, -50px)
+		+pos(320px, -120px)
 	.imgBox.chart1 
 		+pos(450px, 70px)
 	.imgBox.chart2
-		+pos(550px, 70px)
+		+pos(580px, 70px)
+	.imgBox.bar
+		+pos(190px, 60px)
 	.imgBox.boxl1 
-		+pos(460px, 50px)
+		+pos(490px, 50px)
 	.imgBox.boxl2
-		+pos(470px, 50px)
+		+pos(460px, 30px)
 	.imgBox.boxr1 
-		+pos(560px, 50px)
+		+pos(610px, 50px)
 	.imgBox.boxr2
-		+pos(570px, 50px)
-.menu
-	display: flex 
+		+pos(580px, 30px)
+	.imgBox.pen
+		+pos(220px, -80px)
+	.imgBox.bSquare
+		+pos(350px, 50px)
+	.imgBox.gSquare
+		+pos(-50px, 250px)
+	.imgBox.video
+		+pos(500px, -130px)
+	.imgBox.ySquareS
+		+pos(50px, 100px)
+	.imgBox.bSquareS
+		+pos(30px, 80px)
+	.imgBox.pie
+		+pos(180px, 150px)
+
+.products .canvas 
+	position: absolute
+	+size(960px, 500px)
+	.imgBox.land
+		+pos(-100px, 120px)
+	.imgBox.chartus 
+		+pos(100px, 70px)
+	.imgBox.charttw
+		+pos(450px, 70px)
+	.imgBox.chartc
+		+pos(200px, -70px)
+	.imgBox.bar 
+		+pos(600px, 120px)
+	.imgBox.focuslb
+		+pos(180px, 180px)
+	.imgBox.focusrt 
+		+pos(500px, -80px)
+	.imgBox.bbox 
+		+pos(300px, 250px)
+	.imgBox.pie 
+		+pos(0, -150px)
+	.imgBox.mouse 
+		+pos(480px, 100px)
+	.imgBox.coin 
+		+pos(500px, 330px)
+	.imgBox.arrow 
+		+pos(20px, 300px)
+	.imgBox.bbox2
+		+pos(35px, 222px)
+	.imgBox.ybox 
+		+pos(20px, 250px)
+	.imgBox.path
+		+pos(30px, 100px)
+
+.products .pure-bg
+	z-index: 1
+.products .bgBall
+	position: absolute
+	border-radius: 50%
+	display: flex
+	justify-content: center
+	align-items: center
+	z-index: 1
+@for $i from 1 through 10 
+	.bgBall:nth-child(#{$i})
+		left: #{random(100)+'%'}
+		background: nth($colors, random(4))
+		+size(#{50+random(100))+'px'})
+
+section.sales
 	background: $bg
-	overflow: hidden
-	&>* 
-		margin: 10px

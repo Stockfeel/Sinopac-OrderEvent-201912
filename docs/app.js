@@ -116,6 +116,15 @@ var scaleIn = {
   scale: 1,
   opacity: 1,
   ease: Circ.easeInOut
+};
+var titleFadeInit = {
+  x: 200,
+  opacity: 0
+};
+var titleFade = {
+  x: 0,
+  opacity: 1,
+  ease: Circ.easeInOut
 }; // section animation
 
 $(window).scroll(function(evt) {
@@ -128,6 +137,7 @@ $(window).scroll(function(evt) {
     if (state !== 'industry') {
       state = 'industry';
       var industry = new TimelineMax();
+      var title = TweenMax.fromTo('.industry .title-bg', .5, titleFadeInit, titleFade);
       var land = TweenMax.fromTo('.industry .land', .5, fadeInInit, fadeIn);
       var front = TweenMax.fromTo('.industry .front img', 1, growInInit, growIn);
       var machine = TweenMax.fromTo('.industry .machine img', 1, growInInit, growIn);
@@ -169,15 +179,16 @@ $(window).scroll(function(evt) {
         yoyo: true,
         repeat: -1
       });
-      industry.add(land);
-      industry.add(bus);
-      industry.add(coin1, .2);
-      industry.add(coin2, .4);
-      industry.add(building, .6);
-      industry.add(machine, .8);
-      industry.add(front, 1);
-      industry.add(coin3, 1.2);
-      industry.add(chart3, 1.4);
+      industry.add(title);
+      industry.add(land, .2);
+      industry.add(bus, .2);
+      industry.add(coin1, .4);
+      industry.add(coin2, .6);
+      industry.add(building, .8);
+      industry.add(machine, 1);
+      industry.add(front, 1.2);
+      industry.add(coin3, 1.4);
+      industry.add(chart3, 1.6);
     }
 
     var airplane = TweenMax.fromTo('.industry .airplane', 2, {
@@ -272,18 +283,125 @@ $(window).scroll(function(evt) {
         yoyo: true,
         repeat: -1
       }, 0.2);
-      invest.add(_land).add(_coin3, .2).add(_coin2, .4).add(_coin, .6).add(wall, .8).add(other, 1).add(time, 1).add(plant, 1.2).add(center, 1.2).add(boxesTl, 1.2).add(cancel, 1.4).add(check, 1.4);
+      invest.add(_land).add(_coin3, .2).add(_coin2, .4).add(_coin, .6).add(wall, .8).add(other, 1).add(time, 1).add(plant, 1.2).add(center, 1.2).add(boxesrTl, 1.2).add(cancel, 1.4).add(check, 1.4);
+    }
+  } // sources 
+
+
+  if ($(window).scrollTop() > $('#sources').offset().top) {
+    if (state !== 'sources') {
+      var sources = new TimelineMax();
+
+      var _land2 = TweenMax.fromTo('.sources .land', .5, fadeInInit, fadeIn);
+
+      var _front2 = TweenMax.fromTo('.sources .front img', .5, growInInit, growIn);
+
+      var tree1 = TweenMax.fromTo('.sources .tree1 img', .5, growInInit, growIn);
+      var tree2 = TweenMax.fromTo('.sources .tree2 img', .5, growInInit, growIn);
+      var pie = TweenMax.fromTo('.sources .pie', .5, fadeInInit, fadeIn);
+      var bar = TweenMax.fromTo('.sources .bar', .5, fadeInInit, fadeIn);
+      var bSquareS = TweenMax.fromTo('.sources .bSquareS', .5, fadeInInit, fadeIn);
+      var ySquareS = TweenMax.fromTo('.sources .ySquareS', .5, fadeInInit, fadeIn);
+      var bSquare = TweenMax.fromTo('.sources .bSquare', .5, fadeInInit, fadeIn);
+      var gSquare = TweenMax.fromTo('.sources .gSquare', .5, fadeInInit, fadeIn);
+      var line = TweenMax.fromTo('.sources .line img', .5, growInInit, growIn);
+      var img1 = TweenMax.fromTo('.sources .img1', .5, fadeInInit, fadeIn);
+      var img2 = TweenMax.fromTo('.sources .img2', .5, fadeInInit, fadeIn);
+      var house = TweenMax.fromTo('.sources .house img', .5, growInInit, growIn);
+      var mountain = TweenMax.fromTo('.sources .mountain img', .5, growInInit, growIn);
+
+      var _boxeslTl = new TimelineMax();
+
+      _boxeslTl.staggerFromTo(['.sources .chart1', '.sources .boxl1', '.sources .boxl2'], .5, {
+        x: -100,
+        y: 100
+      }, {
+        x: 0,
+        y: 0
+      }, 0.1);
+
+      _boxeslTl.staggerFromTo(['.sources .chart2', '.sources .boxr1', '.sources .boxr2'], .5, {
+        x: -100,
+        y: 100
+      }, {
+        x: 0,
+        y: 0
+      }, 0.1);
+
+      sources.add(_land2).add(_front2, .2).add(tree1, .2).add(tree2, .2).add(_boxeslTl, .2).add(pie, .4).add(bar, .4).add(bSquareS, .4).add(ySquareS, .4).add(bSquare, .4).add(line, .6);
+    }
+  } // products  
+
+
+  if ($(window).scrollTop() > $('#products').offset().top) {
+    if (state !== 'products') {
+      var _sources = new TimelineMax();
+
+      var _land3 = TweenMax.fromTo('.products .land', .5, fadeInInit, fadeIn);
+
+      var focuslb = TweenMax.fromTo('.products .focuslb', .5, {
+        x: -100,
+        y: 100
+      }, {
+        x: 0,
+        y: 0
+      });
+      var focusrt = TweenMax.fromTo('.products .focusrt', .5, {
+        x: 100,
+        y: -100
+      }, {
+        x: 0,
+        y: 0
+      });
+      var chartc = TweenMax.fromTo('.products .chartc', fadeInInit, fadeIn);
+      var chartTl = new TimelineMax();
+      var charttw = TweenMax.fromTo('.products .charttw', .5, {
+        x: -200,
+        y: -100,
+        opacity: 0
+      }, {
+        x: 0,
+        y: 0,
+        opacity: 1
+      });
+      var chartus = TweenMax.fromTo('.products .chartus', .5, {
+        x: 200,
+        y: -100,
+        opacity: 0
+      }, {
+        x: 0,
+        y: 0,
+        opacity: 1
+      });
+      chartTl.add(charttw, 0).add(chartus, 0);
+
+      var _bar = TweenMax.fromTo('.products .bar img', .5, growInInit, growIn);
+
+      var coin = TweenMax.fromTo('.products .coin', .5, fadeInInit, fadeIn);
+
+      var _pie = TweenMax.fromTo('.products .pie', .5, fadeInInit, fadeIn);
+
+      var arrow = TweenMax.fromTo('.products .arrow img', .5, growInInit, growIn);
+      var bbox = TweenMax.fromTo('.products .bbox img', .5, growInInit, growIn);
+      var bbox2 = TweenMax.fromTo('.products .bbox2', .5, fadeInInit, fadeIn);
+      var ybox = TweenMax.fromTo('.products .ybox', .5, fadeInInit, fadeIn);
+
+      _sources.add(_land3).add(chartc).add(chartTl, .4);
     }
   }
 }); // menu
 
 var mySwiper = new Swiper('.swiper-container', {
+  direction: 'horizontal',
   slidesPerView: 'auto',
+  observeParents: true,
+  spaceBetween: 50,
+  observer: true,
   loop: true,
-  autoplay: 1000,
-  pagination: '.swiper-pagination',
-  nextButton: '.swiper-button-next',
-  prevButton: '.swiper-button-prev'
+  centeredSlides: true,
+  autoplay: {
+    delay: 3000
+  }
 }); // utlis 
 
 function randomBetween(min, max) {

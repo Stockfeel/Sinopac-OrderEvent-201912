@@ -1,5 +1,6 @@
 -var n = 0;
 -var m = 0;
+-var arr=['食品加工', '金融理財', '休閒娛樂', '房屋營建', '生活百貨', '交通運輸', '能源環保', '生技醫療', '積體電路', '電子科技', '電機機械', '網路通訊']
 html
   head 
     title 永豐活動頁面
@@ -29,6 +30,7 @@ html
           img(src='./asset/landing_coin.png') 
           h2 投資下單
         .step 
+          h2.communication 一次滿足
           img(src='./asset/landing_dialogue.svg')
       .landing__info
         p 股感攜手永豐金證券，秉持著落實普惠金融、致力打造知識金融場域的理念，帶你從自身的#[span.highlight 生活能力圈出發、培養投資嗅覺]，啟動你的生活投資！
@@ -45,11 +47,10 @@ html
     main
       section.industry#industry
         .title-bg 
-          h3 industry 
-          h4 industry 
+          img(src='./asset/industry/title.png')
         .info
           .title 從生活圈出發啟動生活投資
-          .intro 股感帶你從生活圈及能力圈出發，認識產業主題包，讓生活串連投資零時差！
+          .intro #[span.highlight 股感帶你從生活圈及能力圈出發]，認識產業主題包，讓生活串連投資零時差！
         .canvas
           .imgBox.land
             img(src='./asset/industry/land.png')
@@ -80,17 +81,16 @@ html
         .swiper-wrapper
           for m in [1,2,3,4,5,6,7,8,9,10]
             .menu__item.swiper-slide
-              img(src='./asset/ball/'+m+'.png')
-        .swiper-pagination 
-        .swiper-button-prev
-        .swiper-button-next
+              p= arr[m]
+              .imgBox
+                img.land(src='./asset/land.png')
+                img.object(src='./asset/ball/'+m+'.png')
       section.invest#invest
         .title-bg
-          h3 invest 
-          h4 invest
-        .info
+          img(src='./asset/invest/title.png')
+        .info.right-align
           .title 精選十二大產業別輕鬆縮小投資範圍
-          .intro 永豐金證券精選十二大產業投資組合，為你輕鬆篩選標的，省時省力不燒腦！
+          .intro 永豐金證券#[span.highlight 精選十二大產業投資組合]，為你輕鬆篩選標的，省時省力不燒腦！
           .btn
             p 即刻體驗
             img(src='./asset/landing_next.svg')
@@ -135,10 +135,9 @@ html
             img(src='./asset/invest/time.png')
           .imgBox.front
             img(src='./asset/invest/front.png')
-      section.sources
+      section.sources#sources
         .title-bg
-          h3 sources 
-          h4 sources
+          img(src='./asset/sources/title.png')
         .info
           .title 學習大師投資奠定成功基石
           .intro 股感擁有豐富金融知識庫，輕鬆學習大師的價值價量投資學，練就投資真功夫！
@@ -151,28 +150,28 @@ html
             img(src='./asset/sources/book.png')
           .imgBox.bSquare
             img(src='./asset/sources/bSquare.png')
+          .imgBox.gSquare
+            img(src='./asset/sources/gSquare.png')
           .imgBox.bar
             img(src='./asset/sources/bar.png')
-          .imgBox.gbox
-            img(src='./asset/sources/gbox.png')
-          .imgBox.boxl1
-            img(src='./asset/sources/boxl1.png')
           .imgBox.boxl2
             img(src='./asset/sources/boxl2.png')
-          .imgBox.boxr1
-            img(src='./asset/sources/boxr1.png')
+          .imgBox.boxl1
+            img(src='./asset/sources/boxl1.png')
           .imgBox.boxr2
             img(src='./asset/sources/boxr2.png')
+          .imgBox.boxr1
+            img(src='./asset/sources/boxr1.png')
           .imgBox.chart1
             img(src='./asset/sources/chart1.png')
           .imgBox.chart2
             img(src='./asset/sources/chart2.png')
           .imgBox.house
             img(src='./asset/sources/house.png')
-          .imgBox.img1
-            img(src='./asset/sources/img1.png')
           .imgBox.img2
             img(src='./asset/sources/img2.png')
+          .imgBox.img1
+            img(src='./asset/sources/img1.png')
           .imgBox.line
             img(src='./asset/sources/line.png')
           .imgBox.pen
@@ -183,18 +182,56 @@ html
             img(src='./asset/sources/tree2.png')
           .imgBox.front
             img(src='./asset/sources/front.png')
-      section.products
+          .imgBox.ySquareS
+            img(src='./asset/sources/ySquareS.png')
+          .imgBox.bSquareS
+            img(src='./asset/sources/bSquareS.png')
+          .imgBox.video
+            img(src='./asset/sources/video.png')
+          .imgBox.pie
+            img(src='./asset/sources/pie.png')
+      section.products#products
         .title-bg
-          h3 products 
-          h4 products
-        .info
+          img(src='./asset/products/title.png')
+        .info.right-align
           .title 囊括海內外金融商品即刻啟動生活投資
           .intro 股感囊括眾多海內外金融標的，不只美股台股更有豐富ETF可選擇，串連知識學習和投資下單零時差！
           .btn
             p 即刻體驗
             img(src='./asset/landing_next.svg')
         .canvas
-      section.sales 
+          .imgBox.land
+            img(src='./asset/products/land.png')
+          .imgBox.arrow
+            img(src='./asset/products/arrow.png')
+          .imgBox.bbox
+            img(src='./asset/products/bbox.png')
+          .imgBox.bbox2
+            img(src='./asset/products/bbox2.png')
+          .imgBox.pie
+            img(src='./asset/products/pie.png')
+          .imgBox.charttw
+            img(src='./asset/products/charttw.png')
+          .imgBox.chartus
+            img(src='./asset/products/chartus.png')
+          .imgBox.coin
+            img(src='./asset/products/coin.png')
+          .imgBox.focuslb
+            img(src='./asset/products/focuslb.png')
+          .imgBox.focusrt
+            img(src='./asset/products/focusrt.png')
+          .imgBox.ybox
+            img(src='./asset/products/ybox.png')
+          .imgBox.chartc
+            img(src='./asset/products/chartc.png')
+          .imgBox.bar
+            img(src='./asset/products/bar.png')
+          .imgBox.mouse
+            img(src='./asset/products/mouse.png')
+        .pure-bg
+          for m in [1,2,3,4,5,6,7,8,9,10]
+            .bg-ball
+    section.sales 
     footer
       p © Stockfeel. All rights reserved
   script(src='./app.js')
