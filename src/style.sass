@@ -4,6 +4,7 @@ $yellow: #f8d357
 $orange: #ffa225
 $blue: #a7ebfc
 $bg: #e5fcfc
+$text: #4d4d4d
 
 
 // default 
@@ -24,6 +25,9 @@ $bg: #e5fcfc
   section
     width: 100%
     height: 100%
+  p
+    color: $text
+    line-height: 1.78
 
 // utilis
 @mixin size($w, $h:$w)
@@ -63,45 +67,85 @@ section
   position: absolute
   display: flex
   flex-direction: column
+  z-index: 6
   .title
-    width: 240px 
-    font-weight: 900
+    width: 241px 
+    font-weight: 700
     font-size: 40px
     color: $primary
+    letter-spacing: 0.02px
   .intro
     margin-top: 40px
-    width: 196px 
+    width: 173px 
     font-size: 16px 
     line-height: 1.63
+    color: $text
+    letter-spacing: 0.25px
   &.right-align
     align-items: flex-end 
     & > * 
       text-align: right
-    
-
-.title-bg 
-  position: absolute
-  width: 100%
-  img 
-    object-fit: contain
 
 .btn
   display: flex
   justify-content: space-between 
   align-items: center
   background: $primary
-  color: white
   padding: 5px 20px 
   border-radius: 30px
   width: 142.3px
   height: 43.2px
   margin-top: 40px
+  p 
+    color: white
+  &:before 
+    content: ''
+    background: white 
+    height: 1px 
+    width: 0px
+    position: absolute
+    margin-top: 10px
+  &:hover 
+    img 
+      transform: scale(1.1)
+    &:before 
+      animation: line .3s forwards
 
-footer 
-  +flexCenter() 
-  height: 200px 
-  width: 100%
-  color: white
-  background: $primary 
+
+.highlight
+  animation: highlight .3s forwards
+  animation-delay: 2s
+  &:hover 
+    animation: highlight .3s forwards
+
+@keyframes line 
+  from 
+    width: 0px 
+  to 
+    width: 65px
+
+@keyframes highlight 
+  0% 
+    background: linear-gradient(90deg, rgba(#f8d357,1) 0%, rgba(#f8d357,0) 1%, rgba(#f8d357,0) 100%) 
+  10% 
+    background: linear-gradient(90deg, rgba(#f8d357,1) 0%, rgba(#f8d357,1) 10%, rgba(#f8d357,0) 11%, rgba(#f8d357,0) 100%)
+  20% 
+    background: linear-gradient(90deg, rgba(#f8d357,1) 0%, rgba(#f8d357,1) 20%, rgba(#f8d357,0) 21%, rgba(#f8d357,0) 100%)
+  30% 
+    background: linear-gradient(90deg, rgba(#f8d357,1) 0%, rgba(#f8d357,1) 30%, rgba(#f8d357,0) 31%, rgba(#f8d357,0) 100%)
+  40% 
+    background: linear-gradient(90deg, rgba(#f8d357,1) 0%, rgba(#f8d357,1) 40%, rgba(#f8d357,0) 41%, rgba(#f8d357,0) 100%)
+  50% 
+    background: linear-gradient(90deg, rgba(#f8d357,1) 0%, rgba(#f8d357,1) 50%, rgba(#f8d357,0) 51%, rgba(#f8d357,0) 100%)
+  60% 
+    background: linear-gradient(90deg, rgba(#f8d357,1) 0%, rgba(#f8d357,1) 60%, rgba(#f8d357,0) 61%, rgba(#f8d357,0) 100%)
+  70% 
+    background: linear-gradient(90deg, rgba(#f8d357,1) 0%, rgba(#f8d357,1) 70%, rgba(#f8d357,0) 71%, rgba(#f8d357,0) 100%)
+  80% 
+    background: linear-gradient(90deg, rgba(#f8d357,1) 0%, rgba(#f8d357,1) 80%, rgba(#f8d357,0) 81%, rgba(#f8d357,0) 100%)
+  90% 
+    background: linear-gradient(90deg, rgba(#f8d357,1) 0%, rgba(#f8d357,1) 90%, rgba(#f8d357,0) 91%, rgba(#f8d357,0) 100%)
+  100% 
+    background: linear-gradient(90deg, rgba(#f8d357,1) 0%, rgba(#f8d357,1) 99%, rgba(#f8d357,0) 100%)
 
 

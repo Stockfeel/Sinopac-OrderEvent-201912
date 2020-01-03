@@ -11,12 +11,18 @@ for(let i = 0; i < 10; i += 1) {
   bgBall.add(originTrack(elem, [10, 20]), i*1.5)
 }
 
+const downBall = new TimelineMax()
+for(let i = 0; i < 10; i += 1) {
+  const elem = document.querySelector(`.down-bg .bgBall:nth-child(${i+1})`)
+  downBall.add(originTrack(elem, [10, 20]), i*1.5)
+}
+
 function originTrack(selector, [min, max]) {
   const tl = new TimelineMax({repeat: -1})
   tl.set(selector, {opacity: 0})
   tl.fromTo(selector, 2, {opacity: 0}, {opacity: 1})
   tl.to(selector, randomBetween(min, max), {
-    y: -1500,
+    y: -2990,
     x: Math.random() > 0.5 ? 100 : -100,
     repeatDelay: randomBetween(1,3),
     ease: Linear.easeNone
@@ -27,7 +33,7 @@ function originTrack(selector, [min, max]) {
 }
 
 // animation setting
-let state = null;
+let state = 'landing';
 const fadeInInit = {
   y: -100,
   opacity: 0
@@ -63,16 +69,35 @@ const titleFadeInit = {
   x: 200,
   opacity: 0
 }
+const titleFadeBackInit = {
+  x: -200,
+  opacity: 0
+}
 const titleFade = {
   x: 0,
   opacity: 1,
   ease: Circ.easeInOut
 }
 
+function landingAnimation() {
+  const landing = new TimelineMax() 
+  const selector = Array(10).fill(0).map((item, idx) => `.landing__title img:nth-child(${idx + 1})`)
+  landing.staggerFromTo(selector, .1, {
+    y: 100
+  }, {
+    y: 0
+  }, .1)
+}
+
+$(window).ready(function() {
+  landingAnimation()
+})
+
 // section animation
 $(window).scroll(function(evt) {
   if($(window).scrollTop() < $('#industry').offset().top && state !== 'landing') {
     state = 'landing';
+    titleAnimation()
   }
 
   // industry 
@@ -153,6 +178,7 @@ $(window).scroll(function(evt) {
     if(state !== 'invest') {
       state = 'invest';
       const invest = new TimelineMax() 
+      const title = TweenMax.fromTo('.invest .title-bg', .5, titleFadeBackInit, titleFade)
       const land = TweenMax.fromTo('.invest .land', .5, fadeInInit, fadeIn)
       const wall = TweenMax.fromTo('.invest .wall', .5, fadeInInit, fadeIn)
       const other = TweenMax.fromTo('.invest .other', .5, fadeInInit, fadeIn)
@@ -249,6 +275,7 @@ $(window).scroll(function(evt) {
   if($(window).scrollTop() > $('#sources').offset().top) {
     if(state !== 'sources') {
       const sources = new TimelineMax() 
+      const title = TweenMax.fromTo('.sources .title-bg', .5, titleFadeInit, titleFade)
       const land = TweenMax.fromTo('.sources .land', .5, fadeInInit, fadeIn)
       const front = TweenMax.fromTo('.sources .front img', .5, growInInit, growIn) 
       const tree1 = TweenMax.fromTo('.sources .tree1 img', .5, growInInit, growIn) 
@@ -307,6 +334,7 @@ $(window).scroll(function(evt) {
   if($(window).scrollTop() > $('#products').offset().top) {
     if(state !== 'products') {
       const sources = new TimelineMax() 
+      const title = TweenMax.fromTo('.products .title-bg', .5, titleFadeBackInit, titleFade)
       const land = TweenMax.fromTo('.products .land', .5, fadeInInit, fadeIn)
       const focuslb = TweenMax.fromTo('.products .focuslb', .5, {
         x: -100,
@@ -374,7 +402,28 @@ const mySwiper = new Swiper ('.swiper-container', {
   }
 })
 
+// Q&A 
+$('.menu__item').mouseover(function() {
+  $(this).children('.menu__hoverBox').show()
+})
+$('.menu__item').mouseout(function() {
+  $(this).children('.menu__hoverBox').hide()
+})
+
+
+// Q&A 
+$('.question').click(function() {
+  if($(this).hasClass('open')) {
+    $(this).children('.answer').addClass('hidden')
+    $(this).removeClass('open')
+  } else {
+    $(this).children('.answer').removeClass('hidden')
+    $(this).addClass('open')
+  }
+})
+
 // utlis 
 function randomBetween(min,max){
   return Math.floor(Math.random()*(max-min+1)+min);
 }
+

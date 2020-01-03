@@ -54,6 +54,14 @@ for (var _i = 0; _i < 10; _i += 1) {
   bgBall.add(originTrack(_elem, [10, 20]), _i * 1.5);
 }
 
+var downBall = new TimelineMax();
+
+for (var _i2 = 0; _i2 < 10; _i2 += 1) {
+  var _elem2 = document.querySelector(".down-bg .bgBall:nth-child(".concat(_i2 + 1, ")"));
+
+  downBall.add(originTrack(_elem2, [10, 20]), _i2 * 1.5);
+}
+
 function originTrack(selector, _ref) {
   var _ref2 = _slicedToArray(_ref, 2),
     min = _ref2[0],
@@ -71,7 +79,7 @@ function originTrack(selector, _ref) {
     opacity: 1
   });
   tl.to(selector, randomBetween(min, max), {
-    y: -1500,
+    y: -2990,
     x: Math.random() > 0.5 ? 100 : -100,
     repeatDelay: randomBetween(1, 3),
     ease: Linear.easeNone
@@ -85,7 +93,7 @@ function originTrack(selector, _ref) {
 } // animation setting
 
 
-var state = null;
+var state = 'landing';
 var fadeInInit = {
   y: -100,
   opacity: 0
@@ -121,15 +129,36 @@ var titleFadeInit = {
   x: 200,
   opacity: 0
 };
+var titleFadeBackInit = {
+  x: -200,
+  opacity: 0
+};
 var titleFade = {
   x: 0,
   opacity: 1,
   ease: Circ.easeInOut
-}; // section animation
+};
+
+function landingAnimation() {
+  var landing = new TimelineMax();
+  var selector = Array(10).fill(0).map(function(item, idx) {
+    return ".landing__title img:nth-child(".concat(idx + 1, ")");
+  });
+  landing.staggerFromTo(selector, .1, {
+    y: 100
+  }, {
+    y: 0
+  }, .1);
+}
+
+$(window).ready(function() {
+  landingAnimation();
+}); // section animation
 
 $(window).scroll(function(evt) {
   if ($(window).scrollTop() < $('#industry').offset().top && state !== 'landing') {
     state = 'landing';
+    titleAnimation();
   } // industry 
 
 
@@ -210,6 +239,8 @@ $(window).scroll(function(evt) {
     if (state !== 'invest') {
       state = 'invest';
       var invest = new TimelineMax();
+
+      var _title = TweenMax.fromTo('.invest .title-bg', .5, titleFadeBackInit, titleFade);
 
       var _land = TweenMax.fromTo('.invest .land', .5, fadeInInit, fadeIn);
 
@@ -292,6 +323,8 @@ $(window).scroll(function(evt) {
     if (state !== 'sources') {
       var sources = new TimelineMax();
 
+      var _title2 = TweenMax.fromTo('.sources .title-bg', .5, titleFadeInit, titleFade);
+
       var _land2 = TweenMax.fromTo('.sources .land', .5, fadeInInit, fadeIn);
 
       var _front2 = TweenMax.fromTo('.sources .front img', .5, growInInit, growIn);
@@ -336,6 +369,8 @@ $(window).scroll(function(evt) {
   if ($(window).scrollTop() > $('#products').offset().top) {
     if (state !== 'products') {
       var _sources = new TimelineMax();
+
+      var _title3 = TweenMax.fromTo('.products .title-bg', .5, titleFadeBackInit, titleFade);
 
       var _land3 = TweenMax.fromTo('.products .land', .5, fadeInInit, fadeIn);
 
@@ -401,6 +436,23 @@ var mySwiper = new Swiper('.swiper-container', {
   centeredSlides: true,
   autoplay: {
     delay: 3000
+  }
+}); // Q&A 
+
+$('.menu__item').mouseover(function() {
+  $(this).children('.menu__hoverBox').show();
+});
+$('.menu__item').mouseout(function() {
+  $(this).children('.menu__hoverBox').hide();
+}); // Q&A 
+
+$('.question').click(function() {
+  if ($(this).hasClass('open')) {
+    $(this).children('.answer').addClass('hidden');
+    $(this).removeClass('open');
+  } else {
+    $(this).children('.answer').removeClass('hidden');
+    $(this).addClass('open');
   }
 }); // utlis 
 

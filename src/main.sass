@@ -12,18 +12,42 @@ $colors: $primary, $yellow, $blue, $orange
 	flex-direction: column
 	overflow: hidden
 	&>* 
-		margin-top: 20px
 		z-index: 5
+.landing__logo 
+	margin-bottom: 66px
+.landing__title
+	margin-bottom: 20px
+	overflow: hidden
+	& > * 
+		margin: 0 8px
 .landing__steps
 	+flexCenter()
+	margin-bottom: 60px
+	.step__arrow 
+		margin: 0 15px
 	.step
 		+flexCenter()
+		h2
+			font-family: 'GenSenMaru'
+			font-weight: 800
 		&>*:not(&:last-child)
 			margin: 0 10px
-		h2.communication 
+			color: $text
+			font-size: 45px
+	.step.communication 
+		h2 
+			position: absolute
 			color: $primary 
-			margin-right: -50%
-			z-index: 6
+			z-index: 7
+			font-size: 35px
+.landing__info p
+	text-align: center
+	width: 737px
+	line-height: 1.78
+	letter-spacing: 0.33px
+	font-size: 18px
+.landing .btn p 
+	color: white
 .ball-bg
 	display: flex
 	z-index: 2
@@ -45,6 +69,8 @@ $colors: $primary, $yellow, $blue, $orange
 		bottom: -400px
 		background: nth($colors, random(4))
 		+size(#{200+random(200))+'px'})
+
+// landing ball
 .landing .pure-bg
 	z-index: 1
 .landing .bgBall
@@ -61,24 +87,46 @@ $colors: $primary, $yellow, $blue, $orange
 		background: nth($colors, random(4))
 		+size(#{50+random(100))+'px'})
 
-// layout 
+.down-bg
+	z-index: 1
+.down-bg .bgBall
+	position: absolute
+	border-radius: 50%
+	display: flex
+	justify-content: center
+	align-items: center
+	z-index: 1
+@for $i from 1 through 10 
+	.bgBall:nth-child(#{$i})
+		left: #{random(100)+'%'}
+		bottom: -300px
+		background: nth($colors, random(4))
+		+size(#{50+random(100))+'px'})
+
+// section layout  
 section:not(section:first-child) 
 	background: $bg
 	& > *
 		position: absolute
+
+.title-bg 
+	position: absolute
+	
 .industry
+	z-index: 2
 	.info 
 		left: 20%
 		top: 40%
 	.title-bg
 		width: 50%
-		right: 0
+		right: 10%
 		top: 25%
 	.canvas 
-		right: 20% 
+		right: 10% 
 		bottom: 0
 
 .invest 
+	z-index: 2
 	.info 
 		right: 20%
 		top: 30%
@@ -86,10 +134,10 @@ section:not(section:first-child)
 			width: 320px
 	.title-bg 
 		width: 50%
-		left: 20% 
+		left: 15% 
 		top: 20%
 	.canvas 
-		left: 20% 
+		left: 15% 
 		bottom: 10%
 
 .sources 
@@ -98,10 +146,11 @@ section:not(section:first-child)
 		top: 30%
 	.title-bg 
 		width: 50%
-		top: 10%
-		right: 0
+		top: 15%
+		right: 10%
 	.canvas
-		right: 10% 
+		z-index: 2
+		right: 5% 
 		bottom: 10%
 		
 .products 
@@ -112,158 +161,19 @@ section:not(section:first-child)
 			width: 360px
 	.title-bg 
 		width: 50%
-		top: 10%
-		left: 20%
+		top: 15%
+		left: 10%
 	.canvas
+
 		bottom: 10%
-		left: 20%
+		left: 10%
 
 .industry, .invest
 	background: $bg
 .sources, .products
 	background: white
 
-@media (max-width:767px)
-	section:not(section:first-child) 
-		overflow: hidden
-		display: flex
-		text-align: center
-		height: auto
-	.landing
-		.landing__info
-			width: 50%	
-	.industry
-		.info 
-			top: 10%
-			width: 100%
-			left: 50%
-			transform: translateX(-50%)
-			+flexCenter()
-			.title
-				width: 100%
-				margin: 0
-				text-align: center
-			.intro 
-				width: 100%
-				text-align: center
-				margin: 0
-		.title-bg 
-			right: 10%
-			width: 80%
-			.imgBox
-				img
-					width: 100%
-		.canvas 
-			left: 50%
-			transform: translate(-50%, -100px) scale(0.9)
-	.invest
-		.info 
-			top: 10%
-			width: 100%
-			left: 50%
-			transform: translateX(-50%)
-			+flexCenter()
-			.title
-				width: 100%
-				margin: 0
-				text-align: center
-			.intro 
-				width: 100%
-				text-align: center
-				margin: 0
-		.title-bg 
-			left: 10%
-			width: 70%
-			top: 30%
-			.imgBox
-				img
-					width: 100%
-		.canvas 
-			left: 50%
-			transform: translateX(-50%) scale(0.9)
-	.sources
-		.info 
-			top: 10%
-			width: 100%
-			left: 50%
-			transform: translateX(-50%)
-			+flexCenter()
-			.title
-				width: 100%
-				margin: 0
-				text-align: center
-			.intro 
-				width: 100%
-				text-align: center
-				margin: 0
-		.title-bg 
-			right: 10%
-			width: 70%
-			top: 25%
-			.imgBox
-				img
-					width: 100%
-		.canvas 
-			left: 50%
-			transform: translateX(-50%) scale(0.9)
-	.products
-		.info 
-			top: 10%
-			width: 90%
-			left: 50%
-			transform: translateX(-50%)
-			+flexCenter()
-			.title
-				width: 100%
-				margin: 0
-				text-align: center
-			.intro 
-				width: 90%
-				text-align: center
-				margin: 0
-		.title-bg 
-			left: 10%
-			width: 70%
-			top: 30%
-			.imgBox
-				img
-					width: 100%
-		.canvas 
-			left: 50%
-			transform: translateX(-50%) scale(0.9)
-
-
-// menu
-.menu.swiper-container
-	width: 100%
-	height: 250px
-	background: $bg
-	.swiper-wrapper 
-		height: 200px
-		background: $bg
-	.swiper-slide
-		+size(200px, 200px)
-		background: $bg
-		display: flex 
-		align-items: center 
-		justify-content: center 
-		flex-direction: column
-		p
-			color: $primary 
-			font-weight: bold
-		.imgBox
-			+size(90%, 90%)
-			+flexCenter()
-			&>*
-				position: absolute
-			.object
-				+size(80%, 80%)
-				bottom: 5px
-			.land 
-				object-fit: contain
-				bottom: 0
-
-// motion 
+// section canvas position  
 .canvas .imgBox
 	display: inline-block
 	position: absolute
@@ -299,6 +209,12 @@ section:not(section:first-child)
 		+pos(90px, 80px)
 	.chart3
 		+pos(50px, 150px)
+
+.invest .info
+	.title 
+		width: 325px	
+	.intro 
+		width: 196px
 
 .invest .canvas 
 	position: absolute
@@ -343,6 +259,12 @@ section:not(section:first-child)
 		+pos(160px, 235px)
 	.imgBox.circle3
 		+pos(220px, 225px)
+
+.sources .info
+	.title 
+		width: 241px
+	.intro 
+		width: 204px
 
 .sources .canvas 
 	position: absolute
@@ -398,6 +320,12 @@ section:not(section:first-child)
 	.imgBox.pie
 		+pos(180px, 150px)
 
+.products .info
+	.title 
+		width: 361px
+	.intro 
+		width: 196px
+
 .products .canvas 
 	position: absolute
 	+size(960px, 500px)
@@ -432,6 +360,7 @@ section:not(section:first-child)
 	.imgBox.path
 		+pos(30px, 100px)
 
+// section bg ball 
 .products .pure-bg
 	z-index: 1
 .products .bgBall
@@ -447,5 +376,322 @@ section:not(section:first-child)
 		background: nth($colors, random(4))
 		+size(#{50+random(100))+'px'})
 
+
+// menu
+.menu.swiper-container
+	width: 100%
+	height: 250px
+	background: $bg
+	z-index: 2
+	.swiper-wrapper 
+		height: 200px
+		background: $bg
+	.swiper-slide
+		+size(200px, 200px)
+		background: $bg
+		display: flex 
+		align-items: center 
+		justify-content: center 
+		flex-direction: column
+		p
+			color: $primary 
+			font-weight: regular
+			z-index: 2
+		.imgBox
+			+size(90%, 90%)
+			+flexCenter()
+			&>*
+				position: absolute
+			.object
+				+size(80%, 80%)
+				bottom: 5px
+			.land 
+				object-fit: contain
+				bottom: 0
+	&:before 
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		background: linear-gradient(90deg, rgba($bg,1) 0%, rgba($bg,1) 50%, rgba($bg,0) 75%);
+		+size(390px, 364px)
+		z-index: 6
+	&:after 
+		right: 0
+		top: 0
+		content: ''
+		position: absolute
+		z-index: 6
+		background: linear-gradient(-90deg, rgba($bg,1) 0%, rgba($bg,1) 50%, rgba($bg,0) 75%);
+		+size(390px, 364px)
+.menu__hoverBox
+	display: none
+	svg
+		position: absolute
+		z-index: 6
+		path
+			stroke-dasharray: 320
+	  	stroke-dashoffset: 0
+	 &:hover 
+		svg path 
+	  	animation: dash 5s
+	.lstroke
+		left: 20px 
+		top: 50px
+	.rstroke 
+		right: 20px
+		bottom: 20px
+	.rtBox
+		position: absolute
+		left: -10px
+		bottom: 0
+		background: white 
+		width: 120px 
+		height: 70px
+		z-index: 10
+		border-radius: 20px
+	.lbBox
+		position: absolute
+		right: 0
+		top: 0
+		width: 100px 
+		height: 70px
+		background: white
+		z-index: 0
+		border-radius: 20px
+	.btn-small 
+		position: absolute
+		background: $primary 
+		color: white 
+		z-index: 10
+		text-align: center
+		display: flex 
+		justify-content: center 
+		align-items: center
+		+size(97px, 36px)
+		border-radius: 18px
+		left: 20px 
+		bottom: -10px
+  
+@keyframes dash
+  from 
+    stroke-dashoffset: 320
+  to 
+    stroke-dashoffset: 0
+
+// QA 
 section.sales
 	background: $bg
+	z-index: 5
+	display: flex 
+	justify-content: flex-start
+	align-items: center 
+	flex-direction: column
+	height: auto
+	padding-bottom: 100px
+	h1 
+		color: $primary
+		font-weight: bold 
+		font-size: 64px
+.sales__question
+	width: 732px
+	.question
+		position: relative
+		font-size: 21px
+		font-weight: bold 
+		color: $text
+		border-bottom: 1px solid $primary
+		padding: 15px
+		span 
+			font-size: 30px 
+			margin-right: 15px
+			color: $text
+		.control
+			position: absolute 
+			right: 20px
+			top: 35px
+			width: 15px 
+			height: 15px
+			transform-origin: center				
+			&:before 
+				content: ''
+				position: absolute
+				width: 15px 
+				height: 2px 
+				top: 5px
+				right: 0 
+				background: $text
+				transform: rotate(90deg)
+				transition: .5s
+			&:after 
+				content: ''
+				position: absolute
+				width: 15px 
+				height: 2px
+				top: 5px
+				right: 0 
+				background: $text
+			&:hover 
+				transform: rotate(180deg)
+	.question.open 
+		background: white
+		color: $primary
+		border: none
+		border-bottom: 1px solid $primary
+		span 
+			color: $primary
+		.control
+			&:before 
+				transform: rotate(0deg)
+				background: $primary
+			&:after 
+				background: $primary
+	.answer 
+		font-size: 16px
+		color: $text
+		font-weight: normal
+		padding: 30px
+	  line-height: 1.69
+	  letter-spacing: 0.25px
+	  height: auto 
+		&.hidden 
+			display: none
+			height: 0
+		p
+			margin: 0
+	.steps
+		+flexCenter()
+		&>* 
+			margin: 10px
+
+// footer
+footer 
+  width: 100%
+  color: white
+  background: $primary
+  padding: 50px 0
+  .footer__upper 
+  	display: flex
+  	justify-content: center
+  	align-items: center
+  	padding: 30px 0
+  .footer__logo 
+  	padding-right: 40px 
+  	img 
+  		object-fit: contain
+  .footer__info 
+  	border-left: 1px solid white
+  	padding-left: 40px
+  	&>p
+  		color: white
+  		margin: 0
+  		padding: 0
+  .footer__right 
+  	text-align: center
+  	color: #4bb5b1
+  	mix-blend-mode: multiply
+
+// RWD pad 
+@media (max-width:767px)
+	main
+		overflow: hidden
+		padding: 0
+	section
+		overflow: hidden
+	.landing
+		+flexCenter()
+		.landing__info 
+			+flexCenter()
+			p
+				width: 60%
+		.landing__steps
+			&>*
+				margin: 0
+			.step h2
+				font-size: 36px
+	.menu.swiper-container
+		&:before 
+			+size(100px, 364px)
+		z-index: 6
+		&:after 
+			+size(100px, 364px)
+	.industry, .invest, .sources, .products
+		.info 
+			top: 10%
+			width: 100%
+			left: 50%
+			transform: translateX(-50%)
+			+flexCenter()
+			.title
+				width: 100%
+				margin: 0
+				text-align: center
+			.intro 
+				width: 100%
+				text-align: center
+				margin: 0
+		.title-bg 
+			top: 25%
+			left: 0
+			position: absolute
+		.canvas 
+			left: 0	
+			transform: scale(0.9)
+	.footer__upper 
+  	flex-direction: column
+  	&>* 
+  		margin-bottom: 20px
+  	.footer__info
+  		border: none
+  		padding: 0
+  		text-align: center
+  	.footer__logo 
+  		padding: 0
+  		
+
+@media (max-width: 361px)
+	main
+		overflow: hidden
+		padding: 0
+	section
+		overflow: hidden
+	.landing
+		+flexCenter()
+		.landing__info 
+			+flexCenter()
+			p
+				width: 60%
+		.landing__steps
+			&>*
+				margin: 0
+			.step h2
+				font-size: 36px
+	.menu.swiper-container
+		&:before 
+			+size(100px, 364px)
+		z-index: 6
+		&:after 
+			+size(100px, 364px)
+	.industry, .invest, .sources, .products
+		.info 
+			top: 10%
+			width: 100%
+			left: 50%
+			transform: translateX(-50%)
+			+flexCenter()
+			.title
+				width: 100%
+				margin: 0
+				text-align: center
+			.intro 
+				width: 100%
+				text-align: center
+				margin: 0
+		.title-bg 
+			top: 25%
+			left: 0
+			position: absolute
+		.canvas 
+			left: 0	
+			transform: scale(0.9)
+
