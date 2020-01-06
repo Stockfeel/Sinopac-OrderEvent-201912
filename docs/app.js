@@ -447,6 +447,8 @@ $('.menu__item').mouseout(function() {
 }); // Q&A 
 
 $('.question').click(function() {
+  console.log($(this));
+
   if ($(this).hasClass('open')) {
     $(this).children('.answer').addClass('hidden');
     $(this).removeClass('open');
