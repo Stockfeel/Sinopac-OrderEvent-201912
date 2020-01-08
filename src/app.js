@@ -79,6 +79,11 @@ const titleFade = {
   ease: Circ.easeInOut
 }
 
+let themes;
+fetch('https://www.stockfeel.com.tw/wp-content/themes/stockfeel_2016_theme/api/get_industrychain.php')
+  .then(res => res.json())
+  .then(data => console.log(data))
+
 function landingAnimation() {
   const landing = new TimelineMax() 
   const selector = Array(10).fill(0).map((item, idx) => `.landing__title img:nth-child(${idx + 1})`)
@@ -412,14 +417,17 @@ $('.menu__item').mouseout(function() {
 
 
 // Q&A 
-$('.question').click(function() {
-  console.log($(this))
-  if($(this).hasClass('open')) {
-    $(this).children('.answer').addClass('hidden')
-    $(this).removeClass('open')
-  } else {
-    $(this).children('.answer').removeClass('hidden')
-    $(this).addClass('open')
+document.querySelector('.sales__question').addEventListener('click', (evt) => {
+  let node = evt.target;
+  if(node.classList.contains('question') || node.parentNode.classList.contains('question')) {
+    if(node.parentNode.classList.contains('question')) node = node.parentNode;
+    if(node.classList.contains('open')) {
+      node.querySelector('.answer').classList.add('hidden')
+      node.classList.remove('open')
+    } else {
+      node.querySelector('.answer').classList.remove('hidden')
+      node.classList.add('open')
+    }
   }
 })
 

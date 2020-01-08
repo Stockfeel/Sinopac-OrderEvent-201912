@@ -32,7 +32,6 @@ html
           h2 投資下單
         .step.communication
           h2 一次滿足
-          // img(src='./asset/landing_dialogue.svg')
       .landing__info
         p 股感攜手永豐金證券，秉持著落實普惠金融、致力打造知識金融場域的理念，帶你從自身的#[span.highlight 生活能力圈出發、培養投資嗅覺]，啟動你的生活投資！
       .btn
@@ -252,14 +251,17 @@ html
             p 3. 眾多金融商品：不只主題投組，台股、美股、ETF，三大金融商品一次滿足！
         .question #[span Q3] 永豐金證券可以如何輔助我進行投資決策？ #[span.control ]
           .answer.hidden 
-            p 1.AI幫您顧 
+            p AI幫您顧 
             p 運用各種AI演算法，在雲端自動分析，提供您最想知道的各種投資訊息
-            p 2.大師選股
-            p 為您整理金融界裡的大師：華倫‧巴菲特、彼得·林區、班傑明·葛拉
-            p 3.熱門主題
-            p 為您追蹤近期熱門產業，精選數檔超夯概念股，讓您隨時觀看市場趨勢。
-            p 4.每日必看
-            p 為您分別整理台股盤前與盤後必看資訊，以及最新國際股市動態。
+            .answer__feature
+              img(src='./asset/feature/master.svg')
+              p 1.大師選股：為您整理金融界裡的大師：華倫‧巴菲特、彼得·林區、班傑明·葛拉
+            .answer__feature 
+              img(src='./asset/feature/hot.svg') 
+              p 2.熱門主題：為您追蹤近期熱門產業，精選數檔超夯概念股，讓您隨時觀看市場趨勢。
+            .answer__feature 
+              img(src='./asset/feature/daily.svg') 
+              p 3.每日必看：為您分別整理台股盤前與盤後必看資訊，以及最新國際股市動態。
         .question #[span Q4] 在股感上交易，是否會知道我的交易資料跟帳號呢？ #[span.control ]
           .answer.hidden 請不用擔心！股感不會知道您的任何交易資料，站上所有交易系統皆於永豐金證券進行，一切交易相關的系統操作或個人資訊股感皆不會經手，故不用擔心資料被留存或再利用的情事發生。
         .question #[span Q5] 我還不是永豐金證券的用戶，該怎麽進行開戶作業？ #[span.control ]
@@ -267,13 +269,13 @@ html
             p 1.行動開戶：手機下載豐管家，進行開戶作業
             .steps 
               img(src='./asset/sales/1.svg')
-              img(src='./asset/sales/arrow.svg')
+              img.answer__arrow(src='./asset/sales/arrow.svg')
               img(src='./asset/sales/2.svg')
-              img(src='./asset/sales/arrow.svg')
+              img.answer__arrow(src='./asset/sales/arrow.svg')
               img(src='./asset/sales/3.svg')
-              img(src='./asset/sales/arrow.svg')
+              img.answer__arrow(src='./asset/sales/arrow.svg')
               img(src='./asset/sales/4.svg')
-              img(src='./asset/sales/arrow.svg')
+              img.answer__arrow(src='./asset/sales/arrow.svg')
               img(src='./asset/sales/5.svg')
             p 2.網路預約：線上完成開戶預約，將有專人為您服務
             p 3.親臨各大據點臨櫃辦理更多開戶相關的詳細資訊，可至永豐金證券網站了解
@@ -295,8 +297,10 @@ html
         .footer__logo 
           img(src='./asset/logo2.png')
         .footer__info 
-          p 永豐金證券股份有限公司 | 台北市重慶南路一段2號7、18、20樓
-          p 0800-038-123 | 02-6630-8899 (台股營業日7:30 a.m.-10:00 p.m.)
+          p 永豐金證券股份有限公司 
+          p.inline 台北市重慶南路一段2號7、18、20樓
+          p 0800-038-123 | 02-6630-8899 
+          p.inline (台股營業日7:30 a.m.-10:00 p.m.)
           p 107年金管證總字第0006號
       .footer__right © Stockfeel. All rights reserved
   script(src='./app.js')

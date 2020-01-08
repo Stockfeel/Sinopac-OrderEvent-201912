@@ -138,6 +138,12 @@ var titleFade = {
   opacity: 1,
   ease: Circ.easeInOut
 };
+var themes;
+fetch('https://www.stockfeel.com.tw/wp-content/themes/stockfeel_2016_theme/api/get_industrychain.php').then(function(res) {
+  return res.json();
+}).then(function(data) {
+  return console.log(data);
+});
 
 function landingAnimation() {
   var landing = new TimelineMax();
@@ -446,15 +452,19 @@ $('.menu__item').mouseout(function() {
   $(this).children('.menu__hoverBox').hide();
 }); // Q&A 
 
-$('.question').click(function() {
-  console.log($(this));
+document.querySelector('.sales__question').addEventListener('click', function(evt) {
+  var node = evt.target;
 
-  if ($(this).hasClass('open')) {
-    $(this).children('.answer').addClass('hidden');
-    $(this).removeClass('open');
-  } else {
-    $(this).children('.answer').removeClass('hidden');
-    $(this).addClass('open');
+  if (node.classList.contains('question') || node.parentNode.classList.contains('question')) {
+    if (node.parentNode.classList.contains('question')) node = node.parentNode;
+
+    if (node.classList.contains('open')) {
+      node.querySelector('.answer').classList.add('hidden');
+      node.classList.remove('open');
+    } else {
+      node.querySelector('.answer').classList.remove('hidden');
+      node.classList.add('open');
+    }
   }
 }); // utlis 
 

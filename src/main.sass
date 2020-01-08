@@ -35,11 +35,17 @@ $colors: $primary, $yellow, $blue, $orange
 			color: $text
 			font-size: 45px
 	.step.communication 
+		+size(200px, 80px)
+		background-image: url('./asset/landing_dialogue.svg')
+		background-size: contain
+		background-repeat: no-repeat
+		background-position: center center
 		h2 
 			position: absolute
 			color: $primary 
 			z-index: 7
 			font-size: 35px
+			margin-top: 2px
 .landing__info p
 	text-align: center
 	width: 737px
@@ -58,7 +64,6 @@ $colors: $primary, $yellow, $blue, $orange
 	justify-content: center
 	align-items: center
 	z-index: 2
-	// visibility: hidden
 	img
 		width: 80%
 		height: 80%
@@ -87,15 +92,18 @@ $colors: $primary, $yellow, $blue, $orange
 		background: nth($colors, random(4))
 		+size(#{50+random(100))+'px'})
 
+main 
+	position: relative
+	overflow: hidden
 .down-bg
-	z-index: 1
+	z-index: 0
 .down-bg .bgBall
 	position: absolute
 	border-radius: 50%
 	display: flex
 	justify-content: center
 	align-items: center
-	z-index: 1
+	z-index: 0
 @for $i from 1 through 10 
 	.bgBall:nth-child(#{$i})
 		left: #{random(100)+'%'}
@@ -164,7 +172,7 @@ section:not(section:first-child)
 		top: 15%
 		left: 10%
 	.canvas
-
+		z-index: 2
 		bottom: 10%
 		left: 10%
 
@@ -376,7 +384,6 @@ section:not(section:first-child)
 		background: nth($colors, random(4))
 		+size(#{50+random(100))+'px'})
 
-
 // menu
 .menu.swiper-container
 	width: 100%
@@ -502,10 +509,18 @@ section.sales
 		color: $text
 		border-bottom: 1px solid $primary
 		padding: 15px
+		background-color: $bg
 		span 
 			font-size: 30px 
 			margin-right: 15px
 			color: $text
+		.answer__feature 
+			display: flex 
+			margin: 10px 0
+			img 
+				margin-right: 10px
+			p 
+				width: 490px
 		.control
 			position: absolute 
 			right: 20px
@@ -534,7 +549,7 @@ section.sales
 			&:hover 
 				transform: rotate(180deg)
 	.question.open 
-		background: white
+		background-color: white
 		color: $primary
 		border: none
 		border-bottom: 1px solid $primary
@@ -546,6 +561,10 @@ section.sales
 				background: $primary
 			&:after 
 				background: $primary
+	.steps
+		+flexCenter()
+		&>* 
+			margin: 10px
 	.answer 
 		font-size: 16px
 		color: $text
@@ -558,11 +577,7 @@ section.sales
 			display: none
 			height: 0
 		p
-			margin: 0
-	.steps
-		+flexCenter()
-		&>* 
-			margin: 10px
+			margin: 0 
 
 // footer
 footer 
@@ -590,9 +605,10 @@ footer
   	text-align: center
   	color: #4bb5b1
   	mix-blend-mode: multiply
+  	font-size: 16px
 
 // RWD pad 
-@media (max-width:767px)
+@media (max-width:769px)
 	main
 		overflow: hidden
 		padding: 0
@@ -609,12 +625,24 @@ footer
 				margin: 0
 			.step h2
 				font-size: 36px
+			.step.communication
+				+size(190px, 50px)
+				background-image: url('./asset/landing_dialogue.svg')
+				background-size: contain
+				background-repeat: no-repeat
+				background-position: center center
+				h2
+					font-size: 28px
+
+	// pad menu
 	.menu.swiper-container
 		&:before 
 			+size(100px, 364px)
 		z-index: 6
 		&:after 
 			+size(100px, 364px)
+
+	// pad canvas
 	.industry, .invest, .sources, .products
 		.info 
 			top: 10%
@@ -645,22 +673,51 @@ footer
   		border: none
   		padding: 0
   		text-align: center
-  	.footer__logo 
+  	.footer__logo
   		padding: 0
-  		
+	.sales__question
+		width: 594px
+		.question .control 
+			right: 0
+		.steps
+			margin: 10px 0
+			display: flex 
+			justify-content: flex-start 
+			align-items: center
+			&>* 
+				margin: 3px
+	.footer__info 
+		width: 480px
+		p
+			display: inline-block
+	
+	// pad ball
+	@for $i from 1 through 10 
+		.ball:nth-child(#{$i})
+			left: #{random(50)+'%'}
+			bottom: -400px
+			background: nth($colors, random(4))
+			+size(#{150+random(100))+'px'})
+
+	@for $i from 1 through 10 
+		.bgBall:nth-child(#{$i})
+			left: #{random(50)+'%'}
+			bottom: -300px
+			background: nth($colors, random(4))
+			+size(#{50+random(50))+'px'})			
 
 @media (max-width: 361px)
-	main
-		overflow: hidden
-		padding: 0
-	section
-		overflow: hidden
 	.landing
+		overflow: hidden
 		+flexCenter()
+		.landing__logo img
+			width: 124px
+			height: 20px
 		.landing__info 
 			+flexCenter()
 			p
-				width: 60%
+				width: 231px
+				font-size: 14px
 		.landing__title
 			display: flex
 			justify-content: center
@@ -673,21 +730,102 @@ footer
 		.landing__steps
 			&>*
 				margin: 0
+			.step > *
+				margin: 0 5px
 			.step h2
 				font-size: 18px
 				width: 37px
-			.communication
-				background-image: url('./asset/landing_dialogue.svg')
+			.step.communication
+				+size(70px)
+				background-image: url('./asset/landing_bubble.svg')
+				background-size: contain
+				background-repeat: no-repeat
+				background-position: center center
+				h2 
+					font-size: 18px
 			img:not(img:last-child)
 				width: 30px
+
+	// mobile menu
 	.menu.swiper-container
-		&:before 
-			+size(50px, 364px)
 		z-index: 6
+		&:before 
+			+size(0, 364px)
 		&:after 
-			+size(50px, 364px)
+			+size(0, 364px)
+
+	// mobile canvas 
 	.industry, .invest, .sources, .products
+		.info 
+			.title 
+				font-size: 31.5px
+			.intro 
+				width: 277px
+				margin-top: 10px
+		.title-bg 
+			left: 10%
+			top: 220px
+			img
+				width: 290px
 		.canvas 
 			left: -200px
-			transform: scale(0.7)
+			top: 250px
+			transform: scale(0.5)
+	.industry 
+		.info .title 
+			width: 220px
+	.invest .info .title 
+		width: 276px
+	.sources .info .title 
+		width: 220px
+	.products .info .title 
+		width: 306px
+	
+	// mobile QA
+	section.sales h1 
+		font-size: 38px
+	.sales__question
+		width: 80%
+		.question
+			font-size: 14px
+			span 
+				font-size: 15.8px
+				margin-right: 3px
+			.control
+				position: absolute 
+				right: 5px
+				top: 22px
+				transform-origin: center				
+				&:before, &:after 
+					width: 10px
+					height: 1px
+		.answer 
+			font-size: 11px
+			padding: 15px
+		.steps
+			img 
+				+size(50px)
+			.answer__arrow 	
+				+size(4px, 9px)
+	
+	// mobile footer
+	.footer__info 
+		width: 274px
+		font-size: 12px
+	.footer__right
+		font-size: 12px
 
+	// mobile ball
+	@for $i from 1 through 10 
+		.ball:nth-child(#{$i})
+			left: #{random(50)+'%'}
+			bottom: -400px
+			background: nth($colors, random(4))
+			+size(#{50+random(100))+'px'})
+
+	@for $i from 1 through 10 
+		.bgBall:nth-child(#{$i})
+			left: #{random(50)+'%'}
+			bottom: -300px
+			background: nth($colors, random(4))
+			+size(#{50+random(50))+'px'})		
