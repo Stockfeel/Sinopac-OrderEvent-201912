@@ -12,6 +12,7 @@ html
     script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.2/CSSRulePlugin.min.js")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js")
     script(src="https://unpkg.com/swiper/js/swiper.min.js")
+    script(src="https://d3js.org/d3.v5.min.js")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     meta(charset="UTF-8")
   body
@@ -68,7 +69,6 @@ html
             img(src='./asset/industry/chart2.png')
           .imgBox.chart3
             img(src='./asset/industry/chart3.png')
-          //- img(class='chart4' src='./asset/industry/chart4.png')
           .imgBox.coin1
             img(src='./asset/industry/coin1.png')
           .imgBox.coin2
@@ -80,8 +80,8 @@ html
       .menu.swiper-container#menu
         .swiper-wrapper
           for m in [1,2,3,4,5,6,7,8,9,10]
-            .menu__item.swiper-slide
-              p= arr[m]
+            .menu__item.swiper-slide(data-name= arr[m])
+              p.slide__title= arr[m]
               .menu__hoverBox
                 svg.lstroke(width="23" height="60" viewBox="0 0 23 60")
                   path(fill="none" fill-rule="evenodd" stroke="#4BB5B1" d="M1.5 59.959V24.124L22.07.898")

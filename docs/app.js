@@ -138,12 +138,6 @@ var titleFade = {
   opacity: 1,
   ease: Circ.easeInOut
 };
-var themes;
-fetch('https://www.stockfeel.com.tw/wp-content/themes/stockfeel_2016_theme/api/get_industrychain.php').then(function(res) {
-  return res.json();
-}).then(function(data) {
-  return console.log(data);
-});
 
 function landingAnimation() {
   var landing = new TimelineMax();
@@ -159,7 +153,64 @@ function landingAnimation() {
 
 $(window).ready(function() {
   landingAnimation();
-}); // section animation
+  fetch('http://localhost/stockfeel_web/wordpress/wp-content/themes/stockfeel_2016_theme/api/get_industrychain.php').then(function(res) {
+    return res.json();
+  }).then(function(data) {
+    if (data.status === 'success') {
+      appendData(data.result);
+      swiperBind();
+    }
+  });
+});
+
+function swiperBind() {
+  var mySwiper = new Swiper('.swiper-container', {
+    direction: 'horizontal',
+    slidesPerView: 'auto',
+    observeParents: true,
+    spaceBetween: 50,
+    observer: true,
+    loop: true,
+    centeredSlides: true,
+    autoplay: {
+      delay: 3000
+    }
+  });
+}
+
+function appendData(data) {
+  var width = 60;
+  var height = 20;
+  var result = Object.keys(data.change_row).map(function(item) {
+    return {
+      change: data.change_row[item].slice(0, 6),
+      meta: data.meta_row.find(function(ele) {
+        return ele.category === item;
+      })
+    };
+  });
+  result.forEach(function(item) {
+    var node = document.querySelector("[data-name=\"".concat(item.meta.name, "\"]"));
+    var mean = (item.change.reduce(function(acc, item) {
+      return acc + item;
+    }) / item.change.length).toFixed(2);
+    var yExtent = d3.extent(item.change);
+    var xScale = d3.scaleLinear().domain([0, item.change.length]).range([0, width]);
+    var yScale = d3.scaleLinear().domain(yExtent).range([height, 0]);
+    var line = d3.line().x(function(d, idx) {
+      return xScale(idx);
+    }).y(function(d) {
+      return yScale(d);
+    });
+    var lines = line(item.change);
+
+    if (node) {
+      node.querySelector('.rtBox').innerHTML = item.meta.description.slice(0, 20) + '...';
+      node.querySelector('.lbBox').innerHTML = "\n        <p class='box__title'>\u8FD1\u4E00\u6708</p>\n        <p class='box__info ".concat(mean > 0 ? 'up' : 'down', "'>").concat(mean, " %</p>\n        <svg width=\"").concat(width, "\" height=\"").concat(height, "\">\n          <path d=\"").concat(lines, "\" stroke='#4d4d4d' stoke-width='1px' fill='none'></path>\n        </svg>\n      ");
+    }
+  });
+} // section animation
+
 
 $(window).scroll(function(evt) {
   if ($(window).scrollTop() < $('#industry').offset().top && state !== 'landing') {
@@ -430,20 +481,7 @@ $(window).scroll(function(evt) {
       _sources.add(_land3).add(chartc).add(chartTl, .4);
     }
   }
-}); // menu
-
-var mySwiper = new Swiper('.swiper-container', {
-  direction: 'horizontal',
-  slidesPerView: 'auto',
-  observeParents: true,
-  spaceBetween: 50,
-  observer: true,
-  loop: true,
-  centeredSlides: true,
-  autoplay: {
-    delay: 3000
-  }
-}); // Q&A 
+}); // Menu
 
 $('.menu__item').mouseover(function() {
   $(this).children('.menu__hoverBox').show();

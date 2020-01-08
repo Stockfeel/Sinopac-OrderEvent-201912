@@ -10,6 +10,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.2/CSSRulePlugin.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta charset="UTF-8" />
 </head>
@@ -85,8 +86,8 @@
     </section>
     <div class="menu swiper-container" id="menu">
       <div class="swiper-wrapper">
-        <div class="menu__item swiper-slide">
-          <p>金融理財</p>
+        <div class="menu__item swiper-slide" data-name="金融理財">
+          <p class="slide__title">金融理財</p>
           <div class="menu__hoverBox"><svg class="lstroke" width="23" height="60" viewBox="0 0 23 60">
               <path fill="none" fill-rule="evenodd" stroke="#4BB5B1" d="M1.5 59.959V24.124L22.07.898"></path>
             </svg><svg class="rstroke" width="36" height="73" viewBox="0 0 36 73">
@@ -98,8 +99,8 @@
           </div>
           <div class="imgBox"><img class="land" src="./asset/land.png" /><img class="object" src="./asset/ball/1.png" /></div>
         </div>
-        <div class="menu__item swiper-slide">
-          <p>休閒娛樂</p>
+        <div class="menu__item swiper-slide" data-name="休閒娛樂">
+          <p class="slide__title">休閒娛樂</p>
           <div class="menu__hoverBox"><svg class="lstroke" width="23" height="60" viewBox="0 0 23 60">
               <path fill="none" fill-rule="evenodd" stroke="#4BB5B1" d="M1.5 59.959V24.124L22.07.898"></path>
             </svg><svg class="rstroke" width="36" height="73" viewBox="0 0 36 73">
@@ -111,8 +112,8 @@
           </div>
           <div class="imgBox"><img class="land" src="./asset/land.png" /><img class="object" src="./asset/ball/2.png" /></div>
         </div>
-        <div class="menu__item swiper-slide">
-          <p>房屋營建</p>
+        <div class="menu__item swiper-slide" data-name="房屋營建">
+          <p class="slide__title">房屋營建</p>
           <div class="menu__hoverBox"><svg class="lstroke" width="23" height="60" viewBox="0 0 23 60">
               <path fill="none" fill-rule="evenodd" stroke="#4BB5B1" d="M1.5 59.959V24.124L22.07.898"></path>
             </svg><svg class="rstroke" width="36" height="73" viewBox="0 0 36 73">
@@ -124,8 +125,8 @@
           </div>
           <div class="imgBox"><img class="land" src="./asset/land.png" /><img class="object" src="./asset/ball/3.png" /></div>
         </div>
-        <div class="menu__item swiper-slide">
-          <p>生活百貨</p>
+        <div class="menu__item swiper-slide" data-name="生活百貨">
+          <p class="slide__title">生活百貨</p>
           <div class="menu__hoverBox"><svg class="lstroke" width="23" height="60" viewBox="0 0 23 60">
               <path fill="none" fill-rule="evenodd" stroke="#4BB5B1" d="M1.5 59.959V24.124L22.07.898"></path>
             </svg><svg class="rstroke" width="36" height="73" viewBox="0 0 36 73">
@@ -137,8 +138,8 @@
           </div>
           <div class="imgBox"><img class="land" src="./asset/land.png" /><img class="object" src="./asset/ball/4.png" /></div>
         </div>
-        <div class="menu__item swiper-slide">
-          <p>交通運輸</p>
+        <div class="menu__item swiper-slide" data-name="交通運輸">
+          <p class="slide__title">交通運輸</p>
           <div class="menu__hoverBox"><svg class="lstroke" width="23" height="60" viewBox="0 0 23 60">
               <path fill="none" fill-rule="evenodd" stroke="#4BB5B1" d="M1.5 59.959V24.124L22.07.898"></path>
             </svg><svg class="rstroke" width="36" height="73" viewBox="0 0 36 73">
@@ -150,8 +151,8 @@
           </div>
           <div class="imgBox"><img class="land" src="./asset/land.png" /><img class="object" src="./asset/ball/5.png" /></div>
         </div>
-        <div class="menu__item swiper-slide">
-          <p>能源環保</p>
+        <div class="menu__item swiper-slide" data-name="能源環保">
+          <p class="slide__title">能源環保</p>
           <div class="menu__hoverBox"><svg class="lstroke" width="23" height="60" viewBox="0 0 23 60">
               <path fill="none" fill-rule="evenodd" stroke="#4BB5B1" d="M1.5 59.959V24.124L22.07.898"></path>
             </svg><svg class="rstroke" width="36" height="73" viewBox="0 0 36 73">
@@ -163,8 +164,8 @@
           </div>
           <div class="imgBox"><img class="land" src="./asset/land.png" /><img class="object" src="./asset/ball/6.png" /></div>
         </div>
-        <div class="menu__item swiper-slide">
-          <p>生技醫療</p>
+        <div class="menu__item swiper-slide" data-name="生技醫療">
+          <p class="slide__title">生技醫療</p>
           <div class="menu__hoverBox"><svg class="lstroke" width="23" height="60" viewBox="0 0 23 60">
               <path fill="none" fill-rule="evenodd" stroke="#4BB5B1" d="M1.5 59.959V24.124L22.07.898"></path>
             </svg><svg class="rstroke" width="36" height="73" viewBox="0 0 36 73">
@@ -176,8 +177,8 @@
           </div>
           <div class="imgBox"><img class="land" src="./asset/land.png" /><img class="object" src="./asset/ball/7.png" /></div>
         </div>
-        <div class="menu__item swiper-slide">
-          <p>積體電路</p>
+        <div class="menu__item swiper-slide" data-name="積體電路">
+          <p class="slide__title">積體電路</p>
           <div class="menu__hoverBox"><svg class="lstroke" width="23" height="60" viewBox="0 0 23 60">
               <path fill="none" fill-rule="evenodd" stroke="#4BB5B1" d="M1.5 59.959V24.124L22.07.898"></path>
             </svg><svg class="rstroke" width="36" height="73" viewBox="0 0 36 73">
@@ -189,8 +190,8 @@
           </div>
           <div class="imgBox"><img class="land" src="./asset/land.png" /><img class="object" src="./asset/ball/8.png" /></div>
         </div>
-        <div class="menu__item swiper-slide">
-          <p>電子科技</p>
+        <div class="menu__item swiper-slide" data-name="電子科技">
+          <p class="slide__title">電子科技</p>
           <div class="menu__hoverBox"><svg class="lstroke" width="23" height="60" viewBox="0 0 23 60">
               <path fill="none" fill-rule="evenodd" stroke="#4BB5B1" d="M1.5 59.959V24.124L22.07.898"></path>
             </svg><svg class="rstroke" width="36" height="73" viewBox="0 0 36 73">
@@ -202,8 +203,8 @@
           </div>
           <div class="imgBox"><img class="land" src="./asset/land.png" /><img class="object" src="./asset/ball/9.png" /></div>
         </div>
-        <div class="menu__item swiper-slide">
-          <p>電機機械</p>
+        <div class="menu__item swiper-slide" data-name="電機機械">
+          <p class="slide__title">電機機械</p>
           <div class="menu__hoverBox"><svg class="lstroke" width="23" height="60" viewBox="0 0 23 60">
               <path fill="none" fill-rule="evenodd" stroke="#4BB5B1" d="M1.5 59.959V24.124L22.07.898"></path>
             </svg><svg class="rstroke" width="36" height="73" viewBox="0 0 36 73">

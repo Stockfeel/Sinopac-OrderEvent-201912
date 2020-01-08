@@ -79,11 +79,6 @@ const titleFade = {
   ease: Circ.easeInOut
 }
 
-let themes;
-fetch('https://www.stockfeel.com.tw/wp-content/themes/stockfeel_2016_theme/api/get_industrychain.php')
-  .then(res => res.json())
-  .then(data => console.log(data))
-
 function landingAnimation() {
   const landing = new TimelineMax() 
   const selector = Array(10).fill(0).map((item, idx) => `.landing__title img:nth-child(${idx + 1})`)
@@ -95,8 +90,63 @@ function landingAnimation() {
 }
 
 $(window).ready(function() {
-  landingAnimation()  
+  landingAnimation() 
+  fetch('http://localhost/stockfeel_web/wordpress/wp-content/themes/stockfeel_2016_theme/api/get_industrychain.php')
+    .then(res => res.json())
+    .then(data => {
+      if(data.status === 'success') {
+        appendData(data.result)
+        swiperBind()
+      }
+    })
 })
+
+function swiperBind() {
+  const mySwiper = new Swiper ('.swiper-container', {
+    direction: 'horizontal',
+    slidesPerView: 'auto',
+    observeParents:true,
+    spaceBetween: 50,
+    observer: true,
+    loop: true,
+    centeredSlides: true,
+    autoplay: {
+      delay: 3000,
+    }
+  })
+}
+
+function appendData(data) {
+  const width = 60 
+  const height = 20
+  const result = Object.keys(data.change_row).map(item => {
+    return {
+      change: data.change_row[item].slice(0, 6), 
+      meta: data.meta_row.find(ele => ele.category === item)
+    }
+  })
+  result.forEach(item => {
+    const node = document.querySelector(`[data-name="${item.meta.name}"]`);
+    const mean = (item.change.reduce((acc, item) => acc + item) / item.change.length).toFixed(2)
+    const yExtent = d3.extent(item.change)
+    const xScale = d3.scaleLinear().domain([0, item.change.length]).range([0, width])
+    const yScale = d3.scaleLinear().domain(yExtent).range([height, 0])
+    const line = d3.line()
+      .x((d, idx) => xScale(idx))
+      .y((d) => yScale(d))
+    const lines = line(item.change)
+    if(node) {
+      node.querySelector('.rtBox').innerHTML = item.meta.description.slice(0, 20)+'...'
+      node.querySelector('.lbBox').innerHTML = `
+        <p class='box__title'>近一月</p>
+        <p class='box__info ${mean > 0 ? 'up' : 'down'}'>${mean} %</p>
+        <svg width="${width}" height="${height}">
+          <path d="${lines}" stroke='#4d4d4d' stoke-width='1px' fill='none'></path>
+        </svg>
+      `
+    }
+  })
+}
 
 // section animation
 $(window).scroll(function(evt) {
@@ -392,22 +442,7 @@ $(window).scroll(function(evt) {
   }
 })
 
-
-// menu
-const mySwiper = new Swiper ('.swiper-container', {
-  direction: 'horizontal',
-  slidesPerView: 'auto',
-  observeParents:true,
-  spaceBetween: 50,
-  observer: true,
-  loop: true,
-  centeredSlides: true,
-  autoplay: {
-    delay: 3000,
-  }
-})
-
-// Q&A 
+// Menu
 $('.menu__item').mouseover(function() {
   $(this).children('.menu__hoverBox').show()
 })
