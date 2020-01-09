@@ -144,6 +144,7 @@ function appendData(data) {
           <path d="${lines}" stroke='#4d4d4d' stoke-width='1px' fill='none'></path>
         </svg>
       `
+      node.querySelector('.btn-small').setAttribute('href', `https://www.stockfeel.com.tw/industrychain/?class=${item.meta.category}`)
     }
   })
 }
