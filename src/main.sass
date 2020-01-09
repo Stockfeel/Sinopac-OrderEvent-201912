@@ -640,7 +640,7 @@ footer
   	font-size: 16px
 
 // RWD pad 
-@media (max-width:769px)
+@media all and (max-width:769px)
 	main
 		overflow: hidden
 		padding: 0
@@ -738,7 +738,7 @@ footer
 			background: nth($colors, random(4))
 			+size(#{50+random(50))+'px'})			
 
-@media (max-width: 361px)
+@media all and (max-width: 361px)
 	.landing
 		overflow: hidden
 		+flexCenter()
