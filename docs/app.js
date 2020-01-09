@@ -153,7 +153,7 @@ function landingAnimation() {
 
 $(window).ready(function() {
   landingAnimation();
-  fetch('https://www.stockfeel.com.tw/stockfeel_web/wordpress/wp-content/themes/stockfeel_2016_theme/api/get_industrychain.php').then(function(res) {
+  fetch('http://localhost/stockfeel_web/wordpress/wp-content/themes/stockfeel_2016_theme/api/get_industrychain.php').then(function(res) {
     return res.json();
   }).then(function(data) {
     if (data.status === 'success') {
