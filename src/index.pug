@@ -37,7 +37,15 @@ html
         p 股感攜手永豐金證券，秉持著落實普惠金融、致力打造知識金融場域的理念，帶你從自身的#[span.highlight 生活能力圈出發、培養投資嗅覺]，啟動你的生活投資！
       .btn
         a(href='https://www.stockfeel.com.tw/industrychain/') 即刻體驗
-        img(src='./asset/landing_next.svg')
+        .btn__next
+          svg(width="11px" height="9px" viewBox="0 0 11 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink")
+            g(id="Symbols" stroke="white" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round")
+              g(id="Btn/org" transform="translate(-109.000000, -18.000000)")
+                g(id="Group-2")
+                  g(id="Group" transform="translate(104.000000, 11.500000)")
+                    g(id="Group-4" transform="translate(6.000000, 6.500000)")
+                      line(x1="0" y1="4.5" x2="5" y2="4.5" id="Stroke-6")
+                      polyline(id="Stroke-8" stroke-linejoin="round" points="5 0 9 4.4996688 5 9")
       .ball-bg
         for n in [1,2,3,4,5,6,7,8,9,10]
           .ball
@@ -79,10 +87,13 @@ html
             img(src='./asset/industry/front.png')
       .menu.swiper-container#menu
         .swiper-wrapper
-          for m in [1,2,3,4,5,6,7,8,9,10]
+          for m in [1,2,3,4,5,6,7,8,9,10,11,12]
             .menu__item.swiper-slide(data-name= arr[m])
-              p.slide__title= arr[m]
-              .menu__hoverBox
+              p.slide__title= arr[m-1]
+              .imgBox
+                img.land(src='./asset/land.png')
+                img.object(src='./asset/ball/'+m+'.png')
+              .menu__hoverBox.hidden
                 svg.lstroke(width="23" height="60" viewBox="0 0 23 60")
                   path(fill="none" fill-rule="evenodd" stroke="#4BB5B1" d="M1.5 59.959V24.124L22.07.898")
                 svg.rstroke(width="36" height="73" viewBox="0 0 36 73")
@@ -90,9 +101,6 @@ html
                 .rtBox
                 .lbBox
                 a.btn-small(href='#') 了解產業
-              .imgBox
-                img.land(src='./asset/land.png')
-                img.object(src='./asset/ball/'+m+'.png')
       section.invest#invest
         .title-bg
           img(src='./asset/invest/title.png')
@@ -101,7 +109,7 @@ html
           .intro #[span.highlight 精選主題投組與指標投組]，為你輕鬆篩選標的，省時省力不燒腦！
           .btn
             a(href='https://www.stockfeel.com.tw/industrychain/') 即刻體驗
-            img(src='./asset/landing_next.svg')
+            .btn__next
         .canvas
           .imgBox.land
             img(src='./asset/invest/land.png')
@@ -148,7 +156,7 @@ html
           img(src='./asset/sources/title.png')
         .info
           .title 學習大師投資奠定成功基石
-          .intro 股感擁有豐富金融知識庫，輕鬆學習大師的價值價量投資學，練就投資真功夫！
+          .intro #[span.highlight 股感擁有豐富金融知識庫]，輕鬆學習大師的價值價量投資學，練就投資真功夫！
         .canvas
           .imgBox.land
             img(src='./asset/sources/land.png')
@@ -203,10 +211,10 @@ html
           img(src='./asset/products/title.png')
         .info.right-align
           .title 囊括海內外金融商品即刻啟動生活投資
-          .intro 股感囊括眾多海內外金融標的，不只美股台股更有豐富ETF可選擇，串連知識學習和投資下單零時差！
+          .intro 股感囊括眾多海內外金融標的，不只#[span.highlight 美股台股更有豐富ETF可選擇]，串連知識學習和投資下單零時差！
           .btn
             a(href='https://www.stockfeel.com.tw/industrychain/') 即刻體驗
-            img(src='./asset/landing_next.svg')
+            .btn__next
         .canvas
           .imgBox.land
             img(src='./asset/products/land.png')

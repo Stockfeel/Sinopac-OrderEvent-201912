@@ -101,6 +101,14 @@ section
   height: 43.2px
   margin-top: 40px
   cursor: pointer
+  .btn__next 
+    border: solid 1px white 
+    border-radius: 15px
+    +size(25px, 25px)
+    +flexCenter()
+    line, polyline
+      stroke: white
+      fill:none
   p 
     color: white
   &:before 
@@ -110,11 +118,15 @@ section
     width: 0px
     position: absolute
     margin-top: 10px
-  &:hover 
-    img 
-      transform: scale(1.1)
-    &:before 
-      animation: line .3s forwards
+.btn:hover 
+  .btn__next 
+    background: white
+    +size(28px, 28px)
+  line, polyline 
+    stroke: $primary
+    fill:none
+  &:before 
+    animation: line .3s forwards
 
 
 .highlight

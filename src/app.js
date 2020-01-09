@@ -101,8 +101,17 @@ $(window).ready(function() {
     })
 })
 
+$('.swiper-container').mouseover(function() {
+  mySwiper.autoplay.stop()
+})
+
+$('.swiper-container').mouseout(function() {
+  mySwiper.autoplay.start()
+})
+
+let mySwiper;
 function swiperBind() {
-  const mySwiper = new Swiper ('.swiper-container', {
+  mySwiper = new Swiper ('.swiper-container', {
     direction: 'horizontal',
     slidesPerView: 'auto',
     observeParents:true,
@@ -111,7 +120,7 @@ function swiperBind() {
     loop: true,
     centeredSlides: true,
     autoplay: {
-      delay: 3000,
+      delay: 1000,
     }
   })
 }
@@ -445,10 +454,10 @@ $(window).scroll(function(evt) {
 
 // Menu
 $('.menu__item').mouseover(function() {
-  $(this).children('.menu__hoverBox').show()
+  $(this).children('.menu__hoverBox').removeClass('hidden')
 })
 $('.menu__item').mouseout(function() {
-  $(this).children('.menu__hoverBox').hide()
+  $(this).children('.menu__hoverBox').addClass('hidden')
 })
 
 
