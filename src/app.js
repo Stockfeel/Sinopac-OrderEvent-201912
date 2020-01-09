@@ -91,7 +91,7 @@ function landingAnimation() {
 
 $(window).ready(function() {
   landingAnimation() 
-  fetch('http://localhost/stockfeel_web/wordpress/wp-content/themes/stockfeel_2016_theme/api/get_industrychain.php')
+  fetch('https://www.stockfeel.com.tw/stockfeel_web/wordpress/wp-content/themes/stockfeel_2016_theme/api/get_industrychain.php')
     .then(res => res.json())
     .then(data => {
       if(data.status === 'success') {
