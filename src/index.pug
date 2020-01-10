@@ -1,6 +1,6 @@
 -var n = 0;
 -var m = 0;
--var arr=['食品加工', '金融理財', '休閒娛樂', '房屋營建', '生活百貨', '交通運輸', '能源環保', '生技醫療', '積體電路', '電子科技', '電機機械', '網路通訊']
+-var arr=[{id: 1, name: '食品加工'}, {id: 12, name: '金融理財'}, {id: 2, name: '休閒娛樂'}, {id: 3, name: '房屋營建'}, {id: 4, name: '生活百貨'}, {id: 11, name: '交通運輸'}, {id: 6, name: '能源環保'}, {id: 7, name: '生技醫療'}, {id: 8, name: '積體電路'}, {id: 9, name: '電子科技'}, {id: 10, name: '電機機械'}, {id: 16, name: '網路通訊'}]
 html
   head 
     title 永豐活動頁面
@@ -38,14 +38,8 @@ html
       .btn
         a(href='https://www.stockfeel.com.tw/industrychain/') 即刻體驗
         .btn__next
-          svg(width="11px" height="9px" viewBox="0 0 11 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink")
-            g(id="Symbols" stroke="white" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round")
-              g(id="Btn/org" transform="translate(-109.000000, -18.000000)")
-                g(id="Group-2")
-                  g(id="Group" transform="translate(104.000000, 11.500000)")
-                    g(id="Group-4" transform="translate(6.000000, 6.500000)")
-                      line(x1="0" y1="4.5" x2="5" y2="4.5" id="Stroke-6")
-                      polyline(id="Stroke-8" stroke-linejoin="round" points="5 0 9 4.4996688 5 9")
+          img.default(src='./asset/btn_arrow.svg')
+          img.hover(src='./asset/btn_arrow_hover.svg')
       .ball-bg
         for n in [1,2,3,4,5,6,7,8,9,10]
           .ball
@@ -85,11 +79,13 @@ html
             img(src='./asset/industry/coin3.png')
           .imgBox.front
             img(src='./asset/industry/front.png')
+          .imgBox.wifi
+            img(src='./asset/industry/wifi.png')
       .menu.swiper-container#menu
         .swiper-wrapper
           for m in [1,2,3,4,5,6,7,8,9,10,11,12]
-            .menu__item.swiper-slide(data-name= arr[m])
-              p.slide__title= arr[m-1]
+            .menu__item.swiper-slide(data-name= arr[m-1].id)
+              p.slide__title= arr[m-1].name
               .imgBox
                 img.land(src='./asset/land.png')
                 img.object(src='./asset/ball/'+m+'.png')
@@ -110,6 +106,8 @@ html
           .btn
             a(href='https://www.stockfeel.com.tw/industrychain/') 即刻體驗
             .btn__next
+              img.default(src='./asset/btn_arrow.svg')
+              img.hover(src='./asset/btn_arrow_hover.svg')
         .canvas
           .imgBox.land
             img(src='./asset/invest/land.png')
@@ -215,6 +213,8 @@ html
           .btn
             a(href='https://www.stockfeel.com.tw/industrychain/') 即刻體驗
             .btn__next
+              img.default(src='./asset/btn_arrow.svg')
+              img.hover(src='./asset/btn_arrow_hover.svg')
         .canvas
           .imgBox.land
             img(src='./asset/products/land.png')
@@ -247,7 +247,7 @@ html
       .down-bg
         for m in [1,2,3,4,5,6,7,8,9,10]
           .bgBall
-    section.sales 
+    section.sales#sales 
       h1 常見問與答
       .sales__question
         .question #[span Q1] 為什麽股感要和永豐金證券合作？ #[span.control ]
