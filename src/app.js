@@ -165,8 +165,8 @@ function airplaneTime() {
       y: 0,
       opacity: 0
     }, {
-      x: 100,
-      y: -200,
+      x: 250,
+      y: -350,
       opacity: 1,
       ease: Linear.easeNone
     }).pause()
@@ -487,7 +487,7 @@ $(window).scroll(function(evt) {
     state = 'landing';
     titleAnimation();
   }
-  if($(window).scrollTop() > $('#industry').offset().top && 
+  if($(window).scrollTop() > $('#industry').offset().top - 300 && 
       $(window).scrollTop() < $('#menu').offset().top) {
     if(state !== 'industry') {
       state = 'industry';
@@ -496,19 +496,19 @@ $(window).scroll(function(evt) {
     const sectionHeight = $('#industry').offset().top-$('#menu').offset().top;
     airplane.progress(Math.abs(($(window).scrollTop()-$('#industry').offset().top)/sectionHeight)*3.5)
   }
-  if($(window).scrollTop() > $('#invest').offset().top && 
+  if($(window).scrollTop() > $('#invest').offset().top - 300 && 
       $(window).scrollTop() < $('#sources').offset().top && 
       state !== 'invest') {
     state = 'invest';
     invest.forEach(tl => tl.play())
   }
-  if($(window).scrollTop() > $('#sources').offset().top &&
+  if($(window).scrollTop() > $('#sources').offset().top - 300 &&
       $(window).scrollTop() < $('#products').offset().top && 
       state !== 'sources') {
     state = 'sources';
     source.forEach(tl => tl.play())
   }
-  if($(window).scrollTop() > $('#products').offset().top && 
+  if($(window).scrollTop() > $('#products').offset().top - 300 && 
       $(window).scrollTop() < $('#sales').offset().top &&
       state !== 'products') {
     state = 'products';
