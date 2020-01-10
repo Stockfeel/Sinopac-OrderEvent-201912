@@ -11,12 +11,6 @@ for(let i = 0; i < 10; i += 1) {
   bgBall.add(originTrack(elem, [10, 20]), i*1.5)
 }
 
-// const downBall = new TimelineMax()
-// for(let i = 0; i < 10; i += 1) {
-//   const elem = document.querySelector(`.down-bg .bgBall:nth-child(${i+1})`)
-//   downBall.add(originTrack(elem, [10, 20]), i*1.5)
-// }
-
 function originTrack(selector, [min, max]) {
   const tl = new TimelineMax({repeat: -1})
   tl.set(selector, {opacity: 0})

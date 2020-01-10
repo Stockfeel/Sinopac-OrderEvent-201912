@@ -52,12 +52,7 @@ for (var _i = 0; _i < 10; _i += 1) {
   var _elem = document.querySelector(".bgBall:nth-child(".concat(_i + 1, ")"));
 
   bgBall.add(originTrack(_elem, [10, 20]), _i * 1.5);
-} // const downBall = new TimelineMax()
-// for(let i = 0; i < 10; i += 1) {
-//   const elem = document.querySelector(`.down-bg .bgBall:nth-child(${i+1})`)
-//   downBall.add(originTrack(elem, [10, 20]), i*1.5)
-// }
-
+}
 
 function originTrack(selector, _ref) {
   var _ref2 = _slicedToArray(_ref, 2),
