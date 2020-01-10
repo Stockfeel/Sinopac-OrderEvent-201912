@@ -223,7 +223,7 @@ function airplaneTime() {
   return TweenMax.fromTo('.industry .airplane', 2, {
     x: -100,
     y: 0,
-    opacity: 1
+    opacity: 0
   }, {
     x: 100,
     y: -200,
@@ -261,8 +261,8 @@ function industryTime() {
   });
   var busDrop = TweenMax.fromTo('.industry .bus', .5, {
     y: -300,
-    opacity: 0,
-    rotation: -10
+    rotation: -10,
+    opacity: 0
   }, {
     y: 0,
     opacity: 1,
@@ -270,16 +270,13 @@ function industryTime() {
   });
   var busLand = TweenMax.to('.industry .bus', .1, {
     rotation: 0,
-    opacity: 1,
     ease: Linear.easeIn
   });
   var bus = TweenMax.fromTo('.industry .bus', 5, {
     x: 0,
-    opacity: 1,
     ease: Linear.easeNone
   }, {
     x: 400,
-    opacity: 1,
     ease: Linear.easeNone
   });
   busTl.add(busDrop).add(busLand).add(bus);
@@ -369,7 +366,7 @@ function investTime() {
     yoyo: true,
     repeat: -1
   }, 0.2);
-  invest.add(coin3, .2).add(coin2, .4).add(coin1, .6).add(wall, .8).add(other, 1).add(time, 1).add(front, 1.2).add(plant, 1.2).add(center, 1.2).add(boxesrTl, 1.2).add(cancel, 1.4).add(check, 1.4);
+  invest.add(title).add(coin3, .2).add(coin2, .4).add(coin1, .6).add(wall, .8).add(other, 1).add(time, 1).add(front, 1.2).add(plant, 1.2).add(center, 1.2).add(boxesrTl, 1.2).add(cancel, 1.4).add(check, 1.4);
   return [invest, boxeslTl, boxesrTl, circlesTl];
 }
 
@@ -416,7 +413,7 @@ function sourceTime() {
     y: 0,
     opacity: 1
   }, 0.1);
-  sources.add(front, .2).add(tree1, .2).add(tree2, .2).add(boxeslTl, .2).add(mountain, .2).add(pie, .4).add(bar, .4).add(bSquareS, .4).add(ySquareS, .4).add(bSquare, .4).add(gSquare, .4).add(line, .6).add(house, .6).add(img1, .8).add(img2, .8).add(pen, .8).add(video, .8).add(book, .8);
+  sources.add(title).add(front, .2).add(tree1, .2).add(tree2, .2).add(boxeslTl, .2).add(mountain, .2).add(pie, .4).add(bar, .4).add(bSquareS, .4).add(ySquareS, .4).add(bSquare, .4).add(gSquare, .4).add(line, .6).add(house, .6).add(img1, .8).add(img2, .8).add(pen, .8).add(video, .8).add(book, .8);
   return [sources, boxeslTl];
 }
 
@@ -474,7 +471,7 @@ function productsTime() {
     opacity: 1
   });
   chartTl.add(charttw, 0).add(chartus, 0);
-  products.add(focuslb, .2).add(focusrt, .2).add(chartc, .2).add(pie, .2).add(bar, .4).add(coin, .4).add(arrow, .4).add(bbox, .4).add(bbox2, .4).add(ybox, .6).add(mouse, .8);
+  products.add(title).add(focuslb, .2).add(focusrt, .2).add(chartc, .2).add(pie, .2).add(bar, .4).add(coin, .4).add(arrow, .4).add(bbox, .4).add(bbox2, .4).add(ybox, .6).add(mouse, .8);
   return [products, chartTl];
 } // animation
 
@@ -499,7 +496,7 @@ $(window).scroll(function(evt) {
     }
 
     var sectionHeight = $('#industry').offset().top - $('#menu').offset().top;
-    airplane.progress(Math.abs(($(window).scrollTop() - $('#industry').offset().top) / sectionHeight) * 3);
+    airplane.progress(Math.abs(($(window).scrollTop() - $('#industry').offset().top) / sectionHeight) * 3.5);
   }
 
   if ($(window).scrollTop() > $('#invest').offset().top && $(window).scrollTop() < $('#sources').offset().top && state !== 'invest') {

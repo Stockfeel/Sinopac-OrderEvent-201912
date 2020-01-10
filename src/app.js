@@ -163,7 +163,7 @@ function airplaneTime() {
   return TweenMax.fromTo('.industry .airplane', 2, {
       x: -100,
       y: 0,
-      opacity: 1
+      opacity: 0
     }, {
       x: 100,
       y: -200,
@@ -197,8 +197,8 @@ function industryTime() {
   const busTl = new TimelineMax({ paused: true })
   const busDrop = TweenMax.fromTo('.industry .bus', .5, {
     y: -300,
+    rotation: -10,
     opacity: 0,
-    rotation: -10
   }, {
     y: 0,
     opacity: 1,
@@ -206,16 +206,13 @@ function industryTime() {
   })
   const busLand = TweenMax.to('.industry .bus', .1, {
     rotation: 0,
-    opacity: 1,
     ease: Linear.easeIn,
   })
   const bus = TweenMax.fromTo('.industry .bus', 5, {
     x: 0,
-    opacity: 1,
     ease: Linear.easeNone,
   },{
     x: 400,
-    opacity: 1,
     ease: Linear.easeNone,
   })
   busTl.add(busDrop).add(busLand).add(bus)
@@ -320,7 +317,7 @@ function investTime() {
     yoyo: true,
     repeat: -1
   }, 0.2)
-  invest
+  invest.add(title)
     .add(coin3, .2)
     .add(coin2, .4)
     .add(coin1, .6)
@@ -386,7 +383,7 @@ function sourceTime() {
     opacity: 1 
   }, 0.1)
 
-  sources
+  sources.add(title)
     .add(front, .2)
     .add(tree1, .2)
     .add(tree2, .2)
@@ -462,7 +459,7 @@ function productsTime() {
   chartTl.add(charttw, 0)
     .add(chartus, 0)
 
-  products
+  products.add(title)
     .add(focuslb, .2)
     .add(focusrt, .2)
     .add(chartc, .2)
@@ -497,7 +494,7 @@ $(window).scroll(function(evt) {
       industry.forEach(tl => tl.play())
     }
     const sectionHeight = $('#industry').offset().top-$('#menu').offset().top;
-    airplane.progress(Math.abs(($(window).scrollTop()-$('#industry').offset().top)/sectionHeight)*3)
+    airplane.progress(Math.abs(($(window).scrollTop()-$('#industry').offset().top)/sectionHeight)*3.5)
   }
   if($(window).scrollTop() > $('#invest').offset().top && 
       $(window).scrollTop() < $('#sources').offset().top && 
