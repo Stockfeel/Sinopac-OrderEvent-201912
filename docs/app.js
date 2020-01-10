@@ -308,21 +308,25 @@ function investTime() {
   });
   boxeslTl.fromTo('.invest .boxl1', {
     x: 0,
-    y: 0
+    y: 0,
+    opacity: 0
   }, {
     x: 40,
-    y: -40
+    y: -40,
+    opacity: 1
   });
   boxeslTl.fromTo('.invest .boxl2', {
     x: 0,
-    y: 0
+    y: 0,
+    opacity: 0
   }, {
     x: 20,
-    y: -20
+    y: -20,
+    opacity: 1
   });
   boxeslTl.staggerFromTo(['.invest .boxl1', '.invest .boxl2', '.invest .boxl3'], 1, {
     y: -20,
-    opacity: 1
+    opacity: 0
   }, {
     y: 0,
     opacity: 1,
@@ -335,14 +339,16 @@ function investTime() {
   });
   boxesrTl.fromTo('.invest .boxr1', {
     x: 0,
-    y: 0
+    y: 0,
+    opacity: 0
   }, {
     x: -40,
-    y: 20
+    y: 20,
+    opacity: 1
   });
   boxesrTl.staggerFromTo(['.invest .boxr1', '.invest .boxr2'], 1, {
     y: 0,
-    opacity: 1
+    opacity: 0
   }, {
     y: 10,
     opacity: 1,
@@ -355,7 +361,7 @@ function investTime() {
   });
   circlesTl.staggerFromTo(['.invest .circle1', '.invest .circle2', '.invest .circle3'], 1, {
     scale: 0.8,
-    opacity: 1
+    opacity: 0
   }, {
     scale: 1,
     opacity: 1,
@@ -394,19 +400,23 @@ function sourceTime() {
   });
   boxeslTl.staggerFromTo(['.sources .chart1', '.sources .boxl1', '.sources .boxl2'], .5, {
     x: -100,
-    y: 100
+    y: 100,
+    opacity: 0
   }, {
     x: 0,
-    y: 0
+    y: 0,
+    opacity: 1
   }, 0.1);
   boxeslTl.staggerFromTo(['.sources .chart2', '.sources .boxr1', '.sources .boxr2'], .5, {
     x: -100,
-    y: 100
+    y: 100,
+    opacity: 0
   }, {
     x: 0,
-    y: 0
+    y: 0,
+    opacity: 1
   }, 0.1);
-  sources.add(front, .2).add(tree1, .2).add(tree2, .2).add(boxeslTl, .2).add(mountain, .2).add(pie, .4).add(bar, .4).add(bSquareS, .4).add(ySquareS, .4).add(bSquare, .4).add(line, .6).add(house, .6).add(img1, .8).add(img2, .8).add(pen, .8).add(video, .8).add(book, .8);
+  sources.add(front, .2).add(tree1, .2).add(tree2, .2).add(boxeslTl, .2).add(mountain, .2).add(pie, .4).add(bar, .4).add(bSquareS, .4).add(ySquareS, .4).add(bSquare, .4).add(gSquare, .4).add(line, .6).add(house, .6).add(img1, .8).add(img2, .8).add(pen, .8).add(video, .8).add(book, .8);
   return [sources, boxeslTl];
 }
 
@@ -417,17 +427,21 @@ function productsTime() {
   var title = TweenMax.fromTo('.products .title-bg', .5, titleFadeBackInit, titleFade);
   var focuslb = TweenMax.fromTo('.products .focuslb', .5, {
     x: -100,
-    y: 100
+    y: 100,
+    opacity: 0
   }, {
     x: 0,
-    y: 0
+    y: 0,
+    opacity: 1
   });
   var focusrt = TweenMax.fromTo('.products .focusrt', .5, {
     x: 100,
-    y: -100
+    y: -100,
+    opacity: 0
   }, {
     x: 0,
-    y: 0
+    y: 0,
+    opacity: 1
   });
   var chartc = TweenMax.fromTo('.products .chartc', fadeInInit, fadeIn);
   var bar = TweenMax.fromTo('.products .bar img', .5, growInInit, growIn);
@@ -437,6 +451,7 @@ function productsTime() {
   var bbox = TweenMax.fromTo('.products .bbox img', .5, growInInit, growIn);
   var bbox2 = TweenMax.fromTo('.products .bbox2', .5, fadeInInit, fadeIn);
   var ybox = TweenMax.fromTo('.products .ybox', .5, fadeInInit, fadeIn);
+  var mouse = TweenMax.fromTo('.products .mouse', .5, fadeInInit, fadeIn);
   var chartTl = new TimelineMax({
     paused: true
   });
@@ -459,7 +474,7 @@ function productsTime() {
     opacity: 1
   });
   chartTl.add(charttw, 0).add(chartus, 0);
-  products.add(focuslb, .2).add(focusrt, .2).add(chartc, .2).add(bar, .4).add(coin, .4).add(arrow, .4).add(bbox, .4).add(bbox2, .4).add(ybox, .6);
+  products.add(focuslb, .2).add(focusrt, .2).add(chartc, .2).add(pie, .2).add(bar, .4).add(coin, .4).add(arrow, .4).add(bbox, .4).add(bbox2, .4).add(ybox, .6).add(mouse, .8);
   return [products, chartTl];
 } // animation
 
@@ -484,7 +499,7 @@ $(window).scroll(function(evt) {
     }
 
     var sectionHeight = $('#industry').offset().top - $('#menu').offset().top;
-    airplane.progress(Math.abs(($(window).scrollTop() - $('#industry').offset().top) / sectionHeight) * 2);
+    airplane.progress(Math.abs(($(window).scrollTop() - $('#industry').offset().top) / sectionHeight) * 3);
   }
 
   if ($(window).scrollTop() > $('#invest').offset().top && $(window).scrollTop() < $('#sources').offset().top && state !== 'invest') {

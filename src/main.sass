@@ -1,6 +1,7 @@
 @import ./style.sass
 
 $colors: $primary, $yellow, $blue, $orange
+$colors2: $yellow, $blue, $orange
 +initialize
 
 // landing
@@ -72,7 +73,7 @@ $colors: $primary, $yellow, $blue, $orange
 	.ball:nth-child(#{$i})
 		left: #{random(100)+'%'}
 		bottom: -400px
-		background: nth($colors, random(4))
+		background: nth($colors2, random(3))
 		+size(#{200+random(200))+'px'})
 
 // landing ball
@@ -464,7 +465,7 @@ section:not(section:first-child)
 		font-size: 12px
 	.lbBox
 		position: absolute
-		right: 0
+		right: -40px
 		top: 0
 		width: 100px 
 		height: 80px
