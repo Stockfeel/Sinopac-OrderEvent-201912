@@ -6,8 +6,11 @@ $colors2: $yellow, $blue, $orange
 
 // landing
 .landing
+	+size(100%, 100%)
+	background: white
 	position: relative
 	display: flex
+	display: -webkit-flex
 	justify-content: center
 	align-items: center
 	flex-direction: column
@@ -111,12 +114,6 @@ main
 		bottom: -300px
 		background: nth($colors, random(4))
 		+size(#{50+random(100))+'px'})
-
-// section layout  
-section:not(section:first-child) 
-	background: $bg
-	& > *
-		position: absolute
 
 .title-bg 
 	position: absolute

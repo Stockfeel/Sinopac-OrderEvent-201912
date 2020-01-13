@@ -476,7 +476,6 @@ var airplane = airplaneTime();
 $(window).scroll(function(evt) {
   if ($(window).scrollTop() < $('#industry').offset().top && state !== 'landing') {
     state = 'landing';
-    titleAnimation();
   }
 
   if ($(window).scrollTop() > $('#industry').offset().top - 300 && $(window).scrollTop() < $('#menu').offset().top) {
