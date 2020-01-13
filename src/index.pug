@@ -3,7 +3,6 @@
 -var arr=[{id: 1, name: '食品加工'}, {id: 12, name: '金融理財'}, {id: 2, name: '休閒娛樂'}, {id: 3, name: '房屋營建'}, {id: 4, name: '生活百貨'}, {id: 11, name: '交通運輸'}, {id: 6, name: '能源環保'}, {id: 7, name: '生技醫療'}, {id: 8, name: '積體電路'}, {id: 9, name: '電子科技'}, {id: 10, name: '電機機械'}, {id: 16, name: '網路通訊'}]
 html
   head 
-    title 永豐活動頁面
     link(href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,700&display=swap" rel="stylesheet")
     link(rel='stylesheet' type='text/css' href='./font.css')      
     link(rel='stylesheet' type='text/css' href='./main.css')  
@@ -14,10 +13,29 @@ html
     script(src="https://d3js.org/d3.v5.min.js")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     meta(charset="UTF-8")
+    title 知識學習到股票下單，一站滿足－股感Stockfeel
+    meta(name="description" content="投資學習不再遙不可及！股感攜手永豐金證券，帶你從生活圈和能力圈出發，培養投資嗅覺，並結合AI與大數據，幫你輕鬆縮小範圍、篩選標的！讓生活本身，就是一場最美的投資！讓股感，即刻啟動你的生活投資！")
+    meta(property="og:type" content="website")
+    meta(property="og:site_name" content="股感Stockfeel")
+    meta(property="og:title" content="知識學習到股票下單，一站滿足－股感Stockfeel") 
+    meta(property="og:description" content="提供投資及產業的最新資訊及基礎知識")
+    meta(property="og:url" content="https://www.campaign.stockfeel.com.tw/orderevent")
+    meta(property="og:image" content="#")
+    meta(property="og:description" content="投資學習不再遙不可及！股感攜手永豐金證券，帶你從生活圈和能力圈出發，培養投資嗅覺，並結合AI與大數據，幫你輕鬆縮小範圍、篩選標的！讓生活本身，就是一場最美的投資！讓股感，即刻啟動你的生活投資！")
+    meta(property="og:locale" content="zh_TW")
+    meta(name="twitter:card" content="summary_large_image")
+    meta(name="twitter:site" content="@StockSense_")
+    meta(name="twitter:title" content="知識學習到股票下單，一站滿足－股感Stockfeel")
+    meta(name="twitter:description" content="投資學習不再遙不可及！股感攜手永豐金證券，帶你從生活圈和能力圈出發，培養投資嗅覺，並結合AI與大數據，幫你輕鬆縮小範圍、篩選標的！讓生活本身，就是一場最美的投資！讓股感，即刻啟動你的生活投資！")
+    meta(name="twitter:image" content="#")
+    meta(itemprop="name" content="知識學習到股票下單，一站滿足－股感Stockfeel")
+    meta(itemprop="description" content="投資學習不再遙不可及！股感攜手永豐金證券，帶你從生活圈和能力圈出發，培養投資嗅覺，並結合AI與大數據，幫你輕鬆縮小範圍、篩選標的！讓生活本身，就是一場最美的投資！讓股感，即刻啟動你的生活投資！")
+    meta(itemprop="image" content="#")
   body
     section.landing
       .landing__logo
-        img(src='./asset/logo.svg')
+        a(href='https://www.stockfeel.com.tw/' target='_blank')
+          img(src='./asset/logo.svg')
       .landing__title
         for n in [1,2,3,4,5,6,7,8,9]
           img(src='./asset/title/'+n+'.svg')
@@ -35,7 +53,7 @@ html
       .landing__info
         p 股感攜手永豐金證券，秉持著落實普惠金融、致力打造知識金融場域的理念，帶你從自身的#[span.highlight 生活能力圈出發、培養投資嗅覺]，啟動你的生活投資！
       .btn
-        a(href='https://www.stockfeel.com.tw/industrychain/') 即刻體驗
+        a(href='https://www.stockfeel.com.tw/industrychain/' target='_blank') 即刻體驗
         .btn__next
           img.default(src='./asset/btn_arrow.svg')
           img.hover(src='./asset/btn_arrow_hover.svg')
@@ -95,7 +113,7 @@ html
                   path(fill="none" fill-rule="evenodd" stroke="#4BB5B1" d="M35.048 0v38.488L1.204 72.332")
                 .rtBox
                 .lbBox
-                a.btn-small(href='#') 了解產業
+                a.btn-small(href='#' target='_blank') 了解產業
       section.invest#invest
         .title-bg
           img(src='./asset/invest/title.png')
@@ -103,7 +121,7 @@ html
           .title 精選十二大產業別輕鬆縮小投資範圍
           .intro #[span.highlight 精選主題投組與指標投組]，為你輕鬆篩選標的，省時省力不燒腦！
           .btn
-            a(href='https://www.stockfeel.com.tw/industrychain/') 即刻體驗
+            a(href='https://www.stockfeel.com.tw/industrychain/' target='_blank') 即刻體驗
             .btn__next
               img.default(src='./asset/btn_arrow.svg')
               img.hover(src='./asset/btn_arrow_hover.svg')
@@ -210,7 +228,7 @@ html
           .title 囊括海內外金融商品即刻啟動生活投資
           .intro 股感囊括眾多海內外金融標的，不只#[span.highlight 美股台股更有豐富ETF可選擇]，串連知識學習和投資下單零時差！
           .btn
-            a(href='https://www.stockfeel.com.tw/industrychain/') 即刻體驗
+            a(href='https://www.stockfeel.com.tw/industrychain/' target='_blank') 即刻體驗
             .btn__next
               img.default(src='./asset/btn_arrow.svg')
               img.hover(src='./asset/btn_arrow_hover.svg')
@@ -246,8 +264,9 @@ html
       section.sales#sales 
         h1 常見問與答
         .sales__question
-          .question #[span Q1] 為什麽股感要和永豐金證券合作？ #[span.control ]
-            .answer.hidden 以打造知識金融場域目標的股感，攜手理念相近、 致力推廣普惠金融的永豐金證券，藉由提供多元化知識內容、客製化服務，幫助用戶產生興趣了解產業，並建構系統化學習，進而輔助投資人進行交易決策，實踐互聯網金融一站式的服務體驗！
+          .question.open #[span Q1] 為什麽股感要和永豐金證券合作？ #[span.control]
+            .answer 
+              p 以打造知識金融場域目標的股感，攜手理念相近、 致力推廣普惠金融的永豐金證券，藉由提供多元化知識內容、客製化服務，幫助用戶產生興趣了解產業，並建構系統化學習，進而輔助投資人進行交易決策，實踐互聯網金融一站式的服務體驗！
           .question #[span Q2] 股感全新功能，可以提供什麼樣的服務呢？ #[span.control ]
             .answer.hidden
               p 1. 認識各大產業：帶你從熟悉的生活能力圈開始了解產業，並逐步從中拓展至十二大產業主題。
@@ -269,7 +288,8 @@ html
                 img(src='./asset/feature/daily.svg') 
                 p 3.每日必看：為您分別整理台股盤前與盤後必看資訊，以及最新國際股市動態。
           .question #[span Q4] 在股感上交易，是否會知道我的交易資料跟帳號呢？ #[span.control ]
-            .answer.hidden 請不用擔心！股感不會知道您的任何交易資料，站上所有交易系統皆於永豐金證券進行，一切交易相關的系統操作或個人資訊股感皆不會經手，故不用擔心資料被留存或再利用的情事發生。
+            .answer.hidden 
+              p 請不用擔心！股感不會知道您的任何交易資料，站上所有交易系統皆於永豐金證券進行，一切交易相關的系統操作或個人資訊股感皆不會經手，故不用擔心資料被留存或再利用的情事發生。
           .question #[span Q5] 我還不是永豐金證券的用戶，該怎麽進行開戶作業？ #[span.control ]
             .answer.hidden 
               p 1.行動開戶：手機下載豐管家，進行開戶作業
@@ -286,17 +306,21 @@ html
               p 2.網路預約：線上完成開戶預約，將有專人為您服務
               p 3.親臨各大據點臨櫃辦理更多開戶相關的詳細資訊，可至永豐金證券網站了解
           .question #[span Q6] 開戶需準備什麽文件？ #[span.control ]
-            .answer.hidden 本人身分證正本、本人開戶印鑑、本人第二證明文件 ( 如駕照或健保卡等 )
+            .answer.hidden 
+              p 本人身分證正本、本人開戶印鑑、本人第二證明文件 ( 如駕照或健保卡等 )
           .question #[span Q7] 要怎麼確認我已完成開戶？ #[span.control ]
-            .answer.hidden 待您完成所有線上開戶手續後，系統將會自動發送簡訊及email通知您。請留意您的手機簡訊及信箱。
+            .answer.hidden
+              p 待您完成所有線上開戶手續後，系統將會自動發送簡訊及 email 通知您。請留意您的手機簡訊及信箱。
           .question #[span Q8] 可以幫未成年子女線上開戶嗎？ #[span.control ]
-            .answer.hidden 目前線上開戶只開放本國年滿20歲自然人辦理，暫不接受法人及代理人開戶，若欲開戶請至全省服務據點臨櫃辦理。
+            .answer.hidden 
+              p 目前線上開戶只開放本國年滿20歲自然人辦理，暫不接受法人及代理人開戶，若欲開戶請至全省服務據點臨櫃辦理。
           .question #[span Q9] 下單後，我可以在股感看到我的交易紀錄嗎？ #[span.control ]
-            .answer.hidden 股感與永豐全新設計的下單系統查看，未來的股感系統，也會提供自行輸入查詢等相關紀錄功能，方便您做後續相關操作。
+            .answer.hidden 
+              p 您可以於股感與永豐全新設計的下單系統中查看。未來的股感系統，也會提供自行輸入查詢等相關記錄功能，方便您做後續相關操作。
           .question #[span Q10] 如果我有問題，我可以聯絡誰？ #[span.control ]
             .answer.hidden 
-              p 開戶問題，請來信永豐金證券客服信箱service.sec@sinopac.com 或致電 0800-038-123 ／  02-6630-8899 (台股營業日 7:30 至 22:00) 將有專人為您服務。
-              p 關於網頁資訊，與其他服務或系統問題煩請來信service@stockfeel.com.tw ，將於三個工作天內為您服務。
+              p 開戶問題，請來信永豐金證券客服信箱 #[a(href='mailto:service.sec@sinopac.com' target='_blank') service.sec@sinopac.com] 或致電 0800-038-123 ／  02-6630-8899 (台股營業日 7:30 至 22:00) 將有專人為您服務。
+              p 關於網頁資訊，與其他服務或系統問題煩請來信 #[a(href='mailto:service@stockfeel.com.tw' target='_blank') service@stockfeel.com.tw] ，將於三個工作天內為您服務。
     footer
       .footer__upper
         .footer__logo 

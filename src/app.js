@@ -95,11 +95,19 @@ $(window).ready(function() {
     })
 })
 
-$('.swiper-container').mouseover(function() {
+
+// Menu
+document.querySelector('.menu').addEventListener('mouseover', (evt) => {
+  if(evt.target.classList.contains('menu__item')) {
+    evt.target.querySelector('.menu__hoverBox').classList.remove('hidden')
+  }
   mySwiper.autoplay.stop()
 })
 
-$('.swiper-container').mouseout(function() {
+document.querySelector('.menu').addEventListener('mouseout', (evt) => {
+  if(evt.target.classList.contains('menu__item')) {
+    evt.target.querySelector('.menu__hoverBox').classList.add('hidden')
+  }
   mySwiper.autoplay.start()
 })
 
@@ -114,7 +122,7 @@ function swiperBind() {
     loop: true,
     centeredSlides: true,
     autoplay: {
-      delay: 1000,
+      delay: 1000
     }
   })
 }
@@ -256,7 +264,7 @@ function investTime() {
     opacity: 0
   }, {
     x: 20, 
-    y: -20,
+    y: -40,
     opacity: 1
   })
   boxeslTl.staggerFromTo([
@@ -495,28 +503,19 @@ $(window).scroll(function(evt) {
     state = 'invest';
     invest.forEach(tl => tl.play())
   }
-  if($(window).scrollTop() > $('#sources').offset().top - 300 &&
+  if($(window).scrollTop() > $('#sources').offset().top - 500 &&
       $(window).scrollTop() < $('#products').offset().top && 
       state !== 'sources') {
     state = 'sources';
     source.forEach(tl => tl.play())
   }
-  if($(window).scrollTop() > $('#products').offset().top - 300 && 
+  if($(window).scrollTop() > $('#products').offset().top - 500 && 
       $(window).scrollTop() < $('#sales').offset().top &&
       state !== 'products') {
     state = 'products';
     products.forEach(tl => tl.play())
   }
 })
-
-// Menu
-$('.menu__item').mouseover(function() {
-  $(this).children('.menu__hoverBox').removeClass('hidden')
-})
-$('.menu__item').mouseout(function() {
-  $(this).children('.menu__hoverBox').addClass('hidden')
-})
-
 
 // Q&A 
 document.querySelector('.sales__question').addEventListener('click', (evt) => {

@@ -153,11 +153,20 @@ $(window).ready(function() {
       swiperBind();
     }
   });
-});
-$('.swiper-container').mouseover(function() {
+}); // Menu
+
+document.querySelector('.menu').addEventListener('mouseover', function(evt) {
+  if (evt.target.classList.contains('menu__item')) {
+    evt.target.querySelector('.menu__hoverBox').classList.remove('hidden');
+  }
+
   mySwiper.autoplay.stop();
 });
-$('.swiper-container').mouseout(function() {
+document.querySelector('.menu').addEventListener('mouseout', function(evt) {
+  if (evt.target.classList.contains('menu__item')) {
+    evt.target.querySelector('.menu__hoverBox').classList.add('hidden');
+  }
+
   mySwiper.autoplay.start();
 });
 var mySwiper;
@@ -310,7 +319,7 @@ function investTime() {
     opacity: 0
   }, {
     x: 20,
-    y: -20,
+    y: -40,
     opacity: 1
   });
   boxeslTl.staggerFromTo(['.invest .boxl1', '.invest .boxl2', '.invest .boxl3'], 1, {
@@ -497,26 +506,19 @@ $(window).scroll(function(evt) {
     });
   }
 
-  if ($(window).scrollTop() > $('#sources').offset().top - 300 && $(window).scrollTop() < $('#products').offset().top && state !== 'sources') {
+  if ($(window).scrollTop() > $('#sources').offset().top - 500 && $(window).scrollTop() < $('#products').offset().top && state !== 'sources') {
     state = 'sources';
     source.forEach(function(tl) {
       return tl.play();
     });
   }
 
-  if ($(window).scrollTop() > $('#products').offset().top - 300 && $(window).scrollTop() < $('#sales').offset().top && state !== 'products') {
+  if ($(window).scrollTop() > $('#products').offset().top - 500 && $(window).scrollTop() < $('#sales').offset().top && state !== 'products') {
     state = 'products';
     products.forEach(function(tl) {
       return tl.play();
     });
   }
-}); // Menu
-
-$('.menu__item').mouseover(function() {
-  $(this).children('.menu__hoverBox').removeClass('hidden');
-});
-$('.menu__item').mouseout(function() {
-  $(this).children('.menu__hoverBox').addClass('hidden');
 }); // Q&A 
 
 document.querySelector('.sales__question').addEventListener('click', function(evt) {
