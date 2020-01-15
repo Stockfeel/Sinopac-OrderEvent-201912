@@ -214,8 +214,11 @@ function appendData(data) {
 
     if (node) {
       node.querySelector('.rtBox').innerHTML = item.meta.description.slice(0, 20) + '...';
-      node.querySelector('.lbBox').innerHTML = "\n        <p class='box__title'>\u8FD1\u4E00\u6708</p>\n        <p class='box__info ".concat(mean > 0 ? 'up' : 'down', "'>").concat(mean, " %</p>\n        <svg width=\"").concat(width, "\" height=\"").concat(height, "\">\n          <path d=\"").concat(lines, "\" stroke='#4d4d4d' stoke-width='1px' fill='none'></path>\n        </svg>\n      ");
-      node.querySelector('.btn-small').setAttribute('href', "https://www.stockfeel.com.tw/industrychain/?class=".concat(item.meta.category));
+      node.querySelector('.lbBox').innerHTML = "\n        <p class='box__title'>\u8FD1\u4E00\u6708</p>\n        <p class='box__info ".concat(mean > 0 ? 'up' : 'down', "'>").concat(mean, " %</p>\n        <svg width=\"").concat(width, "\" height=\"").concat(height, "\">\n          <path d=\"").concat(lines, "\" stroke='#4d4d4d' stoke-width='1px' fill='none'></path>\n        </svg>\n      "); // node.querySelector('.btn-small').setAttribute('href', )
+
+      node.querySelector('.btn-small').addEventListener('click', function() {
+        window.open("https://www.stockfeel.com.tw/industrychain/?class=".concat(item.meta.category), '_blank');
+      });
     }
   });
 }
