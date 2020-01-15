@@ -675,10 +675,13 @@ footer
   	flex-direction: column
   	td 
   		padding-top: 33px
+  		vertical-align: top
   	& p 
 	  	color: white 
 	  	margin: 0px
 	  	margin-left: 20px
+	  	font-size: 14px
+	  	line-height: 1.47
 	  	span:first-child
 	  		border-left: 1px solid white
 	  		padding-left: 5px
@@ -687,7 +690,7 @@ footer
   	text-align: center
   	color: #4bb5b1
   	mix-blend-mode: multiply
-  	font-size: 16px
+  	font-size: 14px
 
 // RWD pad 
 @media all and (max-width:1025px)
@@ -752,27 +755,6 @@ footer
 			left: 0	
 			bottom: 0
 			transform: scale(0.95)
-	.footer__upper 
-  	flex-direction: column
-  	&>* 
-  		margin-bottom: 20px
-  	.footer__info
-  		border: none
-  		padding: 0
-  		text-align: center
-  	.footer__logo
-  		padding: 0
-	.sales__question
-		width: 594px
-		.question .control 
-			right: 0
-		.steps
-			margin: 10px 0
-			display: flex 
-			justify-content: flex-start 
-			align-items: center
-			&>* 
-				margin: 3px
 
 	footer .footer__upper 
 		margin-left: 50%
@@ -781,14 +763,13 @@ footer
 		p
 			width: 100%
 			margin-left: 0
-		tr:first-child td:nth-child(2) 
-			p:first-child span, p:nth-child(2) span:last-child
-	  		border-left: none
-	  		display: block
 		td
 			display: inline-block
-		tr 
 			text-align: center
+		tr 
+			display: flex 
+			flex-direction: column
+			align-items: center
 		
 	// pad ball
 	@for $i from 1 through 10 
@@ -918,8 +899,12 @@ footer
 	// mobile footer
 	footer .footer__upper 
 		min-width: 350px
+		tr:first-child td:nth-child(2) 
+			p:first-child span, p:nth-child(2) span:last-child
+	  		border-left: none
+	  		display: block
 		p 
-			font-size: 12px
+			font-size: 14px
 		tr 
 			display: flex 
 			flex-direction: column
