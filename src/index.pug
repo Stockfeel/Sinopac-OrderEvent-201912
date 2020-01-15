@@ -32,6 +32,8 @@ html
     meta(itemprop="description" content="投資學習不再遙不可及！股感攜手永豐金證券，帶你從生活圈和能力圈出發，培養投資嗅覺，並結合AI與大數據，幫你輕鬆縮小範圍、篩選標的！讓生活本身，就是一場最美的投資！讓股感，即刻啟動你的生活投資！")
     meta(itemprop="image" content="./asset/og_image.png")
   body
+    a.fix-btn(href='https://www.sinotrade.com.tw/SpdOpenAct/Main/Apply01.aspx?strProd=0048&strWeb=0042' target='_blank')
+      img(src='./asset/fix_btn.png')
     section.landing
       .landing__logo
         a(href='https://www.stockfeel.com.tw/' target='_blank')
@@ -118,10 +120,12 @@ html
         .title-bg
           img(src='./asset/invest/title.png')
         .info.right-align
-          .title 精選十二大產業別輕鬆縮小投資範圍
+          .title 
+            div 精選主題投資
+            div 輕鬆縮小投資範圍
           .intro #[span.highlight 精選主題投組與指標投組]，為你輕鬆篩選標的，省時省力不燒腦！
           .btn
-            a(href='https://www.stockfeel.com.tw/industrychain/' target='_blank') 即刻體驗
+            a(href='https://www.stockfeel.com.tw/category/stock-concept/' target='_blank') 即刻體驗
             .btn__next
               img.default(src='./asset/btn_arrow.svg')
               img.hover(src='./asset/btn_arrow_hover.svg')
@@ -172,6 +176,11 @@ html
         .info
           .title 學習大師投資奠定成功基石
           .intro #[span.highlight 股感擁有豐富金融知識庫]，輕鬆學習大師的價值價量投資學，練就投資真功夫！
+          .btn
+            a(href='https://www.stockfeel.com.tw/category/investment-expert/' target='_blank') 探索大師心法
+            .btn__next
+              img.default(src='./asset/btn_arrow.svg')
+              img.hover(src='./asset/btn_arrow_hover.svg')
         .canvas
           .imgBox.land
             img(src='./asset/sources/land.png')
@@ -228,7 +237,7 @@ html
           .title 囊括海內外金融商品即刻啟動生活投資
           .intro 股感囊括眾多海內外金融標的，不只#[span.highlight 美股台股更有豐富ETF可選擇]，串連知識學習和投資下單零時差！
           .btn
-            a(href='https://www.stockfeel.com.tw/industrychain/' target='_blank') 即刻體驗
+            a(href='https://www.stockfeel.com.tw/category/stock-concept/' target='_blank') 即刻體驗
             .btn__next
               img.default(src='./asset/btn_arrow.svg')
               img.hover(src='./asset/btn_arrow_hover.svg')
@@ -280,7 +289,7 @@ html
               p 運用各種AI演算法，在雲端自動分析，提供您最想知道的各種投資訊息
               .answer__feature
                 img(src='./asset/feature/master.svg')
-                p 1.大師選股：為您整理金融界裡的大師：華倫‧巴菲特、彼得·林區、班傑明·葛拉
+                p 1.大師選股：為您整理金融界裡的大師：華倫‧巴菲特、彼得·林區、班傑明·葛拉漢
               .answer__feature 
                 img(src='./asset/feature/hot.svg') 
                 p 2.熱門主題：為您追蹤近期熱門產業，精選數檔超夯概念股，讓您隨時觀看市場趨勢。
@@ -323,13 +332,19 @@ html
               p 關於網頁資訊，與其他服務或系統問題煩請來信 #[a(href='mailto:service@stockfeel.com.tw' target='_blank') service@stockfeel.com.tw] ，將於三個工作天內為您服務。
     footer
       .footer__upper
-        .footer__logo 
-          img(src='./asset/logo2.png')
-        .footer__info 
-          p 永豐金證券股份有限公司 
-          p.inline 台北市重慶南路一段2號7、18、20樓
-          p 0800-038-123 | 02-6630-8899 
-          p.inline (台股營業日7:30 a.m.-10:00 p.m.)
-          p 107年金管證總字第0006號
+        table 
+          tr 
+            td 
+              img(src='./asset/logo2.png')
+            td 
+              p 永豐金證券股份有限公司 #[span 台北市重慶南路一段2號7、18、20樓]
+              p 0800-038-123 #[span 02-6630-8899] #[span (台股營業日7:30 a.m.-10:00 p.m.)]
+              p 107年金管證總字第0006號
+          tr 
+            td 
+              img(src='./asset/logo1.svg')
+            td 
+              p 股感生活 #[span 投資有股感，成為你的投資方向感]
+              p 台北市松山區民生東路三段135號3樓
       .footer__right © Stockfeel. All rights reserved
   script(src='./app.js')

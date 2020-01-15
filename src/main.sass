@@ -4,6 +4,20 @@ $colors: $primary, $yellow, $blue, $orange
 $colors2: $yellow, $blue, $orange
 +initialize
 
+
+.fix-btn
+	position: fixed
+	bottom: 50px
+	right: 100px
+	z-index: 10
+	&:after 
+		content: '我要開戶'
+		font-size: 17px 
+		color: white 
+		position: absolute
+		bottom: 6px
+		left: 15px
+
 // landing
 .landing
 	+size(100%, 100%)
@@ -442,7 +456,7 @@ main
 	opacity: 1
 	transition: opacity .5s
 	a
-		pointer-events: none
+		pointer-events: auto
 	&.hidden 
 		opacity: 0
 	svg
@@ -619,18 +633,22 @@ section.sales
 	  transition: .5s
 		overflow: none
 		margin-top: 0px
-		&.hidden 
-			height: 20px
-			overflow: hidden
-			margin-top: -60px
-			& * 
-				opacity: 0
 		& * 
 			opacity: 1 
 			transition: .1s
 		p
 			margin: 0
 			pointer-events: none
+		a 
+			pointer-events: auto
+		&.hidden 
+			height: 20px
+			overflow: hidden
+			margin-top: -60px
+			& * 
+				opacity: 0
+			a 
+				pointer-events: none
 
 	.answer .logo 
 		display: flex 
@@ -650,17 +668,17 @@ footer
   	justify-content: center
   	align-items: center
   	padding: 30px 0
-  .footer__logo 
-  	padding-right: 40px 
-  	img 
-  		object-fit: contain
-  .footer__info 
-  	border-left: 1px solid white
-  	padding-left: 40px
-  	&>p
-  		color: white
-  		margin: 0
-  		padding: 0
+  	flex-direction: column
+  	td 
+  		padding-top: 33px
+  	& p 
+	  	color: white 
+	  	margin: 0px
+	  	margin-left: 20px
+	  	span:first-child
+	  		border-left: 1px solid white
+	  		padding-left: 5px
+	  		margin-left: 3px
   .footer__right 
   	text-align: center
   	color: #4bb5b1
@@ -669,6 +687,9 @@ footer
 
 // RWD pad 
 @media all and (max-width:769px)
+	.fix-btn 
+		bottom: 20px
+		right: 20px
 	main
 		overflow: hidden
 		padding: 0
@@ -746,11 +767,23 @@ footer
 			align-items: center
 			&>* 
 				margin: 3px
-	.footer__info 
-		width: 480px
+
+	footer .footer__upper 
+		margin-left: 50%
+		transform: translateX(-50%)
+		min-width: 500px
 		p
+			width: 100%
+			margin-left: 0
+		tr:first-child td:nth-child(2) 
+			p:first-child span, p:nth-child(2) span:last-child
+	  		border-left: none
+	  		display: block
+		td
 			display: inline-block
-	
+		tr 
+			text-align: center
+		
 	// pad ball
 	@for $i from 1 through 10 
 		.ball:nth-child(#{$i})
@@ -767,6 +800,11 @@ footer
 			+size(#{50+random(50))+'px'})			
 
 @media all and (max-width: 415px)
+	.fix-btn 
+		bottom: 20px
+		left: 20px
+		img 
+			+size(100px)
 	.landing
 		overflow: hidden
 		+flexCenter()
@@ -872,11 +910,10 @@ footer
 				+size(4px, 9px)
 	
 	// mobile footer
-	.footer__info 
-		width: 274px
-		font-size: 12px
-	.footer__right
-		font-size: 12px
+	footer .footer__upper 
+		min-width: 350px
+		p 
+			font-size: 12px
 
 	// mobile ball
 	@for $i from 1 through 10 
