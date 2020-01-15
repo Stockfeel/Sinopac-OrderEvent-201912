@@ -130,6 +130,9 @@ section
 .sources 
   .btn 
     width: 180px
+    &:hover 
+      &:before 
+        animation: line2 .3s forwards
 .highlight
   animation: highlight .3s forwards
   animation-delay: 2s
@@ -141,6 +144,12 @@ section
     width: 0px 
   to 
     width: 65px
+
+@keyframes line2 
+  from 
+    width: 0px 
+  to 
+    width: 100px
 
 @keyframes highlight 
   0% 
