@@ -231,19 +231,6 @@ function appendData(data) {
   });
 }
 
-function airplaneTime() {
-  return TweenMax.fromTo('.industry .airplane', 2, {
-    x: -100,
-    y: 0,
-    opacity: 0
-  }, {
-    x: 250,
-    y: -350,
-    opacity: 1,
-    ease: Linear.easeNone
-  }).pause();
-}
-
 function industryTime() {
   var industry = new TimelineMax({
     paused: true
@@ -258,6 +245,16 @@ function industryTime() {
   var wifi = TweenMax.fromTo('.industry .wifi', 1, fadeInInit, fadeIn);
   var chart2 = TweenMax.fromTo('.industry .chart2 img', 1, growInInit, growIn);
   var chart3 = TweenMax.fromTo('.industry .chart3 img', 1, growInInit, growIn);
+  var airplane = TweenMax.fromTo('.industry .airplane', 2, {
+    x: -100,
+    y: 0,
+    opacity: 0
+  }, {
+    x: 250,
+    y: -350,
+    opacity: 1,
+    ease: Linear.easeNone
+  });
   var chart1 = TweenMax.fromTo('.industry .chart1', 1, {
     y: 50,
     opacity: 0
@@ -292,7 +289,7 @@ function industryTime() {
     ease: Linear.easeNone
   });
   busTl.add(busDrop).add(busLand).add(bus);
-  industry.add(title).add(coin1, .4).add(coin2, .6).add(building, .8).add(machine, 1).add(front, 1.2).add(wifi, 1.4).add(coin3, 1.4).add(chart3, 1.6).add(chart2, 1.6).add(chart1, 1.6);
+  industry.add(title).add(coin1, .4).add(coin2, .6).add(building, .8).add(machine, 1).add(front, 1.2).add(wifi, 1.4).add(airplane, 1.4).add(coin3, 1.4).add(chart3, 1.6).add(chart2, 1.6).add(chart1, 1.6);
   return [industry, busTl, chart1];
 }
 
@@ -492,7 +489,6 @@ var industry = industryTime();
 var invest = investTime();
 var source = sourceTime();
 var products = productsTime();
-var airplane = airplaneTime();
 $(window).scroll(function(evt) {
   if ($(window).scrollTop() < $('#industry').offset().top && state !== 'landing') {
     state = 'landing';
@@ -507,7 +503,6 @@ $(window).scroll(function(evt) {
     }
 
     var sectionHeight = $('#industry').offset().top - $('#menu').offset().top;
-    airplane.progress(Math.abs(($(window).scrollTop() - $('#industry').offset().top) / sectionHeight) * 3.5);
   }
 
   if ($(window).scrollTop() > $('#invest').offset().top - 300 && $(window).scrollTop() < $('#sources').offset().top && state !== 'invest') {

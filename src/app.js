@@ -169,20 +169,6 @@ function appendData(data) {
   })
 }
 
-
-function airplaneTime() {
-  return TweenMax.fromTo('.industry .airplane', 2, {
-      x: -100,
-      y: 0,
-      opacity: 0
-    }, {
-      x: 250,
-      y: -350,
-      opacity: 1,
-      ease: Linear.easeNone
-    }).pause()
-}
-
 function industryTime() {
   const industry = new TimelineMax({ paused: true }) 
   const title = TweenMax.fromTo('.industry .title-bg', .5, titleFadeInit, titleFade)
@@ -195,6 +181,16 @@ function industryTime() {
   const wifi = TweenMax.fromTo('.industry .wifi', 1, fadeInInit, fadeIn)
   const chart2 = TweenMax.fromTo('.industry .chart2 img', 1, growInInit, growIn)
   const chart3 = TweenMax.fromTo('.industry .chart3 img', 1, growInInit, growIn)
+  const airplane = TweenMax.fromTo('.industry .airplane', 2, {
+    x: -100,
+    y: 0,
+    opacity: 0
+  }, {
+    x: 250,
+    y: -350,
+    opacity: 1,
+    ease: Linear.easeNone
+  })
   const chart1 = TweenMax.fromTo('.industry .chart1', 1, {
     y: 50,
     opacity: 0
@@ -235,6 +231,7 @@ function industryTime() {
     .add(machine, 1)
     .add(front, 1.2)
     .add(wifi, 1.4)
+    .add(airplane, 1.4)
     .add(coin3, 1.4)
     .add(chart3, 1.6)
     .add(chart2, 1.6)
@@ -491,7 +488,6 @@ const industry = industryTime();
 const invest = investTime();
 const source = sourceTime();
 const products = productsTime();
-const airplane = airplaneTime();
 
 $(window).scroll(function(evt) {
   if($(window).scrollTop() < $('#industry').offset().top && state !== 'landing') {
@@ -504,7 +500,6 @@ $(window).scroll(function(evt) {
       industry.forEach(tl => tl.play())
     }
     const sectionHeight = $('#industry').offset().top-$('#menu').offset().top;
-    airplane.progress(Math.abs(($(window).scrollTop()-$('#industry').offset().top)/sectionHeight)*3.5)
   }
   if($(window).scrollTop() > $('#invest').offset().top - 300 && 
       $(window).scrollTop() < $('#sources').offset().top && 
