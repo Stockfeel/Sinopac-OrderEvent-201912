@@ -691,6 +691,10 @@ footer
   	color: #4bb5b1
   	mix-blend-mode: multiply
   	font-size: 14px
+  tr:nth-child(2) td:first-child img
+  	+size(205px, 48px)
+  	margin-top: -5px
+
 
 // RWD pad 
 @media all and (max-width:1025px)
@@ -732,6 +736,7 @@ footer
 
 	// pad canvas
 	.industry, .invest, .sources, .products
+		height: 900px
 		max-height: 1024px
 		.info 
 			top: 10%
