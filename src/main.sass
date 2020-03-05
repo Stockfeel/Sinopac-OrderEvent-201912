@@ -533,6 +533,115 @@ main
 		text-decoration: underline
 		cursor: pointer
   
+// event 
+section.event 
+	background: #fff7d9
+	height: auto
+	display: flex 
+	flex-direction: column
+	align-items: center
+	.event__info 
+		margin-top: 40px
+		p 
+			text-align: center 
+			margin: 0
+			font-size: 40px
+			font-weight: bold
+			color: #4d4d4d
+	h1 
+		color: $orange 
+		text-align: center
+		font-size: 75px
+		margin: 0
+	.event__section 
+		box-sizing: border-box 
+		position: relative
+		background: white
+		width: 40%
+		margin: 50px auto 20px auto
+		border-bottom: 1px solid $orange
+		padding: 20px 6%
+		h2 
+			color: $orange 
+			font-size: 64px
+			font-weight: bold
+			margin: 0
+			span
+				font-size: 40px
+		&::before 
+			content: ''
+			position: absolute 
+			width: 90% 
+			height: 1px
+			background-color: $orange 
+			right: 0 
+			top: 0
+		p
+			font-size: 14px
+			margin: 0
+			span 
+				display: inline-block
+				color: white 
+				background: $orange
+				font-size: 18px
+				+size(32px)
+				vertical-align: middle 
+				text-align: center
+				padding: 5px 
+				border-radius: 16px		
+				margin-top: -5px	
+		&::after 
+			content: ''
+			position: absolute 
+			left: -13%
+			top: -20px
+			width: 165px 
+			height: 60px
+			background-repeat: no-repeat
+			background-size: cover
+		img 
+			position: absolute
+			max-width: 100%
+			max-height: 100% 
+			width: auto 
+			height: auto
+		.event__point 
+			&:nth-child(2n+1)
+				right: 100px
+				top: -50px 
+				+size(96px)
+			&:nth-child(2n)
+				right: -30px 
+				top: 30px 
+				+size(60px)
+		.event__calendar
+			&:nth-child(3n+1)
+				right: -1%
+			&:nth-child(3n+2)
+				left: 5%
+				top: 150px
+			&:nth-child(3n)
+				right: 10%
+				bottom: 50px
+		.event__feature
+			&:nth-child(2n+1)
+				left: 5%
+				bottom: 120px
+			&:nth-child(2n)
+				right: 5%
+				bottom: 100px
+
+section.event .event__section
+	&:nth-child(2n+1)
+		&::after 
+			background-image: url("./asset/dis-count-bubble-1.svg")
+	&:nth-child(2n)
+		height: 777px
+		h2 
+			font-size: 35px
+		&::after 
+			background-image: url("./asset/dis-count-bubble-2.svg")
+
 @keyframes dash
   from 
     stroke-dashoffset: 320
@@ -548,7 +657,6 @@ section.sales
 	justify-content: flex-start
 	align-items: center 
 	flex-direction: column
-	height: auto
 	padding-bottom: 100px
 	overflow: hidden
 	h1 
@@ -794,7 +902,30 @@ footer
 			left: #{random(50)+'%'}
 			bottom: -300px
 			background: nth($colors, random(4))
-			+size(#{50+random(50))+'px'})			
+			+size(#{50+random(50))+'px'})		
+	
+	section.event .event__section 
+		width: 70%
+		padding: 20px 50px 20px 100px
+		h2 
+			font-size: 56px
+		.event__point 
+			&:nth-child(2n+1)
+				left: 10px
+				top: 50px 
+				+size(80px)
+			&:nth-child(2n)
+				right: 30px 
+				top: -30px 
+		img 
+			max-width: 70%
+			max-height: 70% 
+
+@media all and (max-width: 769px)
+	section.event .event__section 
+		&::after 
+			width: 113px 
+			height: 40px
 
 @media all and (max-width: 415px)
 	.fix-btn 
@@ -933,3 +1064,33 @@ footer
 			bottom: -300px
 			background: nth($colors, random(4))
 			+size(#{50+random(50))+'px'})		
+
+	section.event 
+		.event__info p 
+			font-size: 24px
+		h1 
+			font-size: 48px
+			padding: 0 50px
+	section.event .event__section 
+		width: 90%
+		padding: 20px 5%
+		img 
+			max-width: 70%
+			max-height: 70% 
+		img.event__feature 
+			max-width: 40%
+			max-height: 40% 
+		p 
+			margin-top: 20px
+		h2 
+			font-size: 48px
+		.event__point 
+			&:nth-child(2n+1)
+				left: 320px
+				top: 80px 
+				+size(40px)
+			&:nth-child(2n)
+				right: 30px 
+				top: -30px 
+				+size(50px)
+

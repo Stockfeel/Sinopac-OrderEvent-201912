@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="495" height="52" viewBox="0 0 495 52">
+    <g fill="none" fill-rule="evenodd" font-weight="bold">
+        <text fill="#FFA224" font-family="GothamRounded-Bold, Gotham Rounded" font-size="56.715" transform="translate(-4 -3.507)">
+            <tspan x="0" y="45">Line </tspan> <tspan x="139.348" y="45" letter-spacing="-.289">P</tspan> <tspan x="176.66" y="45">oints 1</tspan> <tspan x="359.735" y="45" letter-spacing="-2.836">,</tspan> <tspan x="370.284" y="45">118</tspan>
+        </text>
+        <text fill="#FF9C24" font-family="GenSenMaruGothicTW-Bold-TTF, GenSenMaruGothic TW TTF" font-size="35" transform="translate(-4 -3.507)">
+            <tspan x="458" y="42.507"> 點</tspan>
+        </text>
+    </g>
+</svg>

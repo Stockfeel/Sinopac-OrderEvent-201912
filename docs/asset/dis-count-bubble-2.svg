@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="165" height="58" viewBox="0 0 165 58">
+    <defs>
+        <path id="prefix__a" d="M0 0.485L150.669 0.485 150.669 58.411 0 58.411z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g transform="translate(0 -1) translate(0 .515)">
+            <mask id="prefix__b" fill="#fff">
+                <use xlink:href="#prefix__a"/>
+            </mask>
+            <path fill="#FFA224" d="M121.706 58.411H28.963C12.967 58.411 0 45.443 0 29.448 0 13.452 12.967.485 28.963.485h92.743c15.996 0 28.963 12.967 28.963 28.963 0 15.995-12.967 28.963-28.963 28.963" mask="url(#prefix__b)"/>
+        </g>
+        <text fill="#FFF" font-family="GenSenMaruGothicTW-Bold-TTF, GenSenMaruGothic TW TTF" font-size="35" font-weight="bold" letter-spacing=".075" transform="translate(0 -1)">
+            <tspan x="25" y="42.042">優惠</tspan>
+        </text>
+        <text fill="#FFF" font-family="GothamRounded-Medium, Gotham Rounded" font-size="40" font-weight="400" transform="translate(0 -1)">
+            <tspan x="100.25" y="43">2</tspan>
+        </text>
+        <path fill="#FFA224" d="M139.247 50.514L139.247 29.592 164.437 49.037z" transform="translate(0 -1)"/>
+    </g>
+</svg>
