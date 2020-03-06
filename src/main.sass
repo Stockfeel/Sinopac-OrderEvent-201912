@@ -5,6 +5,42 @@ $colors2: $yellow, $blue, $orange
 +initialize
 
 
+nav 
+	width: 100% 
+	display: flex 
+	justify-content: center
+	padding: 0
+	background: transparent
+	box-shadow: 0 -2 10px 10px rgba(0, 0, 0, .2)
+	.tab
+		position: relative
+		&:nth-child(2n+1)::after, &:nth-child(2n)::after 
+			position: absolute
+			color: white 
+			font-size: 15px
+			right: 25%
+			top: 13px
+		&:nth-child(2n+1)::after
+			content: '開戶優惠'
+		&:nth-child(2n)::after 
+			content: '我要開戶'
+		&:nth-child(2n+1)::before 
+			content: ''
+			+size(65px, 46px)
+			position: absolute
+			left: 0
+			top: 0
+			background-image: url('./asset/gift.png') 
+		&:nth-child(2n)::before 
+			content: ''
+			+size(65px, 46px)
+			position: absolute
+			left: 0
+			top: 0
+			background-image: url('./asset/acc.png') 
+	& > * 
+		display: inline-block
+
 .fix-btn
 	position: fixed
 	bottom: 50px
@@ -12,13 +48,18 @@ $colors2: $yellow, $blue, $orange
 	z-index: 10
 	img 
 		cursor: pointer
-	&:after 
-		content: '我要開戶'
+	&::after 
 		font-size: 17px 
 		color: white 
 		position: absolute
-		bottom: 6px
-		left: 15px
+		bottom: 4%
+		left: 10px
+	&.apply::after 
+		content: '我要開戶'
+	&.gift
+		bottom: 16%
+		&::after 
+			content: '開戶優惠'
 
 // landing
 .landing
@@ -540,6 +581,9 @@ section.event
 	display: flex 
 	flex-direction: column
 	align-items: center
+	.btn 
+		background: $orange
+		margin-bottom: 60px
 	.event__info 
 		margin-top: 40px
 		p 
@@ -605,6 +649,8 @@ section.event
 			max-height: 100% 
 			width: auto 
 			height: auto
+			&.hidden
+				display: none
 		.event__point 
 			&:nth-child(2n+1)
 				right: 100px
@@ -626,10 +672,12 @@ section.event
 		.event__feature
 			&:nth-child(2n+1)
 				left: 5%
-				bottom: 120px
+				bottom: 100px
 			&:nth-child(2n)
 				right: 5%
 				bottom: 100px
+	.event__next
+		animation: waving 1s infinite
 
 section.event .event__section
 	&:nth-child(2n+1)
@@ -641,6 +689,14 @@ section.event .event__section
 			font-size: 35px
 		&::after 
 			background-image: url("./asset/dis-count-bubble-2.svg")
+
+@keyframes waving 
+	0%
+		transform: translateY(0)
+	50% 
+		transform: translateY(10px)
+	100% 
+		transform: translateY(0)
 
 @keyframes dash
   from 
@@ -929,10 +985,7 @@ footer
 
 @media all and (max-width: 415px)
 	.fix-btn 
-		bottom: 20px
-		left: 20px
-		img 
-			+size(100px)
+		display: none
 	.landing
 		overflow: hidden
 		+flexCenter()
@@ -1074,12 +1127,36 @@ footer
 	section.event .event__section 
 		width: 90%
 		padding: 20px 5%
+		&::after 
+			left: -1%
 		img 
 			max-width: 70%
 			max-height: 70% 
+		img.event__calendar
+			&:nth-child(3n+1)
+				top: 170px
+				&.hidden
+					top: 450px
+					left: 20px
+					max-width: 50%
+					max-height: 50% 
+					display: block
+			&:nth-child(3n+2)
+				top: 220px
+			&:nth-child(3n)
+				max-width: 40%
+				max-height: 40% 
+				right: 10%
+				bottom: 30px
 		img.event__feature 
 			max-width: 40%
 			max-height: 40% 
+			&:nth-child(2n+1)
+				left: 5%
+				bottom: 30px
+			&:nth-child(2n)
+				right: 5%
+				bottom: 200px
 		p 
 			margin-top: 20px
 		h2 

@@ -1,3 +1,14 @@
+const prevScrollpos = window.pageYOffset;
+window.onscroll = () => {
+  let currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.querySeletor(".tab").style.top = "0";
+  } else {
+    document.querySeletor(".tab").style.top = "-50px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+
 // landing
 const landing = new TimelineMax()
 for(let i = 0; i < 10; i += 1) {

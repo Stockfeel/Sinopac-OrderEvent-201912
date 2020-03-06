@@ -33,7 +33,9 @@ html
     meta(itemprop="description" content="投資學習不再遙不可及！股感攜手永豐金證券，帶你從生活圈和能力圈出發，培養投資嗅覺，並結合AI與大數據，幫你輕鬆縮小範圍、篩選標的！讓生活本身，就是一場最美的投資！讓股感，即刻啟動你的生活投資！")
     meta(itemprop="image" content="./asset/og_image.png")
   body
-    a.fix-btn(href='https://www.sinotrade.com.tw/SpdOpenAct/Main/Apply01.aspx?strProd=0048&strWeb=0042' target='_blank')
+    a.fix-btn.gift(href='#event')
+      img(src='./asset/gift_btn.png')
+    a.fix-btn.apply(href='https://www.sinotrade.com.tw/SpdOpenAct/Main/Apply01.aspx?strProd=0048&strWeb=0042' target='_blank')
       img(src='./asset/fix_btn.png')
     section.landing
       .landing__logo
@@ -67,6 +69,11 @@ html
       .pure-bg
         for m in [1,2,3,4,5,6,7,8,9,10]
           .bgBall
+    nav.navbar 
+      .tab 
+        img(src="./asset/tab1.png")
+      .tab 
+        img(src="./asset/tab2.png")
     main
       section.industry#industry
         .title-bg 
@@ -274,7 +281,7 @@ html
             img(src='./asset/products/bar.png')
           .imgBox.mouse
             img(src='./asset/products/mouse.png')
-      section.event 
+      section.event#event
         .event__info
           p 即日起至三月底
           p 前 100 名於股感網站開戶成功者 
@@ -295,8 +302,16 @@ html
           img.event__calendar(src="./asset/calender1.png")
           img.event__calendar(src="./asset/calender2.png")
           img.event__calendar(src="./asset/calender3.png")
+          img.event__calendar.hidden(src="./asset/calender3.png")
           img.event__feature(src="./asset/left-circle.png") 
           img.event__feature(src="./asset/right-circle.png")
+        .event__next 
+          img(src="./asset/event_arrow.svg")
+        .btn
+          a(href='https://www.stockfeel.com.tw/industrychain/' target='_blank') 即刻體驗
+          .btn__next
+            img.default(src='./asset/btn_arrow.svg')
+            img.hover(src='./asset/btn_arrow_hover_orange.svg')
       section.sales#sales 
         h1 常見問與答
         .sales__question
