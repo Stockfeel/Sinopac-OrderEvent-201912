@@ -489,7 +489,19 @@ var industry = industryTime();
 var invest = investTime();
 var source = sourceTime();
 var products = productsTime();
+var node = document.querySelector("nav.navbar");
+var prevScrollpos = window.pageYOffset;
 $(window).scroll(function(evt) {
+  var currentScrollPos = window.pageYOffset;
+
+  if (prevScrollpos < currentScrollPos) {
+    node.classList.add('nav-hidden');
+  } else {
+    node.classList.remove('nav-hidden');
+  }
+
+  prevScrollpos = currentScrollPos;
+
   if ($(window).scrollTop() < $('#industry').offset().top && state !== 'landing') {
     state = 'landing';
   }

@@ -1,14 +1,3 @@
-const prevScrollpos = window.pageYOffset;
-window.onscroll = () => {
-  let currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    document.querySeletor(".tab").style.top = "0";
-  } else {
-    document.querySeletor(".tab").style.top = "-50px";
-  }
-  prevScrollpos = currentScrollPos;
-}
-
 // landing
 const landing = new TimelineMax()
 for(let i = 0; i < 10; i += 1) {
@@ -500,7 +489,17 @@ const invest = investTime();
 const source = sourceTime();
 const products = productsTime();
 
+const node = document.querySelector("nav.navbar");
+let prevScrollpos = window.pageYOffset;
 $(window).scroll(function(evt) {
+  let currentScrollPos = window.pageYOffset;
+    if (prevScrollpos < currentScrollPos) {
+      node.classList.add('nav-hidden');
+    } else {
+      node.classList.remove('nav-hidden');
+    }
+  prevScrollpos = currentScrollPos;
+
   if($(window).scrollTop() < $('#industry').offset().top && state !== 'landing') {
     state = 'landing';
   }

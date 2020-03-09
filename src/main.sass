@@ -4,22 +4,31 @@ $colors: $primary, $yellow, $blue, $orange
 $colors2: $yellow, $blue, $orange
 +initialize
 
+@keyframes up
+	from 
+		transform: translateY(0px)
+	to 
+		transform: translateY(-46px)
 
-nav 
+nav.navbar
 	width: 100% 
-	display: flex 
+	position: fixed
+	bottom: 0
+	display: none 
+	z-index: 10
 	justify-content: center
 	padding: 0
-	background: transparent
-	box-shadow: 0 -2 10px 10px rgba(0, 0, 0, .2)
+	&.nav-hidden 
+		transform: translateY(46px)
 	.tab
+		width: 50%
 		position: relative
 		&:nth-child(2n+1)::after, &:nth-child(2n)::after 
 			position: absolute
 			color: white 
 			font-size: 15px
 			right: 25%
-			top: 13px
+			top: 35px
 		&:nth-child(2n+1)::after
 			content: '開戶優惠'
 		&:nth-child(2n)::after 
@@ -29,15 +38,17 @@ nav
 			+size(65px, 46px)
 			position: absolute
 			left: 0
-			top: 0
+			top: 22px
 			background-image: url('./asset/gift.png') 
 		&:nth-child(2n)::before 
 			content: ''
 			+size(65px, 46px)
 			position: absolute
 			left: 0
-			top: 0
-			background-image: url('./asset/acc.png') 
+			top: 22px
+			background-image: url('./asset/acc.png')
+		img 
+			width: 100%
 	& > * 
 		display: inline-block
 
@@ -984,6 +995,8 @@ footer
 			height: 40px
 
 @media all and (max-width: 415px)
+	nav.navbar 
+		display: flex
 	.fix-btn 
 		display: none
 	.landing
@@ -1170,4 +1183,3 @@ footer
 				right: 30px 
 				top: -30px 
 				+size(50px)
-
