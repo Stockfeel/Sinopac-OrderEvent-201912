@@ -19,7 +19,7 @@ nav.navbar
 	justify-content: center
 	padding: 0
 	&.nav-hidden 
-		transform: translateY(46px)
+		transform: translateY(60px)
 	.tab
 		width: 50%
 		position: relative
@@ -28,7 +28,8 @@ nav.navbar
 			color: white 
 			font-size: 15px
 			right: 25%
-			top: 35px
+			top: 65%
+			transform: translateY(-50%)
 		&:nth-child(2n+1)::after
 			content: '開戶優惠'
 		&:nth-child(2n)::after 
@@ -38,14 +39,16 @@ nav.navbar
 			+size(65px, 46px)
 			position: absolute
 			left: 15px
-			top: 22px
+			top: 65%
+			transform: translateY(-50%)
 			background-image: url('./asset/gift.png') 
 		&:nth-child(2n)::before 
 			content: ''
 			+size(65px, 46px)
 			position: absolute
 			left: 15px
-			top: 22px
+			top: 65%
+			transform: translateY(-50%)
 			background-image: url('./asset/acc.png')
 		img 
 			width: 100%
@@ -68,7 +71,7 @@ nav.navbar
 	&.apply::after 
 		content: '我要開戶'
 	&.gift
-		bottom: 16%
+		bottom: 20%
 		&::after 
 			content: '開戶優惠'
 
@@ -615,7 +618,7 @@ section.event
 		width: 40%
 		margin: 50px auto 20px auto
 		border-bottom: 1px solid $orange
-		padding: 20px 6%
+		padding: 20px 4%
 		h2 
 			color: $orange 
 			font-size: 64px
@@ -872,6 +875,9 @@ footer
   	+size(205px, 48px)
   	margin-top: -5px
 
+@media all and (max-width: 1367px)
+	section.event .event__section
+		width: 70%
 
 // RWD pad 
 @media all and (max-width:1025px)
