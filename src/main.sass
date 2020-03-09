@@ -57,22 +57,25 @@ nav.navbar
 
 .fix-btn
 	position: fixed
+	display: flex
+	flex-direction: column
 	bottom: 50px
 	right: 100px
 	z-index: 10
 	img 
 		cursor: pointer
-	&::after 
-		font-size: 17px 
-		color: white 
-		position: absolute
-		bottom: 4%
-		left: 10px
-	&.apply::after 
-		content: '我要開戶'
-	&.gift
-		bottom: 20%
+	a 
+		margin: 10px
+		position: relative
 		&::after 
+			font-size: 17px 
+			color: white 
+			position: absolute
+			bottom: 4%
+			left: 10px
+		&.apply::after 
+			content: '我要開戶'
+		&.gift::after 
 			content: '開戶優惠'
 
 // landing
@@ -651,7 +654,7 @@ section.event
 		&::after 
 			content: ''
 			position: absolute 
-			left: -13%
+			left: -20%
 			top: -20px
 			width: 165px 
 			height: 60px
@@ -875,9 +878,12 @@ footer
   	+size(205px, 48px)
   	margin-top: -5px
 
-@media all and (max-width: 1367px)
+@media all and (max-width: 1441px)
 	section.event .event__section
-		width: 70%
+		width: 55%
+	.event__section::after 
+		left: -13%
+
 
 // RWD pad 
 @media all and (max-width:1025px)

@@ -33,10 +33,11 @@ html
     meta(itemprop="description" content="投資學習不再遙不可及！股感攜手永豐金證券，帶你從生活圈和能力圈出發，培養投資嗅覺，並結合AI與大數據，幫你輕鬆縮小範圍、篩選標的！讓生活本身，就是一場最美的投資！讓股感，即刻啟動你的生活投資！")
     meta(itemprop="image" content="./asset/og_image.png")
   body
-    a.fix-btn.gift(href='#event')
-      img(src='./asset/gift_btn.png')
-    a.fix-btn.apply(href='https://www.sinotrade.com.tw/SpdOpenAct/Main/Apply01.aspx?strProd=0048&strWeb=0042' target='_blank')
-      img(src='./asset/fix_btn.png')
+    .fix-btn
+      a.gift(href='#event')
+        img(src='./asset/gift_btn.png')
+      a.apply(href='https://www.sinotrade.com.tw/SpdOpenAct/Main/Apply01.aspx?strProd=0048&strWeb=0042' target='_blank')
+        img(src='./asset/fix_btn.png')
     section.landing
       .landing__logo
         a(href='https://www.stockfeel.com.tw/' target='_blank')
