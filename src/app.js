@@ -551,3 +551,7 @@ function randomBetween(min,max){
   return Math.floor(Math.random()*(max-min+1)+min);
 }
 
+// prevent mobile browser bounce
+document.addEventListener("touchmove", (evt) => {
+    evt.preventDefault();
+});
