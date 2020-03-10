@@ -41,6 +41,7 @@ nav.navbar
 			left: 15px
 			top: 65%
 			transform: translateY(-50%)
+			background-size: cover 
 			background-image: url('./asset/gift.png') 
 		&:nth-child(2n)::before 
 			content: ''
@@ -49,6 +50,7 @@ nav.navbar
 			left: 15px
 			top: 65%
 			transform: translateY(-50%)
+			background-size: cover 
 			background-image: url('./asset/acc.png')
 		img 
 			width: 100%
@@ -1001,6 +1003,8 @@ footer
 			max-height: 70% 
 
 @media all and (max-width: 769px)
+	.industry, .invest, .sources, .products
+		height: 650px
 	section.event .event__section 
 		&::after 
 			width: 113px 
