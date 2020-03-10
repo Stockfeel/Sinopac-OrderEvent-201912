@@ -494,8 +494,12 @@ var prevScrollpos = window.pageYOffset;
 $(window).scroll(function(evt) {
   var currentScrollPos = window.pageYOffset;
 
-  if (prevScrollpos < currentScrollPos) {
-    node.classList.add('nav-hidden');
+  if (currentScrollPos > 20) {
+    if (prevScrollpos < currentScrollPos) {
+      node.classList.add('nav-hidden');
+    } else {
+      node.classList.remove('nav-hidden');
+    }
   } else {
     node.classList.remove('nav-hidden');
   }
@@ -557,9 +561,4 @@ document.querySelector('.sales__question').addEventListener('click', function(ev
 
 function randomBetween(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
-} // prevent mobile browser bounce
-
-
-document.addEventListener("touchmove", function(evt) {
-  evt.preventDefault();
-});
+}

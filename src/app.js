@@ -493,11 +493,16 @@ const node = document.querySelector("nav.navbar");
 let prevScrollpos = window.pageYOffset;
 $(window).scroll(function(evt) {
   let currentScrollPos = window.pageYOffset;
+  if(currentScrollPos > 20) {
     if (prevScrollpos < currentScrollPos) {
       node.classList.add('nav-hidden');
     } else {
       node.classList.remove('nav-hidden');
     }
+  } else {
+    node.classList.remove('nav-hidden');
+  }
+
   prevScrollpos = currentScrollPos;
 
   if($(window).scrollTop() < $('#industry').offset().top && state !== 'landing') {
@@ -550,8 +555,3 @@ document.querySelector('.sales__question').addEventListener('click', (evt) => {
 function randomBetween(min,max){
   return Math.floor(Math.random()*(max-min+1)+min);
 }
-
-// prevent mobile browser bounce
-document.addEventListener("touchmove", (evt) => {
-    evt.preventDefault();
-});
