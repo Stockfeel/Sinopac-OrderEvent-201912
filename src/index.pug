@@ -57,7 +57,7 @@ html
       .landing__info
         p 股感攜手永豐金證券，秉持著落實普惠金融、致力打造知識金融場域的理念，帶你從自身的#[span.highlight 生活能力圈出發、培養投資嗅覺]，啟動你的生活投資！
       .btn
-        a(href='https://www.stockfeel.com.tw/industrychain/' target='_blank') 即刻體驗
+        a(href='#event') 立刻查看優惠
         .btn__next
           img.default(src='./asset/btn_arrow.svg')
           img.hover(src='./asset/btn_arrow_hover.svg')
@@ -266,30 +266,19 @@ html
             img(src='./asset/products/mouse.png')
       section.event#event
         .event__info
-          p 即日起至三月底
           p 前 100 名於股感網站開戶成功者 
-        h1 獨家 2 大優惠立即享
+        h1 立即享三大好康
         .event__section
-          p 開戶成功即 
-            span 贈  
-          h2 Line Points 1,118 
-            span 點
-          p *開戶成功將由永豐金提供點數下載連結給您
-          img.event__point(src="./asset/p-1.svg")
-          img.event__point(src="./asset/p-1.svg")
+          span.heading_no 1.
+          span.heading 開戶享活儲利率1.1%
         .event__section
-          p 開戶成功即 
-            span 贈
-          h2 股感股市插畫桌曆
-          p *開戶成功將由永豐寄送
-          img.event__calendar(src="./asset/calender1.png")
-          img.event__calendar(src="./asset/calender2.png")
-          img.event__calendar(src="./asset/calender3.png")
-          img.event__calendar.hidden(src="./asset/calender3.png")
-          img.event__feature(src="./asset/left-circle.png") 
-          img.event__feature(src="./asset/right-circle.png")
+          span.heading_no 2.
+          span.heading 存股享手續費超優惠
+        .event__section
+          span.heading_no 3.
+          span.heading 台股、複委託手續費優惠
         .event__next 
-          img(src="./asset/event_arrow.svg")
+          img(src="./asset/event_arrow.svg")  
         .btn
           a(href='https://www.stockfeel.com.tw/industrychain/' target='_blank') 即刻體驗
           .btn__next
@@ -358,18 +347,21 @@ html
     footer
       .footer__upper
         table 
-          tr 
+          tr
+            td 
+              img(src='./asset/logo1.svg')
             td 
               img(src='./asset/logo2.png')
+          tr
+            td 
+              p 股感生活金融科技股份有限公司｜
+                a(href='https://reurl.cc/N6mA05' target='_blank') 客服信箱
+              p 台北市松山區民生東路三段135號3樓
             td 
               p 永豐金證券股份有限公司 #[span 台北市重慶南路一段2號7、18、20樓]
               p 0800-038-123 #[span 02-6630-8899] #[span (台股營業日7:30 a.m.-10:00 p.m.)]
               p 107年金管證總字第0006號
-          tr 
-            td 
-              img(src='./asset/logo1.svg')
-            td 
-              p 股感生活 #[span 投資有股感，成為你的投資方向感]
-              p 台北市松山區民生東路三段135號3樓
+
+
       .footer__right © Stockfeel. All rights reserved
   script(src='./app.js')

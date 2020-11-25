@@ -615,15 +615,15 @@ section.event
 		color: $orange 
 		text-align: center
 		font-size: 75px
-		margin: 0
+		margin: 0 0 20px 0
 	.event__section 
 		box-sizing: border-box 
 		position: relative
 		background: white
-		width: 40%
-		margin: 50px auto 20px auto
+		width: 42%
+		margin: 5px auto
 		border-bottom: 1px solid $orange
-		padding: 20px 4%
+		padding: 20px 1%
 		h2 
 			color: $orange 
 			font-size: 64px
@@ -653,6 +653,18 @@ section.event
 				padding: 5px 
 				border-radius: 16px		
 				margin-top: -5px	
+		span
+			&.heading
+				font-size: 56px
+				font-weight: bold
+				color: #ffa225
+			&.heading_no
+				font-size: 56px
+				font-weight: bold
+				font-style: italic
+				color: #999
+
+
 		&::after 
 			content: ''
 			position: absolute 
@@ -697,17 +709,6 @@ section.event
 				bottom: 100px
 	.event__next
 		animation: waving 1s infinite
-
-section.event .event__section
-	&:nth-child(2n+1)
-		&::after 
-			background-image: url("./asset/dis-count-bubble-1.svg")
-	&:nth-child(2n)
-		height: 777px
-		h2 
-			font-size: 35px
-		&::after 
-			background-image: url("./asset/dis-count-bubble-2.svg")
 
 @keyframes waving 
 	0%
@@ -859,12 +860,11 @@ footer
   	padding: 30px 0
   	flex-direction: column
   	td 
-  		padding-top: 33px
+  		padding: 20px 20px 0 20px
   		vertical-align: top
   	& p 
 	  	color: white 
 	  	margin: 0px
-	  	margin-left: 20px
 	  	font-size: 14px
 	  	line-height: 1.47
 	  	span:first-child
@@ -881,8 +881,6 @@ footer
   	margin-top: -5px
 
 @media all and (max-width: 1441px)
-	section.event .event__section
-		width: 55%
 	.event__section::after 
 		left: -13%
 
@@ -986,10 +984,8 @@ footer
 			+size(#{50+random(50))+'px'})		
 	
 	section.event .event__section 
-		width: 70%
+		width: 75%
 		padding: 20px 50px 20px 100px
-		h2 
-			font-size: 56px
 		.event__point 
 			&:nth-child(2n+1)
 				left: 10px
