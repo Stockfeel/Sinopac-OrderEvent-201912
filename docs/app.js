@@ -129,12 +129,10 @@ var titleFade = {
   x: 0,
   opacity: 1,
   ease: Circ.easeInOut
-}; // Menu
-// document.querySelector('.menu').addEventListener('mouseout', (evt) => {
-//   if(evt.target.classList.contains('btn-small')) {
-//     evt.target.parentNode.classList.add('hidden')
-//   }
-// })
+};
+$("#event_intro_open").click(function() {
+  $(".event_introduction").slideToggle("slow");
+});
 
 function industryTime() {
   var industry = new TimelineMax({

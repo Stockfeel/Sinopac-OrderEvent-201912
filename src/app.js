@@ -74,12 +74,9 @@ const titleFade = {
 }
 
 
-// Menu
-// document.querySelector('.menu').addEventListener('mouseout', (evt) => {
-//   if(evt.target.classList.contains('btn-small')) {
-//     evt.target.parentNode.classList.add('hidden')
-//   }
-// })
+$(`#event_intro_open`).click(function(){
+  $(`.event_introduction`).slideToggle(`slow`);
+})
 
 
 function industryTime() {

@@ -600,6 +600,19 @@ section.event
 	display: flex 
 	flex-direction: column
 	align-items: center
+	#event_intro_open
+		margin: 20px 0
+		color: #4d4d4d
+	.event_introduction
+		display: none
+		ul.event__list
+			margin: 0 auto
+			list-style: decimal
+			width: 60%
+		p.event__list__title
+			margin: 0 auto
+			text-align: left
+			width: 60%
 	.btn 
 		background: $orange
 		margin-bottom: 60px
@@ -620,7 +633,7 @@ section.event
 		box-sizing: border-box 
 		position: relative
 		background: white
-		width: 42%
+		width: 60%
 		margin: 5px auto
 		border-bottom: 1px solid $orange
 		padding: 20px 1%
@@ -984,8 +997,7 @@ footer
 			+size(#{50+random(50))+'px'})		
 	
 	section.event .event__section 
-		width: 75%
-		padding: 20px 50px 20px 100px
+		width: 90%
 		.event__point 
 			&:nth-child(2n+1)
 				left: 10px
@@ -1001,10 +1013,26 @@ footer
 @media all and (max-width: 769px)
 	.industry, .invest, .sources, .products
 		height: 650px
+	section.event
+		.event_introduction
+			ul.event__list
+				width: 90%
+			p.event__list__title
+				width: 90%
 	section.event .event__section 
 		&::after 
 			width: 113px 
 			height: 40px
+		span
+			&.heading
+				font-size: 25px
+				font-weight: bold
+				color: #ffa225
+			&.heading_no
+				font-size: 25px
+				font-weight: bold
+				font-style: italic
+				color: #999
 
 @media all and (max-width: 415px)
 	nav.navbar 
