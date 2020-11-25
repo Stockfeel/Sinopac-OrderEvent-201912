@@ -6,11 +6,9 @@ html
     link(href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,700&display=swap" rel="stylesheet")
     link(rel='stylesheet' type='text/css' href='./font.css')      
     link(rel='stylesheet' type='text/css' href='./main.css')  
-    link(rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css")
     link(rel='shortcut icon' type='image/x-icon' href='favicon.ico')
     script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.4/gsap.min.js")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js")
-    script(src="https://unpkg.com/swiper/js/swiper.min.js")
     script(src="https://d3js.org/d3.v5.min.js")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     meta(charset="UTF-8")
@@ -109,22 +107,6 @@ html
             img(src='./asset/industry/front.png')
           .imgBox.wifi
             img(src='./asset/industry/wifi.png')
-      .menu.swiper-container#menu
-        .swiper-wrapper
-          for m in [1,2,3,4,5,6,7,8,9,10,11,12]
-            .menu__item.swiper-slide(data-name= arr[m-1].id)
-              p.slide__title= arr[m-1].name
-              .imgBox
-                img.land(src='./asset/land.png')
-                img.object(src='./asset/ball/'+m+'.png')
-              .menu__hoverBox.hidden
-                svg.lstroke(width="23" height="60" viewBox="0 0 23 60")
-                  path(fill="none" fill-rule="evenodd" stroke="#4BB5B1" d="M1.5 59.959V24.124L22.07.898")
-                svg.rstroke(width="36" height="73" viewBox="0 0 36 73")
-                  path(fill="none" fill-rule="evenodd" stroke="#4BB5B1" d="M35.048 0v38.488L1.204 72.332")
-                .rtBox
-                .lbBox
-                a.btn-small(href='#' target='_blank') 了解產業
       section.invest#invest
         .title-bg
           img(src='./asset/invest/title.png')
