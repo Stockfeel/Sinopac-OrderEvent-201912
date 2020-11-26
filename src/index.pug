@@ -83,211 +83,215 @@ html
         img(src="./asset/tab2.png")
     main
       section.industry#industry
-        .title-bg 
-          img(src='./asset/industry/title.png')
-        .info
-          .title 從生活圈出發啟動生活投資
-          .intro #[span.highlight 在股感開啟你的商業視野]，認識產業主題包，讓生活串連投資零時差！
-        .canvas
-          .imgBox.land
-            img(src='./asset/industry/land.png')
-          .imgBox.bus
-            img(src='./asset/industry/bus.png')
-          .imgBox.machine
-            img(src='./asset/industry/machine.png')
-          .imgBox.building
-            img(src='./asset/industry/building.png')
-          .imgBox.airplane
-            img(src='./asset/industry/airplane.png')
-          .imgBox.chart1
-            img(src='./asset/industry/chart1.png')
-          .imgBox.chart2
-            img(src='./asset/industry/chart2.png')
-          .imgBox.chart3
-            img(src='./asset/industry/chart3.png')
-          .imgBox.coin1
-            img(src='./asset/industry/coin1.png')
-          .imgBox.coin2
-            img(src='./asset/industry/coin2.png')
-          .imgBox.coin3
-            img(src='./asset/industry/coin3.png')
-          .imgBox.front
-            img(src='./asset/industry/front.png')
-          .imgBox.wifi
-            img(src='./asset/industry/wifi.png')
-      .menu.swiper-container#menu
-        .swiper-wrapper
-          for m in [1,2,3,4,5,6,7,8,9,10,11,12]
-            .menu__item.swiper-slide(data-name= arr[m-1].id)
-              p.slide__title= arr[m-1].name
-              .imgBox
-                img.land(src='./asset/land.png')
-                img.object(src='./asset/ball/'+m+'.png')
-              .menu__hoverBox.hidden
-                svg.lstroke(width="23" height="60" viewBox="0 0 23 60")
-                  path(fill="none" fill-rule="evenodd" stroke="#4BB5B1" d="M1.5 59.959V24.124L22.07.898")
-                svg.rstroke(width="36" height="73" viewBox="0 0 36 73")
-                  path(fill="none" fill-rule="evenodd" stroke="#4BB5B1" d="M35.048 0v38.488L1.204 72.332")
-                .rtBox #{arr[m-1].desc}
-                //- .lbBox
-                a.btn-small(href='https://www.stockfeel.com.tw/industrychain/?class='+arr[m-1].slug+'' target='_blank') 了解產業
+        section.container
+          .title-bg 
+            img(src='./asset/industry/title.png')
+          .info
+            .title 從生活圈出發啟動生活投資
+            .intro #[span.highlight 在股感開啟你的商業視野]，認識產業主題包，讓生活串連投資零時差！
+          .canvas
+            .imgBox.land
+              img(src='./asset/industry/land.png')
+            .imgBox.bus
+              img(src='./asset/industry/bus.png')
+            .imgBox.machine
+              img(src='./asset/industry/machine.png')
+            .imgBox.building
+              img(src='./asset/industry/building.png')
+            .imgBox.airplane
+              img(src='./asset/industry/airplane.png')
+            .imgBox.chart1
+              img(src='./asset/industry/chart1.png')
+            .imgBox.chart2
+              img(src='./asset/industry/chart2.png')
+            .imgBox.chart3
+              img(src='./asset/industry/chart3.png')
+            .imgBox.coin1
+              img(src='./asset/industry/coin1.png')
+            .imgBox.coin2
+              img(src='./asset/industry/coin2.png')
+            .imgBox.coin3
+              img(src='./asset/industry/coin3.png')
+            .imgBox.front
+              img(src='./asset/industry/front.png')
+            .imgBox.wifi
+              img(src='./asset/industry/wifi.png')
+        .menu.swiper-container#menu
+          .swiper-wrapper
+            for m in [1,2,3,4,5,6,7,8,9,10,11,12]
+              .menu__item.swiper-slide(data-name= arr[m-1].id)
+                p.slide__title= arr[m-1].name
+                .imgBox
+                  img.land(src='./asset/land.png')
+                  img.object(src='./asset/ball/'+m+'.png')
+                .menu__hoverBox.hidden
+                  svg.lstroke(width="23" height="60" viewBox="0 0 23 60")
+                    path(fill="none" fill-rule="evenodd" stroke="#4BB5B1" d="M1.5 59.959V24.124L22.07.898")
+                  svg.rstroke(width="36" height="73" viewBox="0 0 36 73")
+                    path(fill="none" fill-rule="evenodd" stroke="#4BB5B1" d="M35.048 0v38.488L1.204 72.332")
+                  .rtBox #{arr[m-1].desc}
+                  //- .lbBox
+                  a.btn-small(href='https://www.stockfeel.com.tw/industrychain/?class='+arr[m-1].slug+'' target='_blank') 了解產業
       section.invest#invest
-        .title-bg
-          img(src='./asset/invest/title.png')
-        .info.right-align
-          .title 
-            div 精選主題投資
-            div 輕鬆縮小投資範圍
-          .intro
-            p #[span.highlight 精選主題投組與指標投組]，
-            p 為你輕鬆篩選標的，
-            p 省時省力不燒腦！
-          .btn
-            a(href='https://www.stockfeel.com.tw/category/stock-concept/' target='_blank') 即刻體驗
-            .btn__next
-              img.default(src='./asset/btn_arrow.svg')
-              img.hover(src='./asset/btn_arrow_hover.svg')
-        .canvas
-          .imgBox.land
-            img(src='./asset/invest/land.png')
-          .imgBox.wall
-            img(src='./asset/invest/wall.png')
-          .imgBox.boxc1
-            img(src='./asset/invest/boxc1.png')
-          .imgBox.boxl3
-            img(src='./asset/invest/boxl3.png')
-          .imgBox.boxl2
-            img(src='./asset/invest/boxl2.png')
-          .imgBox.boxl1
-            img(src='./asset/invest/boxl1.png')
-          .imgBox.boxr2
-            img(src='./asset/invest/boxr2.png')
-          .imgBox.boxr1
-            img(src='./asset/invest/boxr1.png')
-          .imgBox.plant
-            img(src='./asset/invest/plant.png')
-          .imgBox.circle1
-            img(src='./asset/invest/circle1.png')
-          .imgBox.circle2
-            img(src='./asset/invest/circle2.png')
-          .imgBox.circle3
-            img(src='./asset/invest/circle3.png')
-          .imgBox.coin1
-            img(src='./asset/invest/coin1.png')
-          .imgBox.coin2
-            img(src='./asset/invest/coin2.png')
-          .imgBox.coin3
-            img(src='./asset/invest/coin3.png')
-          .imgBox.cancel
-            img(src='./asset/invest/cancel.png')
-          .imgBox.check
-            img(src='./asset/invest/check.png')
-          .imgBox.other
-            img(src='./asset/invest/other.png')
-          .imgBox.time
-            img(src='./asset/invest/time.png')
-          .imgBox.front
-            img(src='./asset/invest/front.png')
+        section.container
+          .title-bg
+            img(src='./asset/invest/title.png')
+          .info.right-align
+            .title 
+              div 精選主題投資
+              div 輕鬆縮小投資範圍
+            .intro
+              p #[span.highlight 精選主題投組與指標投組]，
+              p 為你輕鬆篩選標的，
+              p 省時省力不燒腦！
+            .btn
+              a(href='https://www.stockfeel.com.tw/category/stock-concept/' target='_blank') 即刻體驗
+              .btn__next
+                img.default(src='./asset/btn_arrow.svg')
+                img.hover(src='./asset/btn_arrow_hover.svg')
+          .canvas
+            .imgBox.land
+              img(src='./asset/invest/land.png')
+            .imgBox.wall
+              img(src='./asset/invest/wall.png')
+            .imgBox.boxc1
+              img(src='./asset/invest/boxc1.png')
+            .imgBox.boxl3
+              img(src='./asset/invest/boxl3.png')
+            .imgBox.boxl2
+              img(src='./asset/invest/boxl2.png')
+            .imgBox.boxl1
+              img(src='./asset/invest/boxl1.png')
+            .imgBox.boxr2
+              img(src='./asset/invest/boxr2.png')
+            .imgBox.boxr1
+              img(src='./asset/invest/boxr1.png')
+            .imgBox.plant
+              img(src='./asset/invest/plant.png')
+            .imgBox.circle1
+              img(src='./asset/invest/circle1.png')
+            .imgBox.circle2
+              img(src='./asset/invest/circle2.png')
+            .imgBox.circle3
+              img(src='./asset/invest/circle3.png')
+            .imgBox.coin1
+              img(src='./asset/invest/coin1.png')
+            .imgBox.coin2
+              img(src='./asset/invest/coin2.png')
+            .imgBox.coin3
+              img(src='./asset/invest/coin3.png')
+            .imgBox.cancel
+              img(src='./asset/invest/cancel.png')
+            .imgBox.check
+              img(src='./asset/invest/check.png')
+            .imgBox.other
+              img(src='./asset/invest/other.png')
+            .imgBox.time
+              img(src='./asset/invest/time.png')
+            .imgBox.front
+              img(src='./asset/invest/front.png')
       section.sources#sources
-        .title-bg
-          img(src='./asset/sources/title.png')
-        .info
-          .title 學習大師投資奠定成功基石
-          .intro #[span.highlight 股感擁有豐富金融知識庫]，輕鬆學習大師的價值價量投資學，練就投資真功夫！
-          .btn
-            a(href='https://www.stockfeel.com.tw/category/investment-expert/' target='_blank') 探索大師心法
-            .btn__next
-              img.default(src='./asset/btn_arrow.svg')
-              img.hover(src='./asset/btn_arrow_hover.svg')
-        .canvas
-          .imgBox.land
-            img(src='./asset/sources/land.png')
-          .imgBox.mountain
-            img(src='./asset/sources/mountain.png')
-          .imgBox.book
-            img(src='./asset/sources/book.png')
-          .imgBox.bSquare
-            img(src='./asset/sources/bSquare.png')
-          .imgBox.gSquare
-            img(src='./asset/sources/gSquare.png')
-          .imgBox.bar
-            img(src='./asset/sources/bar.png')
-          .imgBox.boxl2
-            img(src='./asset/sources/boxl2.png')
-          .imgBox.boxl1
-            img(src='./asset/sources/boxl1.png')
-          .imgBox.boxr2
-            img(src='./asset/sources/boxr2.png')
-          .imgBox.boxr1
-            img(src='./asset/sources/boxr1.png')
-          .imgBox.chart1
-            img(src='./asset/sources/chart1.png')
-          .imgBox.chart2
-            img(src='./asset/sources/chart2.png')
-          .imgBox.house
-            img(src='./asset/sources/house.png')
-          .imgBox.img2
-            img(src='./asset/sources/img2.png')
-          .imgBox.img1
-            img(src='./asset/sources/img1.png')
-          .imgBox.line
-            img(src='./asset/sources/line.png')
-          .imgBox.pen
-            img(src='./asset/sources/pen.png')
-          .imgBox.tree1
-            img(src='./asset/sources/tree1.png')
-          .imgBox.tree2
-            img(src='./asset/sources/tree2.png')
-          .imgBox.front
-            img(src='./asset/sources/front.png')
-          .imgBox.ySquareS
-            img(src='./asset/sources/ySquareS.png')
-          .imgBox.bSquareS
-            img(src='./asset/sources/bSquareS.png')
-          .imgBox.video
-            img(src='./asset/sources/video.png')
-          .imgBox.pie
-            img(src='./asset/sources/pie.png')
+        section.container
+          .title-bg
+            img(src='./asset/sources/title.png')
+          .info
+            .title 學習大師投資奠定成功基石
+            .intro #[span.highlight 股感擁有豐富金融知識庫]，輕鬆學習大師的價值價量投資學，練就投資真功夫！
+            .btn
+              a(href='https://www.stockfeel.com.tw/category/investment-expert/' target='_blank') 探索大師心法
+              .btn__next
+                img.default(src='./asset/btn_arrow.svg')
+                img.hover(src='./asset/btn_arrow_hover.svg')
+          .canvas
+            .imgBox.land
+              img(src='./asset/sources/land.png')
+            .imgBox.mountain
+              img(src='./asset/sources/mountain.png')
+            .imgBox.book
+              img(src='./asset/sources/book.png')
+            .imgBox.bSquare
+              img(src='./asset/sources/bSquare.png')
+            .imgBox.gSquare
+              img(src='./asset/sources/gSquare.png')
+            .imgBox.bar
+              img(src='./asset/sources/bar.png')
+            .imgBox.boxl2
+              img(src='./asset/sources/boxl2.png')
+            .imgBox.boxl1
+              img(src='./asset/sources/boxl1.png')
+            .imgBox.boxr2
+              img(src='./asset/sources/boxr2.png')
+            .imgBox.boxr1
+              img(src='./asset/sources/boxr1.png')
+            .imgBox.chart1
+              img(src='./asset/sources/chart1.png')
+            .imgBox.chart2
+              img(src='./asset/sources/chart2.png')
+            .imgBox.house
+              img(src='./asset/sources/house.png')
+            .imgBox.img2
+              img(src='./asset/sources/img2.png')
+            .imgBox.img1
+              img(src='./asset/sources/img1.png')
+            .imgBox.line
+              img(src='./asset/sources/line.png')
+            .imgBox.pen
+              img(src='./asset/sources/pen.png')
+            .imgBox.tree1
+              img(src='./asset/sources/tree1.png')
+            .imgBox.tree2
+              img(src='./asset/sources/tree2.png')
+            .imgBox.front
+              img(src='./asset/sources/front.png')
+            .imgBox.ySquareS
+              img(src='./asset/sources/ySquareS.png')
+            .imgBox.bSquareS
+              img(src='./asset/sources/bSquareS.png')
+            .imgBox.video
+              img(src='./asset/sources/video.png')
+            .imgBox.pie
+              img(src='./asset/sources/pie.png')
       section.products#products
-        .title-bg
-          img(src='./asset/products/title.png')
-        .info.right-align
-          .title 囊括海內外金融商品即刻啟動生活投資
-          .intro 股感囊括眾多海內外金融標的，不只#[span.highlight 美股台股更有豐富ETF可選擇]，串連知識學習和投資下單零時差！
-          .btn
-            a(href='https://www.stockfeel.com.tw/category/stock-concept/' target='_blank') 即刻體驗
-            .btn__next
-              img.default(src='./asset/btn_arrow.svg')
-              img.hover(src='./asset/btn_arrow_hover.svg')
-        .canvas
-          .imgBox.land
-            img(src='./asset/products/land.png')
-          .imgBox.arrow
-            img(src='./asset/products/arrow.png')
-          .imgBox.bbox
-            img(src='./asset/products/bbox.png')
-          .imgBox.bbox2
-            img(src='./asset/products/bbox2.png')
-          .imgBox.pie
-            img(src='./asset/products/pie.png')
-          .imgBox.charttw
-            img(src='./asset/products/charttw.png')
-          .imgBox.chartus
-            img(src='./asset/products/chartus.png')
-          .imgBox.coin
-            img(src='./asset/products/coin.png')
-          .imgBox.focuslb
-            img(src='./asset/products/focuslb.png')
-          .imgBox.focusrt
-            img(src='./asset/products/focusrt.png')
-          .imgBox.ybox
-            img(src='./asset/products/ybox.png')
-          .imgBox.chartc
-            img(src='./asset/products/chartc.png')
-          .imgBox.bar
-            img(src='./asset/products/bar.png')
-          .imgBox.mouse
-            img(src='./asset/products/mouse.png')
+        section.container
+          .title-bg
+            img(src='./asset/products/title.png')
+          .info.right-align
+            .title 囊括海內外金融商品即刻啟動生活投資
+            .intro 股感囊括眾多海內外金融標的，不只#[span.highlight 美股台股更有豐富ETF可選擇]，串連知識學習和投資下單零時差！
+            .btn
+              a(href='https://www.stockfeel.com.tw/category/stock-concept/' target='_blank') 即刻體驗
+              .btn__next
+                img.default(src='./asset/btn_arrow.svg')
+                img.hover(src='./asset/btn_arrow_hover.svg')
+          .canvas
+            .imgBox.land
+              img(src='./asset/products/land.png')
+            .imgBox.arrow
+              img(src='./asset/products/arrow.png')
+            .imgBox.bbox
+              img(src='./asset/products/bbox.png')
+            .imgBox.bbox2
+              img(src='./asset/products/bbox2.png')
+            .imgBox.pie
+              img(src='./asset/products/pie.png')
+            .imgBox.charttw
+              img(src='./asset/products/charttw.png')
+            .imgBox.chartus
+              img(src='./asset/products/chartus.png')
+            .imgBox.coin
+              img(src='./asset/products/coin.png')
+            .imgBox.focuslb
+              img(src='./asset/products/focuslb.png')
+            .imgBox.focusrt
+              img(src='./asset/products/focusrt.png')
+            .imgBox.ybox
+              img(src='./asset/products/ybox.png')
+            .imgBox.chartc
+              img(src='./asset/products/chartc.png')
+            .imgBox.bar
+              img(src='./asset/products/bar.png')
+            .imgBox.mouse
+              img(src='./asset/products/mouse.png')
       section.event#event
         .event__info
           p 前 100 名於股感網站開戶成功者 
