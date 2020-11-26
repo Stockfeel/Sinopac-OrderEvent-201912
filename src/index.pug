@@ -116,22 +116,22 @@ html
               img(src='./asset/industry/front.png')
             .imgBox.wifi
               img(src='./asset/industry/wifi.png')
-        .menu.swiper-container#menu
-          .swiper-wrapper
-            for m in [1,2,3,4,5,6,7,8,9,10,11,12]
-              .menu__item.swiper-slide(data-name= arr[m-1].id)
-                p.slide__title= arr[m-1].name
-                .imgBox
-                  img.land(src='./asset/land.png')
-                  img.object(src='./asset/ball/'+m+'.png')
-                .menu__hoverBox.hidden
-                  svg.lstroke(width="23" height="60" viewBox="0 0 23 60")
-                    path(fill="none" fill-rule="evenodd" stroke="#4BB5B1" d="M1.5 59.959V24.124L22.07.898")
-                  svg.rstroke(width="36" height="73" viewBox="0 0 36 73")
-                    path(fill="none" fill-rule="evenodd" stroke="#4BB5B1" d="M35.048 0v38.488L1.204 72.332")
-                  .rtBox #{arr[m-1].desc}
-                  //- .lbBox
-                  a.btn-small(href='https://www.stockfeel.com.tw/industrychain/?class='+arr[m-1].slug+'' target='_blank') 了解產業
+      .menu.swiper-container#menu
+        .swiper-wrapper
+          for m in [1,2,3,4,5,6,7,8,9,10,11,12]
+            .menu__item.swiper-slide(data-name= arr[m-1].id)
+              p.slide__title= arr[m-1].name
+              .imgBox
+                img.land(src='./asset/land.png')
+                img.object(src='./asset/ball/'+m+'.png')
+              .menu__hoverBox.hidden
+                svg.lstroke(width="23" height="60" viewBox="0 0 23 60")
+                  path(fill="none" fill-rule="evenodd" stroke="#4BB5B1" d="M1.5 59.959V24.124L22.07.898")
+                svg.rstroke(width="36" height="73" viewBox="0 0 36 73")
+                  path(fill="none" fill-rule="evenodd" stroke="#4BB5B1" d="M35.048 0v38.488L1.204 72.332")
+                .rtBox #{arr[m-1].desc}
+                //- .lbBox
+                a.btn-small(href='https://www.stockfeel.com.tw/industrychain/?class='+arr[m-1].slug+'' target='_blank') 了解產業
       section.invest#invest
         section.container
           .title-bg
