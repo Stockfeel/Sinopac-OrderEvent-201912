@@ -1,14 +1,16 @@
 -var n = 0;
 -var m = 0;
--var arr=[{id: 1, name: '食品加工'}, {id: 12, name: '金融理財'}, {id: 2, name: '休閒娛樂'}, {id: 3, name: '房屋營建'}, {id: 4, name: '生活百貨'}, {id: 11, name: '交通運輸'}, {id: 6, name: '能源環保'}, {id: 7, name: '生技醫療'}, {id: 8, name: '積體電路'}, {id: 9, name: '電子科技'}, {id: 10, name: '電機機械'}, {id: 16, name: '網路通訊'}]
+-var arr=[{id: 1, name: '食品加工', slug: 'food-processing', desc: '食品產業供應鏈的上游可分為肉品與食品原料兩大類...'}, {id: 12, name: '金融理財', slug: 'finance-management', desc: '藉由金融業專業人員管理客戶的資產...'}, {id: 2, name: '休閒娛樂', slug: 'leisure-entertainment', desc: '提供人們娛樂與休閒功效之服務與產品...'}, {id: 3, name: '房屋營建', slug: 'build-construction', desc: '從事住宅、商辦、工廠或公共工程等...'}, {id: 4, name: '生活百貨', slug: 'various-goods', desc: '利用賣場通路提供大眾日常居家生活產品與服務...'}, {id: 11, name: '交通運輸', slug: 'automobile-transportation', desc: '運輸是一種衍生的經濟行為，從事...'}, {id: 6, name: '能源環保', slug: 'energy-environment', desc: '環保意識逐漸抬頭，希望再生能源能逐漸取代...'}, {id: 7, name: '生技醫療', slug: 'medical-biotechnology', desc: '結合科技與醫療為社會大眾提供醫療與保健服務，包括...'}, {id: 8, name: '積體電路', slug: 'integrated-circuit', desc: '隨著5G，AI人工智能等新興服務的發展...'}, {id: 9, name: '電子科技', slug: 'electronic-technology', desc: '電腦週邊產業十分廣闊，上游為...'}, {id: 10, name: '電機機械', slug: 'electric-machinery', desc: '製造所有相關的機械與設計，用機械化...'}, {id: 16, name: '網路通訊', slug: 'internet-communication', desc: '通訊網路負責日常與商用所有的...'}]
 html
   head 
     link(href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,700&display=swap" rel="stylesheet")
     link(rel='stylesheet' type='text/css' href='./font.css')      
-    link(rel='stylesheet' type='text/css' href='./main.css')  
+    link(rel='stylesheet' type='text/css' href='./main.css')
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.3/css/swiper.css")
     link(rel='shortcut icon' type='image/x-icon' href='favicon.ico')
     script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.4/gsap.min.js")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.3/js/swiper.js")
     script(src="https://d3js.org/d3.v5.min.js")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     meta(charset="UTF-8")
@@ -113,6 +115,22 @@ html
             img(src='./asset/industry/front.png')
           .imgBox.wifi
             img(src='./asset/industry/wifi.png')
+      .menu.swiper-container#menu
+        .swiper-wrapper
+          for m in [1,2,3,4,5,6,7,8,9,10,11,12]
+            .menu__item.swiper-slide(data-name= arr[m-1].id)
+              p.slide__title= arr[m-1].name
+              .imgBox
+                img.land(src='./asset/land.png')
+                img.object(src='./asset/ball/'+m+'.png')
+              .menu__hoverBox.hidden
+                svg.lstroke(width="23" height="60" viewBox="0 0 23 60")
+                  path(fill="none" fill-rule="evenodd" stroke="#4BB5B1" d="M1.5 59.959V24.124L22.07.898")
+                svg.rstroke(width="36" height="73" viewBox="0 0 36 73")
+                  path(fill="none" fill-rule="evenodd" stroke="#4BB5B1" d="M35.048 0v38.488L1.204 72.332")
+                .rtBox #{arr[m-1].desc}
+                //- .lbBox
+                a.btn-small(href='https://www.stockfeel.com.tw/industrychain/?class='+arr[m-1].slug+'' target='_blank') 了解產業
       section.invest#invest
         .title-bg
           img(src='./asset/invest/title.png')

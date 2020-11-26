@@ -73,11 +73,105 @@ const titleFade = {
   ease: Circ.easeInOut
 }
 
+function landingAnimation() {
+  const landing = new TimelineMax() 
+  const selector = Array(10).fill(0).map((item, idx) => `.landing__title img:nth-child(${idx + 1})`)
+  landing.staggerFromTo(selector, .1, {
+    y: 100
+  }, {
+    y: 0
+  }, .1)
+}
+
+$(window).ready(function() {
+  landingAnimation() 
+  swiperBind()
+  // fetch('https://www.stockfeel.com.tw/wp-content/themes/stockfeel_2016_theme/api/get_industrychain.php')
+  //   .then(res => res.json())
+  //   .then(data => {
+  //     if(data.status === 'success') {
+  //       // appendData(data.result)
+  //       swiperBind()
+  //     }
+  //   })
+})
+
+// Menu
+document.querySelector('.menu').addEventListener('mouseover', (evt) => {
+  if(evt.target.classList.contains('swiper-slide')) {
+    evt.target.querySelector('.menu__hoverBox').classList.remove('hidden')
+  }
+  if(evt.target.classList.contains('btn-small')) {
+    evt.target.parentNode.classList.remove('hidden')
+  }
+  mySwiper.autoplay.stop()
+})
 
 $(`#event_intro_open`).click(function(){
   $(`.event_introduction`).slideToggle(`slow`);
 })
 
+document.querySelector('.menu').addEventListener('mouseout', (evt) => {
+  if(evt.target.classList.contains('swiper-slide')) {
+    evt.target.querySelector('.menu__hoverBox').classList.add('hidden')
+  }
+  if(evt.target.classList.contains('btn-small')) {
+    evt.target.parentNode.classList.add('hidden')
+  }
+  mySwiper.autoplay.start()
+})
+
+let mySwiper;
+function swiperBind() {
+  mySwiper = new Swiper ('.swiper-container', {
+    direction: 'horizontal',
+    slidesPerView: 'auto',
+    observeParents:true,
+    spaceBetween: 50,
+    observer: true,
+    loop: true,
+    centeredSlides: true,
+    autoplay: {
+      delay: 1000
+    }
+  })
+}
+
+function appendData(data) {
+  const width = 60 
+  const height = 20
+  const result = Object.keys(data.change_row).map(item => {
+    return {
+      change: data.change_row[item].slice(0, 6), 
+      meta: data.meta_row.find(ele => ele.category === item)
+    }
+  })
+  result.forEach(item => {
+    const node = document.querySelector(`[data-name="${item.meta.id}"]`);
+    const mean = (item.change.reduce((acc, item) => acc + item) / item.change.length).toFixed(2)
+    const yExtent = d3.extent(item.change)
+    const xScale = d3.scaleLinear().domain([0, item.change.length]).range([0, width])
+    const yScale = d3.scaleLinear().domain(yExtent).range([height, 0])
+    const line = d3.line()
+      .x((d, idx) => xScale(idx))
+      .y((d) => yScale(d))
+    const lines = line(item.change)
+    if(node) {
+      node.querySelector('.rtBox').innerHTML = item.meta.description.slice(0, 20)+'...'
+      node.querySelector('.lbBox').innerHTML = `
+        <p class='box__title'>近一月</p>
+        <p class='box__info ${mean > 0 ? 'up' : 'down'}'>${mean} %</p>
+        <svg width="${width}" height="${height}">
+          <path d="${lines}" stroke='#4d4d4d' stoke-width='1px' fill='none'></path>
+        </svg>
+      `
+      // node.querySelector('.btn-small').setAttribute('href', )
+      node.querySelector('.btn-small').addEventListener('click', () => {
+        window.open(`https://www.stockfeel.com.tw/industrychain/?class=${item.meta.category}`, '_blank');
+      })
+    }
+  })
+}
 
 function industryTime() {
   const industry = new TimelineMax({ paused: true }) 
@@ -419,12 +513,12 @@ $(window).scroll(function(evt) {
     state = 'landing';
   }
   if($(window).scrollTop() > $('#industry').offset().top - 300 && 
-      $(window).scrollTop()) {
+    $(window).scrollTop() < $('#menu').offset().top) {
     if(state !== 'industry') {
       state = 'industry';
       industry.forEach(tl => tl.play())
     }
-    const sectionHeight = $('#industry').offset().top;
+    const sectionHeight = $('#industry').offset().top-$('#menu').offset().top;
   }
   if($(window).scrollTop() > $('#invest').offset().top - 300 && 
       $(window).scrollTop() < $('#sources').offset().top && 

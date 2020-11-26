@@ -130,9 +130,109 @@ var titleFade = {
   opacity: 1,
   ease: Circ.easeInOut
 };
+
+function landingAnimation() {
+  var landing = new TimelineMax();
+  var selector = Array(10).fill(0).map(function(item, idx) {
+    return ".landing__title img:nth-child(".concat(idx + 1, ")");
+  });
+  landing.staggerFromTo(selector, .1, {
+    y: 100
+  }, {
+    y: 0
+  }, .1);
+}
+
+$(window).ready(function() {
+  landingAnimation();
+  swiperBind(); // fetch('https://www.stockfeel.com.tw/wp-content/themes/stockfeel_2016_theme/api/get_industrychain.php')
+  //   .then(res => res.json())
+  //   .then(data => {
+  //     if(data.status === 'success') {
+  //       // appendData(data.result)
+  //       swiperBind()
+  //     }
+  //   })
+}); // Menu
+
+document.querySelector('.menu').addEventListener('mouseover', function(evt) {
+  if (evt.target.classList.contains('swiper-slide')) {
+    evt.target.querySelector('.menu__hoverBox').classList.remove('hidden');
+  }
+
+  if (evt.target.classList.contains('btn-small')) {
+    evt.target.parentNode.classList.remove('hidden');
+  }
+
+  mySwiper.autoplay.stop();
+});
 $("#event_intro_open").click(function() {
   $(".event_introduction").slideToggle("slow");
 });
+document.querySelector('.menu').addEventListener('mouseout', function(evt) {
+  if (evt.target.classList.contains('swiper-slide')) {
+    evt.target.querySelector('.menu__hoverBox').classList.add('hidden');
+  }
+
+  if (evt.target.classList.contains('btn-small')) {
+    evt.target.parentNode.classList.add('hidden');
+  }
+
+  mySwiper.autoplay.start();
+});
+var mySwiper;
+
+function swiperBind() {
+  mySwiper = new Swiper('.swiper-container', {
+    direction: 'horizontal',
+    slidesPerView: 'auto',
+    observeParents: true,
+    spaceBetween: 50,
+    observer: true,
+    loop: true,
+    centeredSlides: true,
+    autoplay: {
+      delay: 1000
+    }
+  });
+}
+
+function appendData(data) {
+  var width = 60;
+  var height = 20;
+  var result = Object.keys(data.change_row).map(function(item) {
+    return {
+      change: data.change_row[item].slice(0, 6),
+      meta: data.meta_row.find(function(ele) {
+        return ele.category === item;
+      })
+    };
+  });
+  result.forEach(function(item) {
+    var node = document.querySelector("[data-name=\"".concat(item.meta.id, "\"]"));
+    var mean = (item.change.reduce(function(acc, item) {
+      return acc + item;
+    }) / item.change.length).toFixed(2);
+    var yExtent = d3.extent(item.change);
+    var xScale = d3.scaleLinear().domain([0, item.change.length]).range([0, width]);
+    var yScale = d3.scaleLinear().domain(yExtent).range([height, 0]);
+    var line = d3.line().x(function(d, idx) {
+      return xScale(idx);
+    }).y(function(d) {
+      return yScale(d);
+    });
+    var lines = line(item.change);
+
+    if (node) {
+      node.querySelector('.rtBox').innerHTML = item.meta.description.slice(0, 20) + '...';
+      node.querySelector('.lbBox').innerHTML = "\n        <p class='box__title'>\u8FD1\u4E00\u6708</p>\n        <p class='box__info ".concat(mean > 0 ? 'up' : 'down', "'>").concat(mean, " %</p>\n        <svg width=\"").concat(width, "\" height=\"").concat(height, "\">\n          <path d=\"").concat(lines, "\" stroke='#4d4d4d' stoke-width='1px' fill='none'></path>\n        </svg>\n      "); // node.querySelector('.btn-small').setAttribute('href', )
+
+      node.querySelector('.btn-small').addEventListener('click', function() {
+        window.open("https://www.stockfeel.com.tw/industrychain/?class=".concat(item.meta.category), '_blank');
+      });
+    }
+  });
+}
 
 function industryTime() {
   var industry = new TimelineMax({
@@ -413,7 +513,7 @@ $(window).scroll(function(evt) {
     state = 'landing';
   }
 
-  if ($(window).scrollTop() > $('#industry').offset().top - 300 && $(window).scrollTop()) {
+  if ($(window).scrollTop() > $('#industry').offset().top - 300 && $(window).scrollTop() < $('#menu').offset().top) {
     if (state !== 'industry') {
       state = 'industry';
       industry.forEach(function(tl) {
@@ -421,7 +521,7 @@ $(window).scroll(function(evt) {
       });
     }
 
-    var sectionHeight = $('#industry').offset().top;
+    var sectionHeight = $('#industry').offset().top - $('#menu').offset().top;
   }
 
   if ($(window).scrollTop() > $('#invest').offset().top - 300 && $(window).scrollTop() < $('#sources').offset().top && state !== 'invest') {
